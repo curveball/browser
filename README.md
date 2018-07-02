@@ -25,7 +25,37 @@ Installation
 Getting started
 ---------------
 
-...
+### Curveball
+
+```typescript
+import { Application } from 'curveball/@core';
+import halBrowser from 'hal-browser';
+
+const app = new Application();
+app.use(halBrowser({
+  title: 'HAL Browser',
+  stylesheets: [
+    // path to CSS stylesheets
+  ],
+});
+```
+
+The HAL browser ships with 2 really basic stylesheets in the `styles`
+directory:
+
+* `main.css` - Main interface css
+* `solarized-dark.css` - A syntax highlighting stylesheet lifted from the
+  [Highlight.js][4] project, and originally created by (c) Jeremy Hull
+
+For best effect you'll want both stylesheets!
+
+### Express
+
+TODO
+
+### Koa
+
+TODO
 
 API
 ---
@@ -33,3 +63,4 @@ API
 [1]: https://github.com/expressjs/core
 [2]: https://expressjs.com/
 [3]: https://koajs.com/
+[4]: https://github.com/isagalaev/highlight.js/

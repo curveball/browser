@@ -1,0 +1,40 @@
+body, pre, h1, h2, h3, h4, p, table {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-size: 13px;
+  font-family: sans-serif;
+}
+
+header {
+  background: #cce;
+  padding: 10px;
+}
+
+h2 {
+  padding: 10px 0 5px 0;
+}
+
+main {
+  padding: 5px;
+}
+
+code {
+
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  font-size: 15px;
+  text-align: left;
+  vertical-align: top;
+  border: 3px solid #eee;
+  padding: 3px;
+}
+
