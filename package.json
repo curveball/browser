@@ -36,6 +36,7 @@
   "homepage": "https://github.com/evert/hal-browser#readme",
   "devDependencies": {
     "@types/chai": "^4.1.4",
+    "@types/highlight.js": "^9.12.3",
     "@types/mocha": "^5.2.3",
     "@types/node": "^10.3.6",
     "@types/sinon": "^5.0.1",
@@ -54,6 +55,7 @@
     ]
   },
   "dependencies": {
-    "@curveball/core": "^0.4.1"
+    "@curveball/core": "^0.4.1",
+    "highlight.js": "^9.12.0"
   }
 }
