@@ -1,12 +1,18 @@
-Curveball New Package
-=====================
+HAL browser
+===========
 
-This repository serves as the skeleton for all new [Curveball][1] packages.
+This package provides a middleware for HAL APIs.
+
+The middleware looks for HAL and JSON responses, and automatically converts
+them into a HTML interface if a browser access them.
+
+It does so via the `Accept: text/html` header. If this header is not provides,
+the middleware does nothing.
 
 Installation
 ------------
 
-    npm install @curveball/new-package 
+    npm install hal-browser
 
 
 Getting started
@@ -18,5 +24,3 @@ API
 ---
 
 ...
-
-[1]: https://github.com/curveballjs/
