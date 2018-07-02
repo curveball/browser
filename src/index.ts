@@ -7,7 +7,7 @@ import highlight from 'highlight.js';
 type Options = {
   title?: string
   stylesheets?: string[]
-}
+};
 
 /**
  * Options after clean-up.
@@ -17,7 +17,7 @@ type Options = {
 type SureOptions = {
   title: string,
   stylesheets: string[]
-}
+};
 
 const parsedContentTypes = [
   'application/json',
@@ -40,7 +40,7 @@ export default function browser(options?: Options): Middleware {
     options.stylesheets = [];
   }
 
-  return async (ctx: Context, next: Function) => {
+  return async (ctx, next) => {
 
     // Check to see if the client even wants html.
     if (!ctx.request.accepts('text/html')) {
@@ -61,20 +61,20 @@ export default function browser(options?: Options): Middleware {
     // This is useful if the client submitted a lower q= score for text/html
     if (ctx.request.accepts('text/html', ...parsedContentTypes) === 'text/html') {
       ctx.response.headers.set('Content-Type', 'text/html');
-      generateHtmlIndex(ctx, ctx.response.body, <SureOptions>options);
+      generateHtmlIndex(ctx, ctx.response.body, <SureOptions> options);
     }
 
-  }
+  };
 
 }
 
-function generateHtmlIndex(ctx: Context, body: Object, options: SureOptions) {
+function generateHtmlIndex(ctx: Context, body: any, options: SureOptions) {
 
   const jsonBody = syntaxHighlightJson(body);
   const links = generateLinks(body);
 
   const stylesheets = options.stylesheets.map(ss => {
-    return `    <link rel="stylesheet" href="${h(ss)}" type="text/css" />\n`
+    return `    <link rel="stylesheet" href="${h(ss)}" type="text/css" />\n`;
   }).join('');
 
   ctx.response.body = `
@@ -116,7 +116,7 @@ function h(input: string): string {
 
 }
 
-function syntaxHighlightJson(body: Object): string {
+function syntaxHighlightJson(body: any): string {
 
   return highlight.highlight('json', JSON.stringify(body, undefined, '  ')).value;
 
@@ -124,11 +124,11 @@ function syntaxHighlightJson(body: Object): string {
 
 function generateLinks(body: any): string {
 
-  if (!body._links) return '';
+  if (!body._links) { return ''; }
 
   let linkHtml = '';
 
-  for (const rel in body._links) {
+  for (const rel of Object.keys(body._links)) {
 
     const links =
       Array.isArray(body._links[rel]) ?
@@ -140,14 +140,14 @@ function generateLinks(body: any): string {
 
     for (const link of links) {
 
-      linkHtml += `<tr>`;
+      linkHtml += '<tr>';
       if (first) {
         linkHtml += `<td rowspan="${linkCount}">${h(rel)}</td>`;
         first = false;
       }
       linkHtml += `<td><a href="${h(link.href)}">${h(link.href)}</a></td>`;
-      linkHtml += `<td>` + (link.title ? h(link.title) : '') + `</td>`;
-      linkHtml += `</tr>\n`;
+      linkHtml += '<td>' + (link.title ? h(link.title) : '') + '</td>';
+      linkHtml += '</tr>\n';
 
     }
 
