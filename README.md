@@ -6,7 +6,7 @@ This package provides a middleware for HAL APIs.
 The middleware looks for HAL and JSON responses, and automatically converts
 them into a HTML interface if a browser access them.
 
-It does so via the `Accept: text/html` header. If this header is not provides,
+It does so via the `Accept: text/html` header. If this header is not provided,
 the middleware does nothing.
 
 Supported frameworks
