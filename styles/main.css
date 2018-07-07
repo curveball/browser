@@ -1,3 +1,17 @@
+/**
+ * Color scheme:
+ *
+ * Background (white): #FBF7EB
+ * Header: #414656
+ *
+ * Other colors:
+ *
+ * Greens:
+ * #64847D
+ * #8AA99A
+ * #B8CAB6
+ */
+
 body, pre, h1, h2, h3, h4, p, table {
   margin: 0;
   padding: 0;
@@ -6,12 +20,16 @@ body, pre, h1, h2, h3, h4, p, table {
 
 body {
   font-size: 13px;
-  font-family: sans-serif;
+  font-family: "Ubuntu Sans", "Arial", sans-serif;
+  background: #FBF7EB;
 }
 
 header {
-  background: #cce;
+  background: #414656;;
   padding: 10px;
+  color: #FFF;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 3px 3px 10px #ccc;
 }
 
 h2 {
@@ -23,7 +41,9 @@ main {
 }
 
 code {
-
+  margin: 5px;
+  font-family: Monaco, "Lucida Console", "Ubuntu Mono", monospace;
+  font-size: 120%;
 }
 
 table {
