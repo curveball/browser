@@ -55,7 +55,7 @@ An example. If a API normally returns the following HAL format:
 
 The browser will automatically convert it to this HTML format:
 
-![Screenshot from 0.2.0]([https://github.com/evert/hal-browser/blob/master/screenshots/0.2.0.png|alt=octocat])
+![Screenshot from 0.2.0](https://github.com/evert/hal-browser/blob/master/screenshots/0.2.0.png)
 
 Supported frameworks
 --------------------
