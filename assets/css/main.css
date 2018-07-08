@@ -12,7 +12,7 @@
  * #B8CAB6
  */
 
-body, pre, h1, h2, h3, h4, p, table {
+body, pre, h1, h2, h3, h4, p, table, ul, ol {
   margin: 0;
   padding: 0;
 }
@@ -30,6 +30,11 @@ header {
   color: #FFF;
   border-bottom: 1px solid #ccc;
   box-shadow: 3px 3px 10px #ccc;
+}
+
+header h1 a {
+  color: #FFF;
+  text-decoration: none;
 }
 
 h2 {
@@ -56,5 +61,35 @@ th, td {
   vertical-align: top;
   border: 3px solid #eee;
   padding: 3px;
+}
+
+nav {
+  padding: 5px;
+}
+
+/* Navigation bar */
+nav ul {
+  list-style: none;
+  display: block;
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  display: inline-block;
+  border-radius: 3px;
+  background: #B8CAB6;
+  padding: 5px;
+  box-shadow: 3px 3px 4px #ccc;
+}
+
+nav a:hover {
+  background: #8AA99A;
+}
+
+nav a img {
+  width: 32px;
 }
 
