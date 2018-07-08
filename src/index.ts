@@ -1,5 +1,6 @@
 import { Middleware } from '@curveball/core';
 import generateHtmlIndex from './html-index';
+import serveAsset from './serve-asset';
 import { Options, SureOptions, NavigationLinkMap } from './types';
 
 const parsedContentTypes = [
@@ -19,6 +20,10 @@ export default function browser(options?: Options): Middleware {
   const newOptions = normalizeOptions(options);
 
   return async (ctx, next) => {
+
+    if (newOptions.serveAssets && ctx.request.path.startsWith('/_hal-browser/assets/')) {
+      return serveAsset(ctx);
+    }
 
     // Check to see if the client even wants html.
     if (!ctx.request.accepts('text/html')) {
@@ -46,6 +51,7 @@ export default function browser(options?: Options): Middleware {
 
 }
 
+
 /**
  * This function does a whole bunch of cleanup of the options object, so
  * everything else can do less work.
@@ -64,11 +70,18 @@ function normalizeOptions(options: Options): SureOptions {
   }
 
   if (!options.stylesheets) {
-    options.stylesheets = [];
+    options.stylesheets = [
+      'css/main.css',
+      'css/solarized-dark.css',
+    ];
   }
 
-  if (options.assetBaseUrl) {
-    options.assetBaseUrl = '/hal-browser/assets';
+  if (!options.assetBaseUrl) {
+    options.assetBaseUrl = '/_hal-browser/assets/';
+  }
+
+  if (options.serveAssets === undefined) {
+    options.serveAssets = true;
   }
 
   const tmpNavLinks = Object.assign(
@@ -86,7 +99,7 @@ function normalizeOptions(options: Options): SureOptions {
     }
     if (navLink === true) {
       options.navigationLinks[navLinkRel] = {
-        defaultTitle: navLinkRel
+        defaultTitle: navLinkRel,
       };
     } else {
       options.navigationLinks[navLinkRel] = navLink;

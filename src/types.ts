@@ -6,6 +6,7 @@ export type Options = {
   stylesheets?: string[],
   navigationLinks?: NavigationLinkMap,
   assetBaseUrl?: string,
+  serveAssets?: boolean,
 };
 
 /**
@@ -17,7 +18,8 @@ export type SureOptions = {
   title: string,
   stylesheets: string[]
   navigationLinks: SureNavigationLinkMap,
-  assetBaseUrl: string
+  assetBaseUrl: string,
+  serveAssets: boolean,
 };
 
 /**

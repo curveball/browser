@@ -16,7 +16,7 @@ export default function generateHtmlIndex(ctx: Context, body: any, options: Sure
   const linksHtml = generateLinks(remainingLinks);
 
   const stylesheets = options.stylesheets.map(ss => {
-    return `    <link rel="stylesheet" href="${h(ss)}" type="text/css" />\n`;
+    return `    <link rel="stylesheet" href="${h(url.resolve(options.assetBaseUrl, ss))}" type="text/css" />\n`;
   }).join('');
 
   ctx.response.body = `
@@ -134,10 +134,13 @@ function generateNavigation(links: Link[], options: SureOptions) : [string, Link
       ( nl.defaultTitle )
     );
 
-    const iconUrl = url.resolve( options.assetBaseUrl, nl.icon ? nl.icon : link.rel + '.svg');
+    const iconUrl = url.resolve(
+      options.assetBaseUrl,
+      nl.icon ? nl.icon : 'icon/' + link.rel + '.svg'
+    );
     html.push(
       `<a href="${ h(link.href) }" rel="${ h(link.rel) }" title="${ h(title) }">` +
-      `<img src="${ iconUrl }" /><a>`
+      `<img src="${ iconUrl }" /></a>`
     );
 
   }
