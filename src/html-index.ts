@@ -9,26 +9,27 @@ import url from 'url';
 
 export default function generateHtmlIndex(ctx: Context, body: any, options: SureOptions) {
 
-  const jsonBody = syntaxHighlightJson(body);
-
   const links: Link[] = getLinksFromBody(body);
-  const [nav, remainingLinks] = generateNavigation(links, options);
-  const linksHtml = generateLinks(remainingLinks);
+  const nav = generateNavigation(links, options);
+  const linksHtml = generateLinks(links, options);
+  const [headTitle, bodyTitle] = generateTitle(links, ctx, options);
+  const bodyHtml = generateBody(body);
 
   const stylesheets = options.stylesheets.map(ss => {
     return `    <link rel="stylesheet" href="${h(url.resolve(options.assetBaseUrl, ss))}" type="text/css" />\n`;
   }).join('');
 
+
   ctx.response.body = `
 <!DOCTYPE html>
 <html>
   <head>
-    <title>${h(options.title)}</title>
+    <title>${headTitle}</title>
 ${stylesheets}
   </head>
   <body>
     <header>
-      <h1>${h(options.title)}</h1>
+      <h1>${bodyTitle}</h1>
     </header>
 
     <nav>
@@ -39,7 +40,7 @@ ${stylesheets}
       ${linksHtml}
 
       <h2>Body</h2>
-      <code class="hljs"><pre>${jsonBody}</pre></code>
+      <code class="hljs"><pre>${bodyHtml}</pre></code>
 
     </main>
 
@@ -68,7 +69,17 @@ function syntaxHighlightJson(body: any): string {
 
 }
 
-function generateLinks(links: Link[]): string {
+function generateBody(body: any) {
+
+  const tmpBody = Object.assign(body);
+  delete tmpBody._links;
+
+  return syntaxHighlightJson(tmpBody);
+
+}
+
+
+function generateLinks(links: Link[], options: SureOptions): string {
 
   let linkHtml = '';
 
@@ -76,6 +87,11 @@ function generateLinks(links: Link[]): string {
   const groups: { [rel: string]: Link[] } = {};
 
   for (const link of links) {
+
+    if (link.rel === 'self' || link.rel in options.navigationLinks) {
+      continue;
+    }
+
     if (groups[link.rel]) {
       groups[link.rel].push(link);
     } else {
@@ -104,6 +120,11 @@ function generateLinks(links: Link[]): string {
 
   }
 
+  if (!linkHtml) {
+    // No links
+    return '';
+  }
+
   return `
     <h2>Links</h2>
     <table>
@@ -116,7 +137,7 @@ function generateLinks(links: Link[]): string {
 
 }
 
-function generateNavigation(links: Link[], options: SureOptions): [string, Link[]] {
+function generateNavigation(links: Link[], options: SureOptions): string {
 
   const remainingLinks: Link[] = [];
   const html: string[] = [];
@@ -146,12 +167,43 @@ function generateNavigation(links: Link[], options: SureOptions): [string, Link[
   }
 
   if (!html.length) {
-    return ['', remainingLinks];
+    return '';
   }
 
   const result = '    <ul>\n      <li>' + html.join('</li>\n      <li>') + '      </li>\n    </ul>\n';
 
-  return [result, remainingLinks];
+  return result;
+
+}
+
+function generateTitle(links: Link[], ctx: Context, options: SureOptions): [string, string] {
+
+  const selfLink = links.find( link => link.rel === 'self' );
+
+  let title;
+  let href;
+
+  if (selfLink) {
+    title = selfLink.title;
+    href = selfLink.href;
+  } else {
+    href = ctx.request.path;
+  }
+
+  if (!title && ctx.response.body.title) {
+    title = ctx.response.body.title;
+  }
+  if (!title && ctx.response.body.name) {
+    title = ctx.response.body.name;
+  }
+  if (!title) {
+    title = href;
+  }
+
+  return [
+    `${h(title)} - ${options.title}`,
+    `<a href="${h(href)}" rel="self">${h(title)}</a> - ${options.title}`
+  ];
 
 }
 

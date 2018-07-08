@@ -9,10 +9,39 @@ const parsedContentTypes = [
   'application/problem+json',
 ];
 
+/*
+ * Wanted links support
+ *
+ * source:
+ * https://www.iana.org/assignments/link-relations/link-relations.xhtml
+ *
+ * - about
+ * - alternate
+ * - collection
+ * - help
+ * - item
+ * - stylesheet
+ * - up
+ * - via
+ *
+ * source:
+ * http://microformats.org/wiki/existing-rel-values
+ *
+ * - code-repository
+ * - icon
+ */
+
 const defaultNavigationLinks: NavigationLinkMap = {
-  next: true,
-  previous: true,
-  author: true
+  'author': true,
+  'create-form': true,
+  'edit': true,
+  'edit-form' : {
+    // alias this
+    icon: 'icons/edit.svg',
+  }
+  'help': true,
+  'previous': true,
+  'search': true,
 };
 
 export default function browser(options?: Options): Middleware {

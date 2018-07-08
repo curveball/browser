@@ -32,6 +32,11 @@ header {
   box-shadow: 3px 3px 10px #ccc;
 }
 
+header h1 a {
+  color: #FFF;
+  text-decoration: none;
+}
+
 h2 {
   padding: 10px 0 5px 0;
 }
