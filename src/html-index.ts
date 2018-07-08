@@ -39,7 +39,7 @@ ${stylesheets}
     <main>
       ${linksHtml}
 
-      <h2>Body</h2>
+      <h2>Contents</h2>
       <code class="hljs"><pre>${bodyHtml}</pre></code>
 
     </main>
