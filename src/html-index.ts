@@ -1,7 +1,7 @@
 import { Context } from '@curveball/core';
 import {
-  SureOptions,
   Link,
+  SureOptions,
 } from './types';
 
 import highlight from 'highlight.js';
@@ -11,7 +11,7 @@ export default function generateHtmlIndex(ctx: Context, body: any, options: Sure
 
   const jsonBody = syntaxHighlightJson(body);
 
-  let links:Link[] = getLinksFromBody(body);
+  const links: Link[] = getLinksFromBody(body);
   const [nav, remainingLinks] = generateNavigation(links, options);
   const linksHtml = generateLinks(remainingLinks);
 
@@ -75,7 +75,7 @@ function generateLinks(links: Link[]): string {
   // Grouping links by rel.
   const groups: { [rel: string]: Link[] } = {};
 
-  for(const link of links) {
+  for (const link of links) {
     if (groups[link.rel]) {
       groups[link.rel].push(link);
     } else {
@@ -83,7 +83,7 @@ function generateLinks(links: Link[]): string {
     }
   }
 
-  for(const group of Object.values(groups)) {
+  for (const group of Object.values(groups)) {
 
     const linkCount = group.length;
     let first = true;
@@ -116,12 +116,12 @@ function generateLinks(links: Link[]): string {
 
 }
 
-function generateNavigation(links: Link[], options: SureOptions) : [string, Link[]] {
+function generateNavigation(links: Link[], options: SureOptions): [string, Link[]] {
 
   const remainingLinks: Link[] = [];
   const html: string[] = [];
 
-  for(const link of links) {
+  for (const link of links) {
 
     if (!options.navigationLinks[link.rel]) {
       remainingLinks.push(link);
@@ -161,9 +161,9 @@ function getLinksFromBody(body: any): Link[] {
     return [];
   }
 
-  const result:Link[] = [];
+  const result: Link[] = [];
 
-  for(const rel of Object.keys(body._links)) {
+  for (const rel of Object.keys(body._links)) {
 
     let linksTmp;
 
@@ -172,9 +172,10 @@ function getLinksFromBody(body: any): Link[] {
     } else {
       linksTmp = [body._links[rel]];
     }
-    for(const link of linksTmp) {
+    for (const link of linksTmp) {
 
       if (!link.href) {
+        // tslint:disable:no-console
         console.warn('Incorrect format for HAL link with rel: ' + rel);
       }
       result.push({

@@ -1,7 +1,7 @@
 import { Middleware } from '@curveball/core';
 import generateHtmlIndex from './html-index';
 import serveAsset from './serve-asset';
-import { Options, SureOptions, NavigationLinkMap } from './types';
+import { NavigationLinkMap, Options, SureOptions } from './types';
 
 const parsedContentTypes = [
   'application/json',
@@ -91,7 +91,7 @@ function normalizeOptions(options: Options): SureOptions {
 
   options.navigationLinks = {};
 
-  for(const navLinkRel of Object.keys(tmpNavLinks)) {
+  for (const navLinkRel of Object.keys(tmpNavLinks)) {
 
     const navLink = tmpNavLinks[navLinkRel];
     if (navLink === null) {
@@ -106,6 +106,6 @@ function normalizeOptions(options: Options): SureOptions {
     }
   }
 
-  return <SureOptions>options;
+  return <SureOptions> options;
 
 }

@@ -24,7 +24,7 @@ export default async function serveAsset(ctx: Context) {
     throw new Error('Invalid path');
   }
 
-  const fileStat:fs.Stats = await stat(fileName);
+  const fileStat: fs.Stats = await stat(fileName);
 
   if (!fileStat.isFile()) {
     throw new Error('Invalid path');
@@ -35,7 +35,7 @@ export default async function serveAsset(ctx: Context) {
   ctx.response.body = await readFile(fileName);
   ctx.response.headers.set('Content-Length', ctx.response.body.length);
 
-  switch(fileParts.ext) {
+  switch (fileParts.ext) {
     case 'svg' :
       ctx.response.type = 'image/svg';
       break;
@@ -43,7 +43,5 @@ export default async function serveAsset(ctx: Context) {
       ctx.response.type = 'image/css';
       break;
   }
-
-  console.log('Serving asset: ' + fileName);
 
 }

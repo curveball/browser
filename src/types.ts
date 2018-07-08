@@ -30,7 +30,7 @@ export type NavigationLinkMap = {
   // Navigation links are nullable so they can be overridden
   [rel: string]: NavigationLink | null | true
 
-}
+};
 
 /**
  * A normalized NavigationLinkMap.
@@ -42,7 +42,7 @@ export type SureNavigationLinkMap = {
   // Navigation links are nullable so they can be overridden
   [rel: string]: NavigationLink
 
-}
+};
 
 /**
  * A "NavigationLink" specifies a link that will automatically get recognized
@@ -60,7 +60,7 @@ export type NavigationLink = {
   // [rel].svg
   icon?: string,
 
-}
+};
 
 /**
  * Represents some link.
@@ -72,4 +72,4 @@ export type Link = {
   type?: string,
   title?: string
 
-}
+};
