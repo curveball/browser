@@ -1,3 +1,10 @@
+0.2.3 (2018-07-07)
+==================
+
+* Another mime-type tweak. Apprarently this problem only appears in
+  some environments. Sorry for the noise.
+
+
 0.2.2 (2018-07-07)
 ==================
 

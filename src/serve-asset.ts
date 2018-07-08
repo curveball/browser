@@ -37,7 +37,7 @@ export default async function serveAsset(ctx: Context) {
 
   switch (fileParts.ext) {
     case '.svg' :
-      ctx.response.type = 'image/svg';
+      ctx.response.type = 'image/svg+xml';
       break;
     case '.css' :
       ctx.response.type = 'text/css';
