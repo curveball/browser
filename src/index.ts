@@ -18,7 +18,6 @@ const parsedContentTypes = [
  * - about
  * - alternate
  * - collection
- * - help
  * - item
  * - stylesheet
  * - up
@@ -27,18 +26,19 @@ const parsedContentTypes = [
  * source:
  * http://microformats.org/wiki/existing-rel-values
  *
- * - code-repository
  * - icon
  */
 
 const defaultNavigationLinks: NavigationLinkMap = {
   'author': true,
+  'core-repository': true,
   'create-form': true,
   'edit': true,
   'edit-form' : {
     // alias this
     icon: 'icons/edit.svg',
   },
+  'help': true,
   'home': true,
   'next': true,
   'previous': true,
