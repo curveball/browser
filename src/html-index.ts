@@ -209,7 +209,7 @@ function generateTitle(links: Link[], ctx: Context, options: SureOptions): [stri
 
 function fetchLinks(body: any, options: SureOptions): Link[] {
 
-  const result: Link[] = options.defaultLinks;
+  const result: Link[] = Array.from(options.defaultLinks);
 
   if (!body._links) {
     return result;
