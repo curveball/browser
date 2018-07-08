@@ -7,6 +7,7 @@ export type Options = {
   navigationLinks?: NavigationLinkMap,
   assetBaseUrl?: string,
   serveAssets?: boolean,
+  defaultLinks?: Link[],
 };
 
 /**
@@ -20,6 +21,7 @@ export type SureOptions = {
   navigationLinks: SureNavigationLinkMap,
   assetBaseUrl: string,
   serveAssets: boolean,
+  defaultLinks: Link[],
 };
 
 /**

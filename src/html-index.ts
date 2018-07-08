@@ -9,7 +9,7 @@ import url from 'url';
 
 export default function generateHtmlIndex(ctx: Context, body: any, options: SureOptions) {
 
-  const links: Link[] = getLinksFromBody(body);
+  const links: Link[] = fetchLinks(body, options);
   const nav = generateNavigation(links, options);
   const linksHtml = generateLinks(links, options);
   const [headTitle, bodyTitle] = generateTitle(links, ctx, options);
@@ -207,13 +207,13 @@ function generateTitle(links: Link[], ctx: Context, options: SureOptions): [stri
 
 }
 
-function getLinksFromBody(body: any): Link[] {
+function fetchLinks(body: any, options: SureOptions): Link[] {
+
+  const result: Link[] = options.defaultLinks;
 
   if (!body._links) {
-    return [];
+    return result;
   }
-
-  const result: Link[] = [];
 
   for (const rel of Object.keys(body._links)) {
 
@@ -240,6 +240,7 @@ function getLinksFromBody(body: any): Link[] {
     }
 
   }
+
   return result;
 
 }

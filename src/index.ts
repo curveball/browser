@@ -94,24 +94,21 @@ function normalizeOptions(options: Options): SureOptions {
     options = {};
   }
 
-  if (!options.title) {
-    options.title = 'HAL Browser';
-  }
-
-  if (!options.stylesheets) {
-    options.stylesheets = [
+  const defaults = {
+    title: 'HAL Browser',
+    stylesheets: [
       'css/main.css',
       'css/solarized-dark.css',
-    ];
-  }
-
-  if (!options.assetBaseUrl) {
-    options.assetBaseUrl = '/_hal-browser/assets/';
-  }
-
-  if (options.serveAssets === undefined) {
-    options.serveAssets = true;
-  }
+    ],
+    defaultLinks: [
+      {
+        href: '/',
+        rel: 'home'
+      }
+    ],
+    assetBaseUrl: '/_hal-browser/assets/',
+    serveAssets: true,
+  };
 
   const tmpNavLinks = Object.assign(
     defaultNavigationLinks,
@@ -135,6 +132,6 @@ function normalizeOptions(options: Options): SureOptions {
     }
   }
 
-  return <SureOptions> options;
+  return <SureOptions> Object.assign(defaults, options);
 
 }
