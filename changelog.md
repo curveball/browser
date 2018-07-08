@@ -1,3 +1,9 @@
+0.2.1 (2018-07-07)
+==================
+
+* Fixed: assets were not getting the right Content-Type
+
+
 0.2.0 (2018-07-07)
 ==================
 
