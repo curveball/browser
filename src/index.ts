@@ -39,6 +39,7 @@ const defaultNavigationLinks: NavigationLinkMap = {
     // alias this
     icon: 'icons/edit.svg',
   },
+  'home': true,
   'next': true,
   'previous': true,
   'search': true,
