@@ -38,8 +38,8 @@ const defaultNavigationLinks: NavigationLinkMap = {
   'edit-form' : {
     // alias this
     icon: 'icons/edit.svg',
-  }
-  'help': true,
+  },
+  'next': true,
   'previous': true,
   'search': true,
 };
