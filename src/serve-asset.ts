@@ -36,10 +36,10 @@ export default async function serveAsset(ctx: Context) {
   ctx.response.headers.set('Content-Length', ctx.response.body.length);
 
   switch (fileParts.ext) {
-    case 'svg' :
+    case '.svg' :
       ctx.response.type = 'image/svg';
       break;
-    case 'css' :
+    case '.css' :
       ctx.response.type = 'image/css';
       break;
   }
