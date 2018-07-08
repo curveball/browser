@@ -55,6 +55,11 @@ export default function browser(options?: Options): Middleware {
       return serveAsset(ctx);
     }
 
+    // Don't do anything if the raw format was requested
+    if ('_browser-raw' in ctx.request.query) {
+      return next();
+    }
+
     // Check to see if the client even wants html.
     if (!ctx.request.accepts('text/html')) {
       return next();
@@ -106,6 +111,10 @@ function normalizeOptions(options: Options): SureOptions {
         href: '/',
         rel: 'home'
       }
+    ],
+    hiddenRels: [
+      'self',
+      'curies',
     ],
     assetBaseUrl: '/_hal-browser/assets/',
     serveAssets: true,

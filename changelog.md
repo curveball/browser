@@ -1,4 +1,4 @@
-0.1.0 (????-??-??)
+0.2.0 (2018-07-07)
 ==================
 
 * Some colorscheme refresh. Still not great. #notadesigner

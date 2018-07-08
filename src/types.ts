@@ -8,6 +8,7 @@ export type Options = {
   assetBaseUrl?: string,
   serveAssets?: boolean,
   defaultLinks?: Link[],
+  hiddenRels?: string[],
 };
 
 /**
@@ -22,6 +23,7 @@ export type SureOptions = {
   assetBaseUrl: string,
   serveAssets: boolean,
   defaultLinks: Link[],
+  hiddenRels: string[],
 };
 
 /**

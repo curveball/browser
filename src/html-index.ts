@@ -88,7 +88,7 @@ function generateLinks(links: Link[], options: SureOptions): string {
 
   for (const link of links) {
 
-    if (link.rel === 'self' || link.rel in options.navigationLinks) {
+    if (options.hiddenRels.includes(link.rel) || link.rel in options.navigationLinks) {
       continue;
     }
 
