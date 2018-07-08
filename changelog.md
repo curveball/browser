@@ -1,7 +1,11 @@
 0.2.0 (2018-07-07)
 ==================
 
-* Some colorscheme refresh. Still not great. #notadesigner
+* Automatically generate navigation icons.
+* Hide uninteresting links.
+* Automatically detect title of resource.
+* Colorscheme refresh. Still not great. #notadesigner
+* Lots of tiny tweaks and bugfixes.
 
 
 0.0.2 (2018-07-02)
