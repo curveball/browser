@@ -1,3 +1,9 @@
+0.2.2 (2018-07-07)
+==================
+
+* Fixed again: css files still didn't have the right Content-Type.
+
+
 0.2.1 (2018-07-07)
 ==================
 

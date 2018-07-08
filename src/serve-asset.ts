@@ -40,7 +40,7 @@ export default async function serveAsset(ctx: Context) {
       ctx.response.type = 'image/svg';
       break;
     case '.css' :
-      ctx.response.type = 'image/css';
+      ctx.response.type = 'text/css';
       break;
   }
 
