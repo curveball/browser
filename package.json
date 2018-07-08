@@ -13,11 +13,10 @@
     "url": "git+https://github.com/evert/hal-browser"
   },
   "files": [
-    "package.json",
     "README.md",
     "dist",
     "LICENSE",
-    "styles"
+    "assets"
   ],
   "keywords": [
     "hal",
