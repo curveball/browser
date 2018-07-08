@@ -6,7 +6,7 @@
 * Automatically detect title of resource.
 * Colorscheme refresh. Still not great. #notadesigner
 * Lots of tiny tweaks and bugfixes.
-
+* Serve `.svg` and `.css` files out of the box.
 
 0.0.2 (2018-07-02)
 =================
