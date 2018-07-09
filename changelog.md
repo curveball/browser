@@ -1,3 +1,9 @@
+0.4.1 (2018-??-??)
+==================
+
+* Don't turn templated HAL links into real HTML links.
+
+
 0.4.0 (2018-08-09)
 ==================
 
