@@ -2,7 +2,7 @@
 ==================
 
 * Don't turn templated HAL links into real HTML links.
-
+* CSV layout improvements.
 
 0.4.0 (2018-08-09)
 ==================
