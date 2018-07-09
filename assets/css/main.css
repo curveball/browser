@@ -5,6 +5,7 @@
 .light-primary-color   { background: #B3E5FC; }
 .text-primary-color    { color: #FFFFFF; }
 .accent-color          { background: #FF5722; }
+.dark-accent-color     { background: #D84315 }
 .primary-text-color    { color: #212121; }
 .secondary-text-color  { color: #757575; }
 .divider-color         { border-color: #BDBDBD; }
@@ -109,7 +110,7 @@ nav a {
 }
 
 nav a:hover {
-  background: #8AA99A;
+  background: #D84315
 }
 
 nav a img {
@@ -175,4 +176,8 @@ form.search input:focus {
 
 .body-markdown code {
   margin-left: 0;
+}
+
+.body-csv {
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14),0 1px 10px 0 rgba(0,0,0,0.12),0 2px 4px -1px rgba(0,0,0,0.3);
 }

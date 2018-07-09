@@ -12,11 +12,20 @@ export default async function csvBody(body: any) {
 `;
 
   const data = await parse(body);
+  let first = true;
+
   for (const row of <string[][]> data) {
 
     html += '      <tr>\n';
     for (const cell of row) {
-      html += `        <td>${h(cell)}</td>\n`;
+      if (first) {
+        html += `        <th>${h(cell)}</th>\n`;
+      } else {
+        html += `        <td>${h(cell)}</td>\n`;
+      }
+    }
+    if (first) {
+      first = false;
     }
     html += '      </tr>\n';
 

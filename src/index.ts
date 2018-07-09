@@ -24,11 +24,9 @@ const parsedContentTypes = [
  * - stylesheet
  * - up
  * - via
- * - code-repository
  *
  * source:
  * http://microformats.org/wiki/existing-rel-values
- *
  * - icon
  */
 
@@ -37,7 +35,7 @@ const defaultNavigationLinks: NavigationLinkMap = {
   'author': {
     showLabel: true,
   },
-  'core-repository': true,
+  'code-repository': true,
   'create-form': {
     showLabel: true,
     defaultTitle: 'Create',
