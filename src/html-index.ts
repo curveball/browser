@@ -72,7 +72,7 @@ function generateTitle(links: Link[], ctx: Context, options: SureOptions): [stri
 
   const body = ctx.response.body;
 
-  if (typeof body === 'object') {
+  if (body && typeof body === 'object') {
     if (!title && body.title) {
       title = body.title;
     }
