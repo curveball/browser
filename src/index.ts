@@ -30,18 +30,39 @@ const parsedContentTypes = [
  */
 
 const defaultNavigationLinks: NavigationLinkMap = {
-  'author': true,
-  'core-repository': true,
-  'create-form': true,
-  'edit': true,
-  'edit-form' : {
-    // alias this
-    icon: 'icons/edit.svg',
+
+  'author': {
+    showLabel: true,
   },
-  'help': true,
-  'home': true,
-  'next': true,
-  'previous': true,
+  'core-repository': true,
+  'create-form': {
+    showLabel: true,
+    defaultTitle: 'Create',
+  },
+  'edit': {
+    showLabel: true,
+    defaultTitle: 'Edit',
+  },
+  'edit-form': {
+    showLabel: true,
+    defaultTitle: 'Edit',
+  },
+  'help': {
+    priority: 10,
+  },
+  'home': {
+    priority: -10,
+  },
+  'next': {
+    position: 'pager',
+    defaultTitle: 'Next page',
+    priority: -10,
+  },
+  'previous': {
+    position: 'pager',
+    defaultTitle: 'Previous page',
+    priority: -20,
+  },
   'search': true,
 };
 
@@ -104,7 +125,7 @@ function normalizeOptions(options: Options): SureOptions {
     title: 'HAL Browser',
     stylesheets: [
       'css/main.css',
-      'css/solarized-dark.css',
+      'css/idea.css',
     ],
     defaultLinks: [
       {
@@ -136,6 +157,7 @@ function normalizeOptions(options: Options): SureOptions {
     if (navLink === true) {
       options.navigationLinks[navLinkRel] = {
         defaultTitle: navLinkRel,
+        position: 'header'
       };
     } else {
       options.navigationLinks[navLinkRel] = navLink;
