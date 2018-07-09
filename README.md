@@ -18,44 +18,24 @@ An example. If a API normally returns the following HAL format:
 ```json
 {
   "_links": {
-    "self": {
-      "href": "/testing"
-    },
-    "previous": {
-      "href": "/testing/?page=1",
-      "title": "Previous page"
-    },
-    "next": {
-      "href": "/testing/?page=2",
-      "title": "Next page"
-    },
-    "author": {
-      "href": "https://evertpot.com",
-      "title": "Evert Pot"
-    },
-    "help": {
-      "href": "https://google.com/",
-      "title": "Google it"
-    },
-    "search": {
-      "href": "https://google.com/"
-    },
-    "edit": {
-      "href": "/testing"
-    },
-    "create-form": {
-      "href": "/testing"
-    }
+    "self": { "href":"/testing" },
+    "previous": { "href":"/testing/?page=1", "title":"Previous page" },
+    "next": { "href":"/testing/?page=2", "title":"Next page" },
+    "author": { "href":"https://evertpot.com", "title":"Evert Pot" },
+    "help": { "href":"https://google.com/", "title":"Google it" },
+    "search": { "href":"https://google.com/{ ?q }", "templated":true },
+    "edit": { "href":"/testing" }, "create-form":{ "href":"/testing" },
+    "my-link": { "href":"/foo-bar", "title":"Custom link" }
   },
-  "msg": "Hello world!",
-  "version": "0.2.0",
-  "name": "test resource!"
-  }
+  "msg":"Hello world!",
+  "version":"0.3.0",
+  "name":"test resource!"
+}
 ```
 
 The browser will automatically convert it to this HTML format:
 
-![Screenshot from 0.2.0](https://github.com/evert/hal-browser/blob/master/screenshots/0.2.0.png)
+![Screenshot from 0.3.0](https://github.com/evert/hal-browser/blob/master/screenshots/0.3.0.png)
 
 Supported frameworks
 --------------------
@@ -134,6 +114,13 @@ app.use(halBrowser({
 
       // Override icon. Also optional
       icon: 'icons/foobar.svg',
+
+      // Either 'header' (default) or 'pager'
+      position: 'header'
+
+      // Set the order. Lower is earlier. Default is 0.
+      priority: -100,
+
     },
     // passing 'true' will use default setting for the button
     'help' : true,

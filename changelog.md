@@ -1,7 +1,14 @@
 0.3.0 (2018-??-??)
 ==================
 
-* Using icons from material design.
+* Going with a Material design, and new color scheme.
+* New syntax highlighting css sheet (`idea.css`).
+* Previous/next links are now in the bottom.
+* It's possible to turn on button labels.
+* It's possibel to determine the button label order.
+* Added a search field, if a `search` link exists that's templated and has a
+  single templated query parameter.
+* Filtering out templated links from navigations.
 
 
 0.2.3 (2018-07-07)
