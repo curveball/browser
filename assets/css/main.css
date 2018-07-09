@@ -88,6 +88,7 @@ nav {
 nav ul {
   list-style: none;
   display: block;
+  word-spacing: 1px;
 }
 
 nav li {
