@@ -1,4 +1,4 @@
-0.3.0 (2018-??-??)
+0.3.0 (2018-07-08)
 ==================
 
 * Going with a Material design, and new color scheme.
