@@ -2,6 +2,7 @@ import { Context } from '@curveball/core';
 import { Link, SureOptions } from './types';
 
 import url from 'url';
+import csvBody from './components/csv-body';
 import halBody from './components/hal-body';
 import linksTable from './components/links-table';
 import markdownBody from './components/markdown-body';
@@ -10,14 +11,14 @@ import pager from './components/pager';
 import search from './components/search';
 import { fetchLinks, h } from './util';
 
-export default function generateHtmlIndex(ctx: Context, body: any, options: SureOptions) {
+export default async function generateHtmlIndex(ctx: Context, body: any, options: SureOptions) {
 
   const links: Link[] = fetchLinks(body, options);
   const navHtml = navigation(links, options);
   const pagerHtml = pager(links, options);
   const linksHtml = linksTable(links, options);
   const [headTitle, bodyTitle] = generateTitle(links, ctx, options);
-  const bodyHtml = parseBody(ctx);
+  const bodyHtml = await parseBody(ctx);
   const searchHtml = search(links, options);
 
   const stylesheets = options.stylesheets.map(ss => {
@@ -86,7 +87,7 @@ function generateTitle(links: Link[], ctx: Context, options: SureOptions): [stri
 
 }
 
-function parseBody(ctx: Context) {
+async function parseBody(ctx: Context) {
 
   switch (ctx.response.type) {
 
@@ -97,6 +98,9 @@ function parseBody(ctx: Context) {
 
     case 'text/markdown' :
       return markdownBody(ctx.response.body);
+
+    case 'text/csv' :
+      return csvBody(ctx.response.body);
 
     default:
       return '';

@@ -1,7 +1,8 @@
 0.4.0 (2018-??-??)
 ==================
 
-* Support text/markdown
+* Support for `text/markdown`
+* Support for `text/csv`
 
 
 0.3.0 (2018-07-08)
