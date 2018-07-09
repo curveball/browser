@@ -1,8 +1,9 @@
-0.4.0 (2018-??-??)
+0.4.0 (2018-08-09)
 ==================
 
 * Support for `text/markdown`
 * Support for `text/csv`
+* Added default `code-repository` link to navigation.
 
 
 0.3.0 (2018-07-08)
