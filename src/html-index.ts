@@ -93,6 +93,11 @@ function generateTitle(links: Link[], ctx: Context, options: SureOptions): [stri
 
 async function parseBody(ctx: Context) {
 
+  if (!ctx.response.body) {
+    // Ignore empty bodies
+    return;
+  }
+
   switch (ctx.response.type) {
 
     case 'application/json' :
