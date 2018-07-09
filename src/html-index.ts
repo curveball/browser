@@ -91,11 +91,11 @@ function generateTitle(links: Link[], ctx: Context, options: SureOptions): [stri
 
 }
 
-async function parseBody(ctx: Context) {
+async function parseBody(ctx: Context): Promise<string> {
 
   if (!ctx.response.body) {
     // Ignore empty bodies
-    return;
+    return '';
   }
 
   switch (ctx.response.type) {
