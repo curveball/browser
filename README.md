@@ -153,7 +153,6 @@ Future features
 * Detect `alternate` links and create an appropriate interface for allowing
   users to select them.
 * Add a link to allow the user to see the raw format.
-* Support displaying `text/csv` as a table.
 * Support HTTP Link headers.
 * A better interface for `_embedded`.
 * Show metadata, such as `Last-Modified`

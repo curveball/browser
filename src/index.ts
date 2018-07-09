@@ -8,6 +8,7 @@ const parsedContentTypes = [
   'application/hal+json',
   'application/problem+json',
   'text/markdown',
+  'text/csv',
 ];
 
 /*
@@ -23,6 +24,7 @@ const parsedContentTypes = [
  * - stylesheet
  * - up
  * - via
+ * - code-repository
  *
  * source:
  * http://microformats.org/wiki/existing-rel-values
@@ -100,7 +102,7 @@ export default function browser(options?: Options): Middleware {
     //
     // This is useful if the client submitted a lower q= score for text/html
     if (ctx.request.accepts('text/html', ...parsedContentTypes) === 'text/html') {
-      generateHtmlIndex(ctx, ctx.response.body, newOptions);
+      await generateHtmlIndex(ctx, ctx.response.body, newOptions);
     }
 
   };
