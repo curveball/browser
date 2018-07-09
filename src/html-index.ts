@@ -3,8 +3,8 @@ import { Link, SureOptions } from './types';
 
 import url from 'url';
 import halBody from './components/hal-body';
-import markdownBody from './components/markdown-body';
 import linksTable from './components/links-table';
+import markdownBody from './components/markdown-body';
 import navigation from './components/navigation';
 import pager from './components/pager';
 import search from './components/search';
@@ -88,8 +88,7 @@ function generateTitle(links: Link[], ctx: Context, options: SureOptions): [stri
 
 function parseBody(ctx: Context) {
 
-  console.log(ctx.response.type);
-  switch(ctx.response.type) {
+  switch (ctx.response.type) {
 
     case 'application/json' :
     case 'application/problem+json' :
