@@ -74,7 +74,7 @@ export function fetchLinks(body: any, options: SureOptions): Link[] {
 
   const result: Link[] = Array.from(options.defaultLinks);
 
-  if (!body._links) {
+  if (!body || !body._links) {
     return result;
   }
 
