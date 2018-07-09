@@ -1,6 +1,6 @@
 {
   "name": "hal-browser",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A HAL browser middleware",
   "main": "dist/index.js",
   "scripts": {
@@ -37,6 +37,7 @@
   "devDependencies": {
     "@types/chai": "^4.1.4",
     "@types/highlight.js": "^9.12.3",
+    "@types/markdown-it": "0.0.4",
     "@types/mocha": "^5.2.3",
     "@types/node": "^10.3.6",
     "@types/sinon": "^5.0.1",
@@ -56,6 +57,7 @@
   },
   "dependencies": {
     "@curveball/core": "^0.4.1",
-    "highlight.js": "^9.12.0"
+    "highlight.js": "^9.12.0",
+    "markdown-it": "^8.4.1"
   }
 }

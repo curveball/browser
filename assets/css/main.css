@@ -138,3 +138,40 @@ form.search input {
 form.search input:focus {
   width: 200px;
 }
+
+.body-markdown {
+  padding: 25px;
+}
+
+.body-markdown > * {
+  padding: 0;
+  border: 0;
+  margin: 10px 0 20px;
+  font-size: 18px;
+}
+
+.body-markdown h1 {
+  font-size: 40px;
+}
+
+.body-markdown h2 {
+  font-size: 30px;
+}
+
+.body-markdown h3 {
+  font-size: 25px;
+}
+
+.body-markdown h4 {
+  font-size: 20px;
+}
+
+.body-markdown ul, .body-markdown ol {
+
+  margin: 30px;
+
+}
+
+.body-markdown code {
+  margin-left: 0;
+}
