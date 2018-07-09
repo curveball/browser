@@ -3,6 +3,8 @@
 
 * Don't turn templated HAL links into real HTML links.
 * CSV layout improvements.
+* Don't break when the response body is `null`.
+
 
 0.4.0 (2018-08-09)
 ==================
