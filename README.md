@@ -9,6 +9,13 @@ them into a HTML interface if a browser access them.
 It does so via the `Accept: text/html` header. If this header is not provided,
 the middleware does nothing.
 
+It automatically decorates the following formats:
+
+* `application/json`
+* `application/problem+json`
+* `application/hal+json`
+* `text/markdown`
+
 
 Screenshot
 ----------

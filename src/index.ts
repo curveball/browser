@@ -7,6 +7,7 @@ const parsedContentTypes = [
   'application/json',
   'application/hal+json',
   'application/problem+json',
+  'text/markdown',
 ];
 
 /*
@@ -99,7 +100,6 @@ export default function browser(options?: Options): Middleware {
     //
     // This is useful if the client submitted a lower q= score for text/html
     if (ctx.request.accepts('text/html', ...parsedContentTypes) === 'text/html') {
-      ctx.response.headers.set('Content-Type', 'text/html');
       generateHtmlIndex(ctx, ctx.response.body, newOptions);
     }
 
