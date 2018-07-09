@@ -33,7 +33,11 @@ export default function linksTable(links: Link[], options: SureOptions): string 
         linkHtml += `<td rowspan="${linkCount}">${h(link.rel)}</td>`;
         first = false;
       }
-      linkHtml += `<td><a href="${h(link.href)}">${h(link.href)}</a></td>`;
+      if (link.templated) {
+        linkHtml += `<td><a href="${h(link.href)}">${h(link.href)}</a></td>`;
+      } else {
+        linkHtml += `<td>${h(link.href)}</td>`;
+      }
       linkHtml += '<td>' + (link.title ? h(link.title) : '') + '</td>';
       linkHtml += '</tr>\n';
 
