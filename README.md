@@ -80,19 +80,8 @@ import { Application } from 'curveball/@core';
 import halBrowser from 'hal-browser';
 
 const app = new Application();
-app.use(halBrowser({
-  title: 'HAL Browser',
-});
+app.use(halBrowser({});
 ```
-
-The HAL browser ships with 2 really basic stylesheets in the `styles`
-directory:
-
-* `main.css` - Main interface css
-* `solarized-dark.css` - A syntax highlighting stylesheet lifted from the
-  [Highlight.js][4] project, and originally created by (c) Jeremy Hull
-
-For best effect you'll want both stylesheets!
 
 ### Express
 

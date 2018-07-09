@@ -64,6 +64,15 @@ export type NavigationLink = {
   // [rel].svg
   icon?: string,
 
+  // Where the icon should appear
+  position?: 'header' | 'pager',
+
+  // Set this to to make an icon appear earlier or later. Default is 0, lower is earlier.
+  priority?: number,
+
+  // Whether or not to show the 'title' as the button label.
+  showLabel?: boolean
+
 };
 
 /**
@@ -75,5 +84,6 @@ export type Link = {
   href: string,
   type?: string,
   title?: string
+  templated?: boolean,
 
 };
