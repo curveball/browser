@@ -70,11 +70,15 @@ function generateTitle(links: Link[], ctx: Context, options: SureOptions): [stri
     href = ctx.request.path;
   }
 
-  if (!title && ctx.response.body.title) {
-    title = ctx.response.body.title;
-  }
-  if (!title && ctx.response.body.name) {
-    title = ctx.response.body.name;
+  const body = ctx.response.body;
+
+  if (typeof body === 'object') {
+    if (!title && body.title) {
+      title = body.title;
+    }
+    if (!title && body.name) {
+      title = body.name;
+    }
   }
   if (!title) {
     title = href;
