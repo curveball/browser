@@ -34,9 +34,9 @@ export default function linksTable(links: Link[], options: SureOptions): string 
         first = false;
       }
       if (link.templated) {
-        linkHtml += `<td><a href="${h(link.href)}">${h(link.href)}</a></td>`;
-      } else {
         linkHtml += `<td>${h(link.href)}</td>`;
+      } else {
+        linkHtml += `<td><a href="${h(link.href)}">${h(link.href)}</a></td>`;
       }
       linkHtml += '<td>' + (link.title ? h(link.title) : '') + '</td>';
       linkHtml += '</tr>\n';
