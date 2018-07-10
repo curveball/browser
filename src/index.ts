@@ -3,7 +3,7 @@ import generateHtmlIndex from './html-index';
 import serveAsset from './serve-asset';
 import { NavigationLinkMap, Options, SureOptions } from './types';
 
-const parsedContentTypes = [
+export const supportedContentTypes = [
   'application/json',
   'application/hal+json',
   'application/problem+json',
@@ -93,7 +93,7 @@ export default function browser(options?: Options): Middleware {
     await next();
 
     // We only care about transforming a few content-types
-    if (!parsedContentTypes.includes(ctx.response.type)) {
+    if (!supportedContentTypes.includes(ctx.response.type)) {
       return;
     }
 
@@ -101,8 +101,8 @@ export default function browser(options?: Options): Middleware {
     // returned.
     //
     // This is useful if the client submitted a lower q= score for text/html
-    if (ctx.request.accepts('text/html', ...parsedContentTypes) === 'text/html') {
-      await generateHtmlIndex(ctx, ctx.response.body, newOptions);
+    if (ctx.request.accepts('text/html', ...supportedContentTypes) === 'text/html') {
+      await generateHtmlIndex(ctx, newOptions);
     }
 
   };

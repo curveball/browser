@@ -11,7 +11,10 @@ import pager from './components/pager';
 import search from './components/search';
 import { fetchLinks, h } from './util';
 
-export default async function generateHtmlIndex(ctx: Context, body: any, options: SureOptions) {
+export default async function generateHtmlIndex(ctx: Context, options: SureOptions) {
+
+  checkFormat(ctx);
+  const body = ctx.response.body;
 
   const links: Link[] = fetchLinks(body, options);
   const navHtml = navigation(links, options);
@@ -114,6 +117,20 @@ async function parseBody(ctx: Context): Promise<string> {
     default:
       return '';
 
+  }
+
+}
+
+function checkFormat(ctx: Context) {
+
+    if ((typeof ctx.response.body === 'string' || ctx.response.body instanceof Buffer) &&
+    (ctx.response.type === 'application/json' || /^application\/(.*)\+json$/.test(ctx.response.type))
+  ) {
+    if (ctx.response.body instanceof Buffer) {
+      ctx.response.body = JSON.parse(ctx.response.body.toString('utf-8'));
+    } else {
+      ctx.response.body = JSON.parse(ctx.response.body);
+    }
   }
 
 }
