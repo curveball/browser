@@ -48,7 +48,7 @@ Supported frameworks
 --------------------
 
 * [Curveball][1] - *DONE*
-* [Express][2] - TODO
+* [Express][2] - *DONE*
 * [Koa][3] - TODO
 
 Installation
@@ -72,7 +72,9 @@ app.use(halBrowser({});
 
 ### Express
 
-TODO
+Express support is handled via a special express middleware. Check out the
+[hal-browser-express][5] package.
+
 
 ### Koa
 
@@ -162,3 +164,4 @@ Future features
 [2]: https://expressjs.com/
 [3]: https://koajs.com/
 [4]: https://github.com/isagalaev/highlight.js/
+[5]: https://github.com/evert/hal-browser-express/
