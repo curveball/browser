@@ -67,6 +67,8 @@ const defaultNavigationLinks: NavigationLinkMap = {
   'search': true,
 };
 
+export { Options } from './types';
+
 export default function browser(options?: Options): Middleware {
 
   const newOptions = normalizeOptions(options);
