@@ -1,9 +1,10 @@
-0.4.1 (2018-??-??)
+0.4.1 (2018-07-09)
 ==================
 
 * Don't turn templated HAL links into real HTML links.
 * CSV layout improvements.
 * Don't break when the response body is `null`.
+* Support `string` or `Buffer` for json responses.
 
 
 0.4.0 (2018-08-09)
