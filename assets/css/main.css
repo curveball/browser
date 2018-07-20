@@ -141,6 +141,7 @@ form.search input:focus {
   width: 200px;
 }
 
+/* Body */
 .body-markdown {
   padding: 25px;
 }
@@ -185,4 +186,18 @@ form.search input:focus {
 
 .body-csv td {
   white-space: nowrap;
+}
+
+/* Embedded */
+details {
+  margin: 5px 25px 20px;
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14),0 1px 10px 0 rgba(0,0,0,0.12),0 2px 4px -1px rgba(0,0,0,0.3);
+  border: 1px solid #BDBDBD;
+  border-radius: 4px;
+
+}
+
+details summary {
+  padding: 15px;
+  font-size: 120%;
 }

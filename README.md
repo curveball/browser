@@ -156,7 +156,6 @@ Future features
   users to select them.
 * Add a link to allow the user to see the raw format.
 * Support HTTP Link headers.
-* A better interface for `_embedded`.
 * Show metadata, such as `Last-Modified`
 * Automatically generate forms for templated links.
 
