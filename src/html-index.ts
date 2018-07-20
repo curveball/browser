@@ -3,6 +3,7 @@ import { Link, SureOptions } from './types';
 
 import url from 'url';
 import csvBody from './components/csv-body';
+import embedded from './components/embedded';
 import halBody from './components/hal-body';
 import linksTable from './components/links-table';
 import markdownBody from './components/markdown-body';
@@ -21,6 +22,7 @@ export default async function generateHtmlIndex(ctx: Context, options: SureOptio
   const pagerHtml = pager(links, options);
   const linksHtml = linksTable(links, options);
   const [headTitle, bodyTitle] = generateTitle(links, ctx, options);
+  const embeddedHtml = embedded(body, options);
   const bodyHtml = await parseBody(ctx);
   const searchHtml = search(links, options);
 
@@ -49,6 +51,7 @@ ${stylesheets}
     <main>
       ${linksHtml}
       ${bodyHtml}
+      ${embeddedHtml}
       ${pagerHtml}
     </main>
 
