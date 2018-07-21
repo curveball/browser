@@ -1,3 +1,4 @@
+import { Context } from '@curveball/core';
 import highlight from 'highlight.js';
 import url from 'url';
 import {
@@ -70,14 +71,37 @@ export function highlightJson(body: any): string {
 /**
  * Grab all links from the body.
  */
-export function fetchLinks(body: any, options: SureOptions): Link[] {
+export function fetchLinks(ctx: Context, options: SureOptions): Link[] {
 
   const result: Link[] = Array.from(options.defaultLinks);
 
-  if (!body || !body._links) {
-    return result;
+  result.push(...getHalLinks(ctx.response.body));
+
+  const linkHeader = ctx.response.headers.get('Link');
+  if (linkHeader) {
+    const parts = linkHeader.split(',').map( item => item.trim());
+    for (const link of parts) {
+      const matches = link.match(/^<([^>]+)>;.*rel="([^"]+)"/);
+      if (matches) {
+        result.push({
+          rel: matches[2],
+          href: matches[1]
+        });
+      }
+    }
   }
 
+  return result;
+
+}
+
+function getHalLinks(body: any) {
+
+  if (!body || !body._links) {
+    return [];
+  }
+
+  const result: Link[] = [];
   for (const rel of Object.keys(body._links)) {
 
     let linksTmp;
@@ -106,5 +130,4 @@ export function fetchLinks(body: any, options: SureOptions): Link[] {
   }
 
   return result;
-
 }
