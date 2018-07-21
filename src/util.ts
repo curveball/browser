@@ -1,5 +1,6 @@
 import { Context } from '@curveball/core';
 import highlight from 'highlight.js';
+import parseLinkHeader from 'parse-link-header';
 import url from 'url';
 import {
   Link,
@@ -79,15 +80,13 @@ export function fetchLinks(ctx: Context, options: SureOptions): Link[] {
 
   const linkHeader = ctx.response.headers.get('Link');
   if (linkHeader) {
-    const parts = linkHeader.split(',').map( item => item.trim());
-    for (const link of parts) {
-      const matches = link.match(/^<([^>]+)>;.*rel="([^"]+)"/);
-      if (matches) {
-        result.push({
-          rel: matches[2],
-          href: matches[1]
-        });
-      }
+    const parsed = parseLinkHeader(linkHeader);
+    for (const [rel, info] of Object.entries(parsed)) {
+      result.push({
+        rel: rel,
+        href: info.url,
+        title: info.title,
+      });
     }
   }
 
