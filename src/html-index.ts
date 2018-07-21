@@ -17,7 +17,7 @@ export default async function generateHtmlIndex(ctx: Context, options: SureOptio
   checkFormat(ctx);
   const body = ctx.response.body;
 
-  const links: Link[] = fetchLinks(body, options);
+  const links: Link[] = fetchLinks(ctx, options);
   const navHtml = navigation(links, options);
   const pagerHtml = pager(links, options);
   const linksHtml = linksTable(links, options);
