@@ -2,6 +2,7 @@
 ==================
 
 * #21: Understand and render `_embedded`.
+* #7: Parsing HTTP Link header.
 
 
 0.4.1 (2018-07-09)
