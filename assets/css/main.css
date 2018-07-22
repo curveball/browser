@@ -80,12 +80,13 @@ tr {
   border-bottom: 1px solid #BDBDBD;
 }
 
+/* Navigation bar */
 nav {
   padding: 15px;
   word-spacing: 5px;
+  display: flex;
 }
 
-/* Navigation bar */
 nav ul {
   list-style: none;
   display: block;
@@ -120,7 +121,31 @@ nav a img {
   margin-top: -2px;
 }
 
-/* earch */
+/* Alternate links */
+
+nav .alternate {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+nav .alternate h3 {
+  font-weight: 300;
+  padding-right: 10px;
+}
+nav .alternate a {
+  font-size: 90%;
+  font-weight: 700;
+  background: #555;
+}
+nav .alternate .type-csv {
+  background: #057212;
+}
+nav .alternate .type-feed {
+  background: #ff6600;
+}
+
+/* search */
 form.search {
 
   background: #0288D1;

@@ -5,6 +5,7 @@ import url from 'url';
 import {
   Link,
   NavigationLink,
+  NavigationPosition,
   SureOptions,
 } from './types';
 
@@ -27,7 +28,7 @@ export function h(input: string): string {
  *
  * This function sorts and normalizes the link.
  */
-export function getNavLinks(links: Link[], options: SureOptions, position: 'header' | 'pager'): Array<Link & NavigationLink> {
+export function getNavLinks(links: Link[], options: SureOptions, position: NavigationPosition): Array<Link & NavigationLink> {
 
   const result = [];
   for (const link of links) {
@@ -52,6 +53,7 @@ export function getNavLinks(links: Link[], options: SureOptions, position: 'head
       rel: link.rel,
       href: link.href,
       title: link.title ? link.title : ( nl.defaultTitle ? nl.defaultTitle : link.rel ),
+      type: link.type,
       icon: url.resolve(options.assetBaseUrl, nl.icon ? nl.icon : 'icon/' + link.rel + '.svg'),
       priority: nl.priority ? nl.priority : 0,
       showLabel: nl.showLabel,
