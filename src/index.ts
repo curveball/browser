@@ -36,6 +36,10 @@ const defaultNavigationLinks: NavigationLinkMap = {
     showLabel: true,
   },
   'code-repository': true,
+  'collection' : {
+    priority: -10,
+    defaultTitle: 'Collection',
+  },
   'create-form': {
     showLabel: true,
     defaultTitle: 'Create',
@@ -52,12 +56,16 @@ const defaultNavigationLinks: NavigationLinkMap = {
     priority: 10,
   },
   'home': {
-    priority: -10,
+    priority: -20,
   },
   'next': {
     position: 'pager',
     defaultTitle: 'Next page',
     priority: -10,
+  },
+  'up' : {
+    priority: -10,
+    defaultTitle: 'Up',
   },
   'previous': {
     position: 'pager',
