@@ -32,6 +32,9 @@ export const supportedContentTypes = [
 
 const defaultNavigationLinks: NavigationLinkMap = {
 
+  'alternate': {
+    position: 'alternate',
+  },
   'author': {
     showLabel: true,
   },
