@@ -49,6 +49,11 @@ export type SureNavigationLinkMap = {
 };
 
 /**
+ * Where Navigation links should appear
+ */
+export type NavigationPosition = 'header' | 'pager' | 'alternate';
+
+/**
  * A "NavigationLink" specifies a link that will automatically get recognized
  * by the hal-browser and placed in the Navigation bar
  */
@@ -65,7 +70,7 @@ export type NavigationLink = {
   icon?: string,
 
   // Where the icon should appear
-  position?: 'header' | 'pager',
+  position?: NavigationPosition,
 
   // Set this to to make an icon appear earlier or later. Default is 0, lower is earlier.
   priority?: number,

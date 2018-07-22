@@ -2,6 +2,7 @@ import { Context } from '@curveball/core';
 import { Link, SureOptions } from './types';
 
 import url from 'url';
+import alternate from './components/alternate';
 import csvBody from './components/csv-body';
 import embedded from './components/embedded';
 import halBody from './components/hal-body';
@@ -19,6 +20,7 @@ export default async function generateHtmlIndex(ctx: Context, options: SureOptio
 
   const links: Link[] = fetchLinks(ctx, options);
   const navHtml = navigation(links, options);
+  const alternateHtml = alternate(links, options);
   const pagerHtml = pager(links, options);
   const linksHtml = linksTable(links, options);
   const [headTitle, bodyTitle] = generateTitle(links, ctx, options);
@@ -46,6 +48,7 @@ ${stylesheets}
 
     <nav>
       ${navHtml}
+      ${alternateHtml}
     </nav>
 
     <main>
