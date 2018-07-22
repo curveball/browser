@@ -25,24 +25,67 @@ An example. If a API normally returns the following HAL format:
 ```json
 {
   "_links": {
-    "self": { "href":"/testing" },
-    "previous": { "href":"/testing/?page=1", "title":"Previous page" },
-    "next": { "href":"/testing/?page=2", "title":"Next page" },
-    "author": { "href":"https://evertpot.com", "title":"Evert Pot" },
-    "help": { "href":"https://google.com/", "title":"Google it" },
-    "search": { "href":"https://google.com/{ ?q }", "templated":true },
-    "edit": { "href":"/testing" }, "create-form":{ "href":"/testing" },
-    "my-link": { "href":"/foo-bar", "title":"Custom link" }
+    "self": { "href": "/testing" },
+    "previous": {
+      "href": "/testing/?page=1",
+      "title": "Previous page"
+    },
+    "next": {
+      "href": "/testing/?page=2",
+      "title": "Next page"
+    },
+    "author": {
+      "href": "https://evertpot.com",
+      "title": "Evert Pot"
+    },
+    "help": {
+      "href": "https://google.com/",
+      "title": "Google it"
+    },
+    "search": {
+      "href": "https://google.com/{?q}",
+      "templated": true
+    },
+    "edit": { "href": "/testing" },
+    "create-form": { "href": "/testing" },
+    "my-link": {
+      "href": "/foo-bar",
+      "title": "Custom link"
+    },
+    "alternate": [
+      {
+        "href": "/testing/markdown",
+        "type": "text/markdown",
+        "title": "Markdown test"
+      },
+      {
+        "href": "/testing/csv",
+        "type": "text/csv",
+        "title": "Csv test"
+      },
+      {
+        "href": "/testing/rss",
+        "type": "application/rss+xml",
+        "title": "RSS"
+      },
+      {
+        "href": "/testing/rss",
+        "type": "application/atom+xml",
+        "title": "Atom"
+      }
+    ],
+    "code-repository": { "href": "https://github.com/evert/hal-browser" },
+    "redirect-test": { "href": "/redirect-test" }
   },
-  "msg":"Hello world!",
-  "version":"0.3.0",
-  "name":"test resource!"
+  "msg": "Hello world!",
+  "version": "0.5.0",
+  "name": "test resource!"
 }
 ```
 
 The browser will automatically convert it to this HTML format:
 
-![Screenshot from 0.3.0](https://github.com/evert/hal-browser/blob/master/screenshots/0.3.0.png)
+![Screenshot from 0.5.0](https://github.com/evert/hal-browser/blob/master/screenshots/0.5.0.png)
 
 Supported frameworks
 --------------------

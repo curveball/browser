@@ -1,9 +1,10 @@
-0.5.0 (????-??-??)
+0.5.0 (2018-07-21)
 ==================
 
 * #21: Understand and render `_embedded`.
 * #7: Parsing HTTP Link header.
 * #27: Up and Collection links have a default button.
+
 
 0.4.1 (2018-07-09)
 ==================
@@ -29,7 +30,7 @@
 * New syntax highlighting css sheet (`idea.css`).
 * Previous/next links are now in the bottom.
 * It's possible to turn on button labels.
-* It's possibel to determine the button label order.
+* It's possible to determine the button label order.
 * Added a search field, if a `search` link exists that's templated and has a
   single templated query parameter.
 * Filtering out templated links from navigations.
