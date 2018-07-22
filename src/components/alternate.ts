@@ -9,7 +9,7 @@ type Type = {
 };
 
 const types: Type = {
-  "csv": {
+  'csv': {
     label: 'CSV',
     cssClass: 'type-csv',
   },
@@ -44,7 +44,6 @@ export default function renderAlternate(links: Link[], options: SureOptions): st
       // Only using the last part of the mimetype.
       cssClass = ' class="' + h(typeInfo.cssClass) + '"';
 
-      console.log(types[subtype]);
       label = types[subtype] !== undefined ? types[subtype].label : subtype.toUpperCase();
     } else {
       label = link.title ? link.title : link.rel;
