@@ -1,3 +1,11 @@
+0.5.1 (2018-08-25)
+==================
+
+* Made a few style tweaks.
+* Made markdown code snippets look better.
+* Fixed icon for `collection` link.
+
+
 0.5.0 (2018-07-21)
 ==================
 

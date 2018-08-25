@@ -42,6 +42,8 @@ const defaultNavigationLinks: NavigationLinkMap = {
   'collection' : {
     priority: -10,
     defaultTitle: 'Collection',
+    icon: 'icon/up.svg',
+    showLabel: true,
   },
   'create-form': {
     showLabel: true,
