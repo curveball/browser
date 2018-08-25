@@ -199,7 +199,7 @@ Future features
 * Show metadata, such as `Last-Modified`
 * Automatically generate forms for templated links.
 
-[1]: https://github.com/expressjs/core
+[1]: https://github.com/curveballjs/core
 [2]: https://expressjs.com/
 [3]: https://koajs.com/
 [4]: https://github.com/isagalaev/highlight.js/
