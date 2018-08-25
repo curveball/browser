@@ -88,6 +88,7 @@ export function fetchLinks(ctx: Context, options: SureOptions): Link[] {
         rel: rel,
         href: info.url,
         title: info.title,
+        type: info.type
       });
     }
   }

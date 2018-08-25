@@ -1,3 +1,9 @@
+0.5.2 (2018-08-25)
+=================
+
+* Pull `type` parameter from HTTP Link header as well.
+
+
 0.5.1 (2018-08-25)
 ==================
 
