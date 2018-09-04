@@ -1,3 +1,9 @@
+0.5.3 (2018-09-04)
+=================
+
+* Catching a wider net of versions for dependencies.
+
+
 0.5.2 (2018-08-25)
 =================
 
