@@ -3,7 +3,7 @@ import { h, highlightJson } from '../util';
 
 export default function embedded(body: any, options: SureOptions): string {
 
-  if (!body._embedded) {
+  if (!body || !body._embedded) {
     return '';
   }
 
