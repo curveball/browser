@@ -1,6 +1,6 @@
 {
   "name": "hal-browser",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "A HAL browser middleware",
   "main": "dist/index.js",
   "scripts": {
@@ -38,16 +38,16 @@
     "@types/chai": "^4.1.4",
     "@types/highlight.js": "^9.12.3",
     "@types/markdown-it": "0.0.4",
-    "@types/mocha": "^5.2.3",
-    "@types/node": "^10.3.6",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.9.4",
     "@types/parse-link-header": "^1.0.0",
-    "@types/sinon": "^5.0.1",
+    "@types/sinon": "^5.0.2",
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
     "nyc": "^12.0.2",
-    "sinon": "^6.0.1",
-    "ts-node": "^7.0.0",
-    "tslint": "^5.10.0",
+    "sinon": "^6.2.0",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
     "typescript": "^2.9.2"
   },
   "types": "dist/",
@@ -57,10 +57,10 @@
     ]
   },
   "dependencies": {
-    "@curveball/core": ">=0.4.1 <1.0.0",
+    "@curveball/core": "^0.6.0",
     "csv-parse": "^2.5.0",
     "highlight.js": "^9.12.0",
-    "markdown-it": "^8.4.1",
+    "markdown-it": "^8.4.2",
     "parse-link-header": "^1.0.1"
   }
 }
