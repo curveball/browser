@@ -1,7 +1,7 @@
+import { Context } from '@curveball/core';
 import csvParse from 'csv-parse';
 import { promisify } from 'util';
 import { h } from '../util';
-import { Context } from '@curveball/core';
 
 const parse = promisify(csvParse);
 

@@ -1,6 +1,6 @@
+import { Context } from '@curveball/core';
 import hljs from 'highlight.js';
 import md from 'markdown-it';
-import { Context } from '@curveball/core';
 
 export default function markdownBody(ctx: Context) {
 

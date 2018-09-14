@@ -1,5 +1,5 @@
-import { highlightJson } from '../util';
 import { Context } from '@curveball/core';
+import { highlightJson } from '../util';
 
 export default function halBody(ctx: Context) {
 
