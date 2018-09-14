@@ -76,7 +76,7 @@ function generateTitle(links: Link[], ctx: Context, options: SureOptions): [stri
     title = selfLink.title;
     href = selfLink.href;
   } else {
-    href = ctx.request.path;
+    href = ctx.path;
   }
 
   const body = ctx.response.body;
@@ -112,13 +112,13 @@ async function parseBody(ctx: Context): Promise<string> {
     case 'application/json' :
     case 'application/problem+json' :
     case 'application/hal+json' :
-      return halBody(ctx.response.body);
+      return halBody(ctx);
 
     case 'text/markdown' :
-      return markdownBody(ctx.response.body);
+      return markdownBody(ctx);
 
     case 'text/csv' :
-      return csvBody(ctx.response.body);
+      return csvBody(ctx);
 
     default:
       return '';

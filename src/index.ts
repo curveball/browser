@@ -88,17 +88,17 @@ export default function browser(options?: Options): Middleware {
 
   return async (ctx, next) => {
 
-    if (newOptions.serveAssets && ctx.request.path.startsWith('/_hal-browser/assets/')) {
+    if (newOptions.serveAssets && ctx.path.startsWith('/_hal-browser/assets/')) {
       return serveAsset(ctx);
     }
 
     // Don't do anything if the raw format was requested
-    if ('_browser-raw' in ctx.request.query) {
+    if ('_browser-raw' in ctx.query) {
       return next();
     }
 
     // Check to see if the client even wants html.
-    if (!ctx.request.accepts('text/html')) {
+    if (!ctx.accepts('text/html')) {
       return next();
     }
 
@@ -114,7 +114,7 @@ export default function browser(options?: Options): Middleware {
     // returned.
     //
     // This is useful if the client submitted a lower q= score for text/html
-    if (ctx.request.accepts('text/html', ...supportedContentTypes) === 'text/html') {
+    if (ctx.accepts('text/html', ...supportedContentTypes) === 'text/html') {
       await generateHtmlIndex(ctx, newOptions);
     }
 

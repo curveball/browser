@@ -1,7 +1,13 @@
+0.5.5 (2018-09-14)
+==================
+
+* Hidden feature: show full JSON bodies if `?_browser-fullbody` is in the url.
+
+
 0.5.4 (2018-09-06)
 ==================
 
-* Don't throw erros on empty bodies.
+* Don't throw errors on empty bodies.
 
 
 0.5.3 (2018-09-04)
