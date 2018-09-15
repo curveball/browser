@@ -1,3 +1,10 @@
+0.5.6 (2018-??-??)
+==================
+
+* Default button for `describedby` link. It now assumes it's a JSON-Schema,
+  although time will tell if this is correct.
+
+
 0.5.5 (2018-09-14)
 ==================
 

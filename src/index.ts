@@ -49,6 +49,10 @@ const defaultNavigationLinks: NavigationLinkMap = {
     showLabel: true,
     defaultTitle: 'Create',
   },
+  'describedby': {
+    showLabel: true,
+    defaultTitle: 'Schema'
+  },
   'edit': {
     showLabel: true,
     defaultTitle: 'Edit',
