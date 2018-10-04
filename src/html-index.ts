@@ -130,7 +130,7 @@ async function parseBody(ctx: Context): Promise<string> {
 function checkFormat(ctx: Context) {
 
     if ((typeof ctx.response.body === 'string' || ctx.response.body instanceof Buffer) &&
-    (ctx.response.type === 'application/json' || /^application\/(.*)\+json$/.test(ctx.response.type))
+    (ctx.response.is('json')
   ) {
     if (ctx.response.body instanceof Buffer) {
       ctx.response.body = JSON.parse(ctx.response.body.toString('utf-8'));
