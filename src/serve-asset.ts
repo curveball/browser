@@ -17,7 +17,7 @@ export default async function serveAsset(ctx: Context) {
 
   const fileName = path.join(
     basePath,
-    ctx.request.path.substr(baseUrl.length)
+    ctx.path.substr(baseUrl.length)
   );
 
   if (!path.isAbsolute(fileName)) {
