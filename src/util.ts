@@ -1,6 +1,6 @@
 import { Context } from '@curveball/core';
 import highlight from 'highlight.js';
-import parseLinkHeader from 'parse-link-header';
+import httpLinkHeader from 'http-link-header';
 import url from 'url';
 import {
   Link,
@@ -81,14 +81,15 @@ export function fetchLinks(ctx: Context, options: SureOptions): Link[] {
   result.push(...getHalLinks(ctx.response.body));
 
   const linkHeader = ctx.response.headers.get('Link');
+  console.log(linkHeader);
   if (linkHeader) {
-    const parsed = parseLinkHeader(linkHeader);
-    for (const [rel, info] of Object.entries(parsed)) {
+    const parsed = httpLinkHeader.parse(linkHeader);
+    for(const link of parsed.refs) {
       result.push({
-        rel: rel,
-        href: info.url,
-        title: info.title,
-        type: info.type
+        rel: link.rel,
+        href: link.uri,
+        title: link.title,
+        type: link.type
       });
     }
   }

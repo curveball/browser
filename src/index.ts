@@ -96,18 +96,31 @@ export default function browser(options?: Options): Middleware {
       return serveAsset(ctx);
     }
 
-    // Don't do anything if the raw format was requested
-    if ('_browser-raw' in ctx.query) {
-      return next();
-    }
-
     // Check to see if the client even wants html.
     if (!ctx.accepts('text/html')) {
       return next();
     }
 
+    // If the url contained _browser-accept, we use that value to override the
+    // Accept header.
+    let oldAccept;
+    if ('_browser-accept' in ctx.query) {
+      oldAccept = ctx.request.headers.get('Accept');
+      ctx.request.headers.set('Accept', ctx.query['_browser-accept']);
+    }
+
+    // Don't do anything if the raw format was requested
+    if ('_browser-raw' in ctx.query) {
+      return next();
+    }
+
     // Doing the inner request
     await next();
+
+    if (oldAccept) {
+      // Putting the old value back in place
+      ctx.request.headers.set('Accept', oldAccept);
+    }
 
     // We only care about transforming a few content-types
     if (!supportedContentTypes.includes(ctx.response.type)) {

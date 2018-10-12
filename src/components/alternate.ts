@@ -1,5 +1,6 @@
 import { Link, SureOptions } from '../types';
 import { getNavLinks, h } from '../util';
+import url from 'url';
 
 type Type = {
   [s: string]: {
@@ -48,8 +49,18 @@ export default function renderAlternate(links: Link[], options: SureOptions): st
     } else {
       label = link.title ? link.title : link.rel;
     }
+
+    let href = link.href;
+    // If the url is relative, we're adding our secret argument to make the Accept header work.
+    if (href.match(/^\/[^\/]/)) {
+      const urlObj = url.parse(href, true);
+      urlObj.query['_browser-accept'] = link.type;
+      console.log(urlObj);
+      href = url.format(urlObj);
+    }
+
     alternateHtml.push(
-      `<a href="${h(link.href)}" rel="${ h(link.rel) }" title="${ h(label) }"${cssClass}>${h(label)}</a>`
+      `<a href="${h(href)}" rel="${ h(link.rel) }" title="${ h(label) }"${cssClass}>${h(label)}</a>`
     );
 
   }
