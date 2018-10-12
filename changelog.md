@@ -1,3 +1,13 @@
+0.6.0 (2018-10-12)
+==================
+
+* It's now possible to get alternative representations in a browser with the
+  `?_browser-accept` query parameter.
+* Links with the `alternate` rel that are local, automatically get the
+  `?_browser-accept` parameter added, so a single resource can now have
+  multiple representations on the same url.
+
+
 0.5.6 (2018-10-04)
 ==================
 
