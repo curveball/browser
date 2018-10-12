@@ -1,6 +1,6 @@
+import url from 'url';
 import { Link, SureOptions } from '../types';
 import { getNavLinks, h } from '../util';
-import url from 'url';
 
 type Type = {
   [s: string]: {
@@ -55,7 +55,6 @@ export default function renderAlternate(links: Link[], options: SureOptions): st
     if (href.match(/^\/[^\/]/)) {
       const urlObj = url.parse(href, true);
       urlObj.query['_browser-accept'] = link.type;
-      console.log(urlObj);
       href = url.format(urlObj);
     }
 

@@ -6,6 +6,8 @@
 * Links with the `alternate` rel that are local, automatically get the
   `?_browser-accept` parameter added, so a single resource can now have
   multiple representations on the same url.
+* Now using a new package for parsing HTTP Link urls. The old one didn't
+  support multiple links with the same `rel`.
 
 
 0.5.6 (2018-10-04)

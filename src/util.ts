@@ -81,10 +81,9 @@ export function fetchLinks(ctx: Context, options: SureOptions): Link[] {
   result.push(...getHalLinks(ctx.response.body));
 
   const linkHeader = ctx.response.headers.get('Link');
-  console.log(linkHeader);
   if (linkHeader) {
     const parsed = httpLinkHeader.parse(linkHeader);
-    for(const link of parsed.refs) {
+    for (const link of parsed.refs) {
       result.push({
         rel: link.rel,
         href: link.uri,
