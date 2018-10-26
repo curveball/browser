@@ -130,8 +130,11 @@ export default function browser(options?: Options): Middleware {
     // Find out the client prefers HTML over the content-type that was actually
     // returned.
     //
-    // This is useful if the client submitted a lower q= score for text/html
-    if (ctx.accepts('text/html', ...supportedContentTypes) === 'text/html') {
+    // This is useful if the client submitted a lower q= score for text/html.
+    //
+    // In addition, we also want to make sure that requests for */* result in
+    // the original contenttype. Users have to explicitly request text/html.
+    if (ctx.accepts(...supportedContentTypes, 'text/html') === 'text/html') {
       await generateHtmlIndex(ctx, newOptions);
     }
 

@@ -1,3 +1,11 @@
+0.6.1 (2018-??-??)
+==================
+
+* Some clients default to sending `Accept: */*`. For those clients we want to
+  not automatically convert to `text/html`. This fixes the default output for
+  Curl and Fetch.
+
+
 0.6.0 (2018-10-12)
 ==================
 
