@@ -1,4 +1,4 @@
-0.6.1 (2018-??-??)
+0.6.1 (2018-11-01)
 ==================
 
 * Some clients default to sending `Accept: */*`. For those clients we want to
