@@ -3,14 +3,9 @@ import { Link, SureOptions } from './types';
 
 import url from 'url';
 import alternate from './components/alternate';
-import csvBody from './components/csv-body';
-import embedded from './components/embedded';
-import halBody from './components/hal-body';
-import linksTable from './components/links-table';
-import markdownBody from './components/markdown-body';
 import navigation from './components/navigation';
-import pager from './components/pager';
 import search from './components/search';
+import resource from './components/resource';
 import { fetchLinks, h } from './util';
 
 export default async function generateHtmlIndex(ctx: Context, options: SureOptions) {
@@ -21,12 +16,9 @@ export default async function generateHtmlIndex(ctx: Context, options: SureOptio
   const links: Link[] = fetchLinks(ctx, options);
   const navHtml = navigation(links, options);
   const alternateHtml = alternate(links, options);
-  const pagerHtml = pager(links, options);
-  const linksHtml = linksTable(links, options);
   const [headTitle, bodyTitle] = generateTitle(links, ctx, options);
-  const embeddedHtml = embedded(body, options);
-  const bodyHtml = await parseBody(ctx);
   const searchHtml = search(links, options);
+  const resourceHtml = await resource(ctx, body, links, options);
 
   const stylesheets = options.stylesheets.map(ss => {
     return `    <link rel="stylesheet" href="${h(url.resolve(options.assetBaseUrl, ss))}" type="text/css" />\n`;
@@ -52,10 +44,7 @@ ${stylesheets}
     </nav>
 
     <main>
-      ${linksHtml}
-      ${bodyHtml}
-      ${embeddedHtml}
-      ${pagerHtml}
+      ${resourceHtml}
     </main>
 
   </body>
@@ -97,33 +86,6 @@ function generateTitle(links: Link[], ctx: Context, options: SureOptions): [stri
     `${h(title)} - ${options.title}`,
     `<a href="${h(href)}" rel="self">${h(title)}</a> - ${options.title}`
   ];
-
-}
-
-async function parseBody(ctx: Context): Promise<string> {
-
-  if (!ctx.response.body) {
-    // Ignore empty bodies
-    return '';
-  }
-
-  switch (ctx.response.type) {
-
-    case 'application/json' :
-    case 'application/problem+json' :
-    case 'application/hal+json' :
-      return halBody(ctx);
-
-    case 'text/markdown' :
-      return markdownBody(ctx);
-
-    case 'text/csv' :
-      return csvBody(ctx);
-
-    default:
-      return '';
-
-  }
 
 }
 

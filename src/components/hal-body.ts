@@ -1,9 +1,10 @@
 import { Context } from '@curveball/core';
 import { highlightJson } from '../util';
 
-export default function halBody(ctx: Context) {
+export default function halBody(ctx: Context, body: any) {
 
-  const tmpBody = Object.assign(ctx.response.body);
+  console.log('halBodyStart', body);
+  const tmpBody = Object.assign({}, body);
 
   if (!('_browser-fullbody' in ctx.query)) {
     delete tmpBody._links;
@@ -15,6 +16,7 @@ export default function halBody(ctx: Context) {
       <code class="hljs"><pre>${highlightJson(tmpBody)}</pre></code>
 `;
 
+  console.log('halBodyEnd', body);
   return html;
 
 }

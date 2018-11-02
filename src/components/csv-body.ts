@@ -5,14 +5,12 @@ import { h } from '../util';
 
 const parse = promisify(csvParse);
 
-export default async function csvBody(ctx: Context) {
+export default async function csvBody(ctx: Context, body: any) {
 
   let html =
 `    <h2>Contents</h2>
     <table class="body-csv">
 `;
-  const body = ctx.response.body;
-
   const data = await parse(body);
   let first = true;
 

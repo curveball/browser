@@ -2,7 +2,7 @@ import { Context } from '@curveball/core';
 import hljs from 'highlight.js';
 import md from 'markdown-it';
 
-export default function markdownBody(ctx: Context) {
+export default function markdownBody(ctx: Context, body: any) {
 
   let html = '<section class="body-markdown">';
   html += md({
@@ -16,7 +16,7 @@ export default function markdownBody(ctx: Context) {
       return '';
 
     }
-  }).render(ctx.response.body);
+  }).render(body);
 
   html += '</section>';
   return html;
