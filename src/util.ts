@@ -97,7 +97,7 @@ export function fetchLinks(ctx: Context, options: SureOptions): Link[] {
 
 }
 
-function getHalLinks(body: any) {
+export function getHalLinks(body: any): Link[] {
 
   if (!body || !body._links) {
     return [];

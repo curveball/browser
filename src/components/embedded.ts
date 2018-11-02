@@ -1,8 +1,11 @@
 import { SureOptions } from '../types';
-import { h, highlightJson } from '../util';
+import { h, getHalLinks } from '../util';
+import resource from './resource';
+import { Context } from '@curveball/core';
 
-export default function embedded(body: any, options: SureOptions): string {
+export default async function embedded(ctx: Context, body: any, options: SureOptions): Promise<string> {
 
+  console.log(body);
   if (!body || !body._embedded) {
     return '';
   }
@@ -12,19 +15,21 @@ export default function embedded(body: any, options: SureOptions): string {
 
     if (Array.isArray(item)) {
       for (const resource of item) {
-        html += renderEmbedded(rel, resource);
+        html += await renderEmbedded(ctx, rel, resource, options);
       }
     } else {
-      html += renderEmbedded(rel, item);
+      html += await renderEmbedded(ctx, rel, item, options);
     }
 
   }
+
+  console.log(html);
 
   return html;
 
 }
 
-function renderEmbedded(rel: string, body: any): string {
+async function renderEmbedded(ctx: Context, rel: string, body: any, options: SureOptions): Promise<string> {
 
   const selfLink = body._links.self.href;
   const summary = rel + ': ' + selfLink;
@@ -32,7 +37,7 @@ function renderEmbedded(rel: string, body: any): string {
   return `
 <details>
   <summary>${h(summary)}</summary>
-  <code class="hljs"><pre>${highlightJson(body)}</pre></code>
+  ${await resource(ctx, body, getHalLinks(body), options)}
 </details>
 `;
 
