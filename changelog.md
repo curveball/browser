@@ -2,6 +2,7 @@
 ==================
 
 * Fully rendered `_embedded` objects.
+* Correctly inject `?_browser-accept` if query string was already set.
 
 
 0.6.1 (2018-11-01)

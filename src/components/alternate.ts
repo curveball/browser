@@ -52,9 +52,10 @@ export default function renderAlternate(links: Link[], options: SureOptions): st
 
     let href = link.href;
     // If the url is relative, we're adding our secret argument to make the Accept header work.
-    if (href.match(/^\/[^\/]/)) {
+    if (href.match(/^\/[^\/]/) !== null) {
       const urlObj = url.parse(href, true);
       urlObj.query['_browser-accept'] = link.type;
+      delete urlObj.search;
       href = url.format(urlObj);
     }
 
