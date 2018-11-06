@@ -1,11 +1,11 @@
-import linksTable from './links-table';
-import { Link, SureOptions } from '../types';
-import pager from './pager';
-import embedded from './embedded';
 import { Context } from '@curveball/core';
-import halBody from './hal-body';
-import markdownBody from './markdown-body';
+import { Link, SureOptions } from '../types';
 import csvBody from './csv-body';
+import embedded from './embedded';
+import halBody from './hal-body';
+import linksTable from './links-table';
+import markdownBody from './markdown-body';
+import pager from './pager';
 
 /**
  * This component renders an entire resource.
