@@ -4,8 +4,8 @@ import { Link, SureOptions } from './types';
 import url from 'url';
 import alternate from './components/alternate';
 import navigation from './components/navigation';
-import search from './components/search';
 import resource from './components/resource';
+import search from './components/search';
 import { fetchLinks, h } from './util';
 
 export default async function generateHtmlIndex(ctx: Context, options: SureOptions) {

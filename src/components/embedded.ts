@@ -1,29 +1,26 @@
-import { SureOptions } from '../types';
-import { h, getHalLinks } from '../util';
-import resource from './resource';
 import { Context } from '@curveball/core';
+import { SureOptions } from '../types';
+import { getHalLinks, h } from '../util';
+import resource from './resource';
 
 export default async function embedded(ctx: Context, body: any, options: SureOptions): Promise<string> {
 
-  console.log(body);
   if (!body || !body._embedded) {
     return '';
   }
 
   let html = '<h2>Embedded</h2>';
-  for (const [rel, item] of Object.entries(body._embedded)) {
+  for (const [rel, linkOrList] of Object.entries(body._embedded)) {
 
-    if (Array.isArray(item)) {
-      for (const resource of item) {
-        html += await renderEmbedded(ctx, rel, resource, options);
+    if (Array.isArray(linkOrList)) {
+      for (const link of linkOrList) {
+        html += await renderEmbedded(ctx, link, resource, options);
       }
     } else {
-      html += await renderEmbedded(ctx, rel, item, options);
+      html += await renderEmbedded(ctx, rel, linkOrList, options);
     }
 
   }
-
-  console.log(html);
 
   return html;
 

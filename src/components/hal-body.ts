@@ -3,7 +3,6 @@ import { highlightJson } from '../util';
 
 export default function halBody(ctx: Context, body: any) {
 
-  console.log('halBodyStart', body);
   const tmpBody = Object.assign({}, body);
 
   if (!('_browser-fullbody' in ctx.query)) {
@@ -16,7 +15,6 @@ export default function halBody(ctx: Context, body: any) {
       <code class="hljs"><pre>${highlightJson(tmpBody)}</pre></code>
 `;
 
-  console.log('halBodyEnd', body);
   return html;
 
 }
