@@ -74,7 +74,7 @@ const defaultNavigationLinks: NavigationLinkMap = {
   },
   'up' : {
     priority: -10,
-    defaultTitle: 'Up',
+    showLabel: true,
   },
   'previous': {
     position: 'pager',

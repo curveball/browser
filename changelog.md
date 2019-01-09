@@ -1,8 +1,9 @@
-0.6.2 (2018-??-??)
+0.6.2 (2019-01-09)
 ==================
 
 * Fully rendered `_embedded` objects.
 * Correctly inject `?_browser-accept` if query string was already set.
+* Showing `up` link label by default.
 
 
 0.6.1 (2018-11-01)
