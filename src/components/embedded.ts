@@ -14,7 +14,7 @@ export default async function embedded(ctx: Context, body: any, options: SureOpt
 
     if (Array.isArray(linkOrList)) {
       for (const link of linkOrList) {
-        html += await renderEmbedded(ctx, link, resource, options);
+        html += await renderEmbedded(ctx, rel, link, options);
       }
     } else {
       html += await renderEmbedded(ctx, rel, linkOrList, options);
