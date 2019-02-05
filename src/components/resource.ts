@@ -2,6 +2,7 @@ import { Context } from '@curveball/core';
 import { Link, SureOptions } from '../types';
 import csvBody from './csv-body';
 import embedded from './embedded';
+import forms from './forms';
 import halBody from './hal-body';
 import linksTable from './links-table';
 import markdownBody from './markdown-body';
@@ -12,8 +13,12 @@ import pager from './pager';
  */
 export default async function resource(ctx: Context, body: any, links: Link[], options: SureOptions) {
 
+  const formsHtml = forms(links, options);
+  const linksHtml = linksTable(links, options);
+
   return `
-${linksTable(links, options)}
+${linksHtml}
+${formsHtml}
 ${await parseBody(ctx, body)}
 ${await embedded(ctx, body, options)}
 ${pager(links, options)}

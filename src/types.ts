@@ -90,5 +90,6 @@ export type Link = {
   type?: string,
   title?: string
   templated?: boolean,
+  rendered?: boolean,
 
 };

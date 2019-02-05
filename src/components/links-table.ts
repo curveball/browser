@@ -10,7 +10,7 @@ export default function linksTable(links: Link[], options: SureOptions): string 
 
   for (const link of links) {
 
-    if (options.hiddenRels.includes(link.rel) || link.rel in options.navigationLinks) {
+    if (options.hiddenRels.includes(link.rel) || link.rel in options.navigationLinks || link.rendered) {
       continue;
     }
 
