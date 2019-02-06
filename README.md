@@ -197,7 +197,6 @@ Future features
 
 * Add a link to allow the user to see the raw format.
 * Show metadata, such as `Last-Modified`
-* Automatically generate forms for templated links.
 
 [1]: https://github.com/curveballjs/core
 [2]: https://expressjs.com/
