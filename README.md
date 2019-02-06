@@ -85,7 +85,38 @@ An example. If a API normally returns the following HAL format:
 
 The browser will automatically convert it to this HTML format:
 
-![Screenshot from 0.5.0](https://github.com/evert/hal-browser/blob/master/screenshots/0.5.0.png)
+![Screenshot from 0.7.0](https://github.com/evert/hal-browser/blob/master/screenshots/0.7.0.png)
+
+This screenshot is an example of the browser automatically formatting a .csv
+and parsing HTTP `Link` headers:
+
+![Screenshot from 0.7.0](https://github.com/evert/hal-browser/blob/master/screenshots/0.7.0-csv.png)
+
+The following example converts this:
+
+```json
+{
+  "_links": {
+    "self": {
+      "href": "/testing/form"
+    },
+    "up": {
+      "href": "/testing",
+      "title": "Back to testing home"
+    },
+    "my-form": {
+      "href": "/testing/form{?startDate}{?endDate}",
+      "title": "Search by date range",
+      "templated": true
+    }
+  }
+}
+```
+
+And automatically turns the templated link into a form:
+
+![Screenshot from 0.7.0](https://github.com/evert/hal-browser/blob/master/screenshots/0.7.0-form.png)
+
 
 Supported frameworks
 --------------------
