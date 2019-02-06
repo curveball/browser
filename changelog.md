@@ -1,3 +1,9 @@
+0.7.0 (2019-??-??)
+==================
+
+* Automatically render HTML forms for templated links, where possible.
+
+
 0.6.3 (2019-01-18)
 ==================
 
