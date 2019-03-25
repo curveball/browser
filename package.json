@@ -35,20 +35,20 @@
   },
   "homepage": "https://github.com/evert/hal-browser#readme",
   "devDependencies": {
-    "@types/chai": "^4.1.6",
+    "@types/chai": "^4.1.7",
     "@types/highlight.js": "^9.12.3",
     "@types/http-link-header": "^0.6.2",
-    "@types/markdown-it": "0.0.5",
-    "@types/mocha": "^5.2.5",
-    "@types/node": "^10.11.4",
-    "@types/sinon": "^5.0.3",
+    "@types/markdown-it": "0.0.7",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.11.6",
+    "@types/sinon": "^7.0.10",
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
-    "nyc": "^12.0.2",
-    "sinon": "^6.3.5",
-    "ts-node": "^7.0.1",
-    "tslint": "^5.11.0",
-    "typescript": "^2.9.2"
+    "nyc": "^13.3.0",
+    "sinon": "^7.3.0",
+    "ts-node": "^8.0.3",
+    "tslint": "^5.14.0",
+    "typescript": "^3.3.4000"
   },
   "types": "dist/",
   "nyc": {
@@ -57,9 +57,9 @@
     ]
   },
   "dependencies": {
-    "@curveball/core": "^0.7.0",
+    "@curveball/core": "^0.8.1",
     "csv-parse": "^2.5.0",
-    "highlight.js": "^9.12.0",
+    "highlight.js": "^9.15.6",
     "http-link-header": "^0.8.0",
     "markdown-it": "^8.4.2"
   }

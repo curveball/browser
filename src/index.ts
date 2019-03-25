@@ -150,7 +150,7 @@ export default function browser(options?: Options): Middleware {
  * This makes the rest of the source simpler, and also saves time because it
  * only happens once.
  */
-function normalizeOptions(options: Options): SureOptions {
+function normalizeOptions(options?: Options): SureOptions {
 
   if (typeof options === 'undefined') {
     options = {};

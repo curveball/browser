@@ -9,7 +9,7 @@ import {
   SureOptions,
 } from './types';
 
-export function h(input: string): string {
+export function h(input: string = ''): string {
 
   const map: { [s: string]: string } = {
     '&' : '&amp;',
