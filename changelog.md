@@ -1,3 +1,13 @@
+0.7.1 (2019-03-25)
+==================
+
+* #41: Don't touch responses with `Content-Disposition: attachment`. The
+  intent of that header is to allow people to create downloads for users,
+  so it's unlikely they want the response re-skinned as HTML.
+* Updated dependencies.
+* Stricted typescript settings.
+
+
 0.7.0 (2019-02-06)
 ==================
 

@@ -1,6 +1,6 @@
 {
   "name": "hal-browser",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "A HAL browser middleware",
   "main": "dist/index.js",
   "scripts": {
