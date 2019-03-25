@@ -127,6 +127,13 @@ export default function browser(options?: Options): Middleware {
       return;
     }
 
+    // If Content-Disposition: attachment was set, it means the API author
+    // intended to create a download, we will also not render HTML.
+    const cd = ctx.request.headers.get('Content-Disposition');
+    if (cd && cd.startsWith('attachment')) {
+      return;
+    }
+
     // Find out the client prefers HTML over the content-type that was actually
     // returned.
     //
