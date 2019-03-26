@@ -1,3 +1,10 @@
+0.7.2 (2019-03-26)
+==================
+
+* Fixed bug: `Content-Disposition` was checked in the Request headers, not
+  the response headers.
+
+
 0.7.1 (2019-03-25)
 ==================
 
