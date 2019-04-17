@@ -40,8 +40,7 @@ export default function linksTable(links: Link[], options: SureOptions): string 
       }
       let linkBadges = '';
       if (link.hints && link.hints.status) {
-        console.log(links);
-        switch(link.hints.status) {
+        switch (link.hints.status) {
           case 'deprecated' :
             linkBadges = ' <span class="link-badge status-deprecated">Deprecated</status>';
             break;
@@ -49,7 +48,6 @@ export default function linksTable(links: Link[], options: SureOptions): string 
             linkBadges = ' <span class="link-badge status-gone">Gone</status>';
             break;
         }
-        console.log(linkBadges);
       }
       linkHtml += '<td>' + (link.title ? h(link.title) : '') + linkBadges + '</td>';
       linkHtml += '</tr>\n';
