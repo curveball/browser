@@ -1,3 +1,10 @@
+0.7.3 (2019-04-17)
+==================
+
+* Now showing links as 'Deprecated' or 'Gone' if they are marked as such
+  using [draft-nottingham-link-hint][link-hint].
+
+
 0.7.2 (2019-03-26)
 ==================
 
@@ -174,3 +181,5 @@
 ==================
 
 * First version
+
+[link-hint]: https://tools.ietf.org/html/draft-nottingham-link-hint

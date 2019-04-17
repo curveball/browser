@@ -91,5 +91,7 @@ export type Link = {
   title?: string
   templated?: boolean,
   rendered?: boolean,
-
+  hints?: {
+    status?: 'deprecated' | 'gone'
+  }
 };

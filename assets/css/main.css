@@ -129,6 +129,21 @@ nav a img {
   margin-top: -2px;
 }
 
+.link-badge {
+  background: #666;
+  color: white;
+  border-radius: 3px;
+  padding: 2px 4px;
+  font-weight: bold;
+}
+
+.link-badge.status-deprecated {
+  background: red;
+}
+.link-badge.status-gone {
+  background: red;
+}
+
 /* Alternate links */
 
 nav .alternate {

@@ -125,6 +125,7 @@ export function getHalLinks(body: any): Link[] {
         type: link.type,
         title: link.title,
         templated: link.templated,
+        hints: link.hints
       });
 
     }
