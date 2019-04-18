@@ -4,7 +4,7 @@
   "description": "A HAL browser middleware",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "make build",
+    "prepublishOnly": "make build",
     "test": "make lint test",
     "tsc": "tsc"
   },
