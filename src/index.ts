@@ -18,11 +18,7 @@ export const supportedContentTypes = [
  * https://www.iana.org/assignments/link-relations/link-relations.xhtml
  *
  * - about
- * - alternate
- * - collection
- * - item
  * - stylesheet
- * - up
  * - via
  *
  * source:
@@ -31,9 +27,17 @@ export const supportedContentTypes = [
  */
 
 const defaultNavigationLinks: NavigationLinkMap = {
-
   'alternate': {
     position: 'alternate',
+  },
+  'authenticate' : {
+    showLabel: true,
+    defaultTitle: 'Sign in',
+  },
+  'authenticated-as' : {
+    priority: 30,
+    showLabel: true,
+    defaultTitle: 'Logged in',
   },
   'author': {
     showLabel: true,
@@ -67,6 +71,11 @@ const defaultNavigationLinks: NavigationLinkMap = {
   'home': {
     priority: -20,
   },
+  'logout' : {
+    priority: 30,
+    showLabel: true,
+    defaultTitle: 'Sign out',
+  },
   'next': {
     position: 'pager',
     defaultTitle: 'Next page',
@@ -80,6 +89,10 @@ const defaultNavigationLinks: NavigationLinkMap = {
     position: 'pager',
     defaultTitle: 'Previous page',
     priority: -20,
+  },
+  'register-user': {
+    showLabel: true,
+    defaultTitle: 'Register user',
   },
   'search': true,
 };
