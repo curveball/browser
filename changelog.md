@@ -1,3 +1,10 @@
+0.7.4 (2019-05-05)
+==================
+
+* Default icons for the following rels: `authenticate`, `authenticated-as`,
+  `register-user`, `logout` from [draft-pot-authentication-link][authentication-link].
+
+
 0.7.3 (2019-04-17)
 ==================
 
@@ -183,3 +190,4 @@
 * First version
 
 [link-hint]: https://tools.ietf.org/html/draft-nottingham-link-hint
+[authentication-link]: https://tools.ietf.org/html/draft-pot-authentication-link-00
