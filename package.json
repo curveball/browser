@@ -37,14 +37,14 @@
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/highlight.js": "^9.12.3",
-    "@types/http-link-header": "^0.6.2",
-    "@types/markdown-it": "0.0.7",
+    "@types/http-link-header": "^1.0.0",
+    "@types/markdown-it": "0.0.8",
     "@types/mocha": "^5.2.6",
-    "@types/node": "^11.13.5",
+    "@types/node": "^12.6.8",
     "@types/sinon": "^7.0.11",
     "chai": "^4.2.0",
-    "mocha": "^5.2.0",
-    "nyc": "^13.3.0",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
     "sinon": "^7.3.2",
     "ts-node": "^8.1.0",
     "tslint": "^5.16.0",
@@ -58,9 +58,9 @@
   },
   "dependencies": {
     "@curveball/core": "^0.8.6",
-    "csv-parse": "^2.5.0",
+    "csv-parse": "^4.4.3",
     "highlight.js": "^9.15.6",
-    "http-link-header": "^0.8.0",
-    "markdown-it": "^8.4.2"
+    "http-link-header": "^1.0.2",
+    "markdown-it": "^9.0.1"
   }
 }
