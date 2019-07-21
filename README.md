@@ -1,6 +1,8 @@
 HAL browser
 ===========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/evert/hal-browser.svg)](https://greenkeeper.io/)
+
 This package provides a middleware for HAL APIs.
 
 The middleware looks for HAL and JSON responses, and automatically converts
