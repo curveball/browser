@@ -11,6 +11,7 @@ export default async function csvBody(ctx: Context, body: any) {
 `    <h2>Contents</h2>
     <table class="body-csv">
 `;
+  // @ts-ignore
   const data = await parse(body);
   let first = true;
 
