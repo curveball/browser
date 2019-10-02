@@ -51,7 +51,7 @@ export type SureNavigationLinkMap = {
 /**
  * Where Navigation links should appear
  */
-export type NavigationPosition = 'header' | 'pager' | 'alternate';
+export type NavigationPosition = 'header' | 'header-right' | 'pager' | 'alternate';
 
 /**
  * A "NavigationLink" specifies a link that will automatically get recognized

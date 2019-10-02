@@ -1,24 +1,33 @@
-import { Link, SureOptions } from '../types';
+import { Link, SureOptions, NavigationLink } from '../types';
 import { getNavLinks, h } from '../util';
 
 export default function navigation(links: Link[], options: SureOptions): string {
 
-  const navHtml: string[] = [];
+  return (`
+    <ul>
+      ${navList(getNavLinks(links, options, 'header'))}
+    </ul>
+    <ul>
+      ${navList(getNavLinks(links, options, 'header-right'))}
+    </ul>
+`);
 
-  for (const link of getNavLinks(links, options, 'header')) {
+}
 
-    navHtml.push(
+function navList(links: (Link & NavigationLink)[]) {
+
+  const html: string[] = [];
+
+  for (const link of links) {
+
+    html.push(
       `<a href="${ h(link.href) }" rel="${ h(link.rel) }" title="${ h(link.title) }">` +
       `<img src="${ link.icon }" />${ link.showLabel ? ' ' + h(link.title) : ''}</a>`
     );
 
   }
 
-  if (navHtml.length) {
-    return '    <ul>\n      <li>' + navHtml.join('</li>\n      <li>') + '</li>\n    </ul>\n';
-  } else {
-    return '';
-  }
+  return '      <li>' + html.join('</li>\n      <li>') + '</li>\n';
+
 
 }
-
