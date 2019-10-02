@@ -1,4 +1,4 @@
-import { Link, SureOptions, NavigationLink } from '../types';
+import { Link, NavigationLink, SureOptions } from '../types';
 import { getNavLinks, h } from '../util';
 
 export default function navigation(links: Link[], options: SureOptions): string {
@@ -14,7 +14,7 @@ export default function navigation(links: Link[], options: SureOptions): string 
 
 }
 
-function navList(links: (Link & NavigationLink)[]) {
+function navList(links: Array<Link & NavigationLink>) {
 
   const html: string[] = [];
 
