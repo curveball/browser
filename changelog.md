@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.7.6 (2019-10-02)
+------------------
+
+* Small design tweak: Some navigation elements now appear on the right.
+
+
 0.7.5 (2019-09-13)
 ------------------
 
