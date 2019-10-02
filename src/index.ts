@@ -33,11 +33,12 @@ const defaultNavigationLinks: NavigationLinkMap = {
   'authenticate' : {
     showLabel: true,
     defaultTitle: 'Sign in',
+    position: 'header-right',
   },
   'authenticated-as' : {
-    priority: 30,
     showLabel: true,
     defaultTitle: 'Logged in',
+    position: 'header-right',
   },
   'author': {
     showLabel: true,
@@ -75,6 +76,7 @@ const defaultNavigationLinks: NavigationLinkMap = {
     priority: 30,
     showLabel: true,
     defaultTitle: 'Sign out',
+    position: 'header-right',
   },
   'next': {
     position: 'pager',
@@ -93,6 +95,7 @@ const defaultNavigationLinks: NavigationLinkMap = {
   'register-user': {
     showLabel: true,
     defaultTitle: 'Register user',
+    position: 'header-right',
   },
   'search': true,
 };
