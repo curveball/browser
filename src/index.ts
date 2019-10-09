@@ -183,7 +183,7 @@ function normalizeOptions(options?: Options): SureOptions {
     title: 'HAL Browser',
     stylesheets: [
       'css/main.css',
-      'css/idea.css',
+      'css/tomorrow-night-eighties.css'
     ],
     defaultLinks: [
       {
