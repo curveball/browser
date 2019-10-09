@@ -182,8 +182,8 @@ function normalizeOptions(options?: Options): SureOptions {
   const defaults = {
     title: 'HAL Browser',
     stylesheets: [
-      'css/main.css',
-      'css/tomorrow-night-eighties.css'
+      'themes/lfo/main.css',
+      'themes/lfo/highlight.css'
     ],
     defaultLinks: [
       {
