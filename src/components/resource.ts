@@ -13,7 +13,7 @@ import pager from './pager';
  */
 export default async function resource(ctx: Context, body: any, links: Link[], options: SureOptions) {
 
-  const formsHtml = forms(links, options);
+  const formsHtml = forms(ctx, links, options);
   const linksHtml = linksTable(links, options);
 
   return `
