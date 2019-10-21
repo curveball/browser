@@ -9,6 +9,7 @@ export const supportedContentTypes = [
   'application/problem+json',
   'text/markdown',
   'text/csv',
+  'application/prs.hal-forms+json'
 ];
 
 /*

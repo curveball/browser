@@ -1,3 +1,4 @@
+import { Context } from '@curveball/core';
 import { Link, SureOptions } from '../types';
 import { h } from '../util';
 
@@ -7,7 +8,28 @@ type Field = {
   name: string
 };
 
-export default function forms(links: Link[], options: SureOptions): string {
+export default function forms(ctx: Context, links: Link[], options: SureOptions): string {
+
+  let formHtml = '';
+  formHtml += parseTemplatedLinks(links, options);
+
+  const target = '_htarget' in ctx.request.query ? ctx.request.query._htarget : ctx.request.path;
+  formHtml += parseHalForms(target, ctx.response.body);
+
+  if (!formHtml) {
+    // No links
+    return '';
+  }
+
+  return `
+    <h2>Forms</h2>
+    ${formHtml}
+  `;
+
+}
+
+
+function parseTemplatedLinks(links: Link[], options: SureOptions): string {
 
   let formHtml = '';
 
@@ -105,9 +127,62 @@ export default function forms(links: Link[], options: SureOptions): string {
     return '';
   }
 
-  return `
-    <h2>Forms</h2>
-    ${formHtml}
-  `;
+  return formHtml;
+
+}
+
+type HalFormProperty = {
+  name: string,
+  prompt?: string,
+  readOnly?: boolean,
+  regex?: string,
+  required?: boolean,
+  templated?: boolean,
+  value?: string,
+};
+
+type HalForm = {
+  method: string,
+  properties: HalFormProperty[],
+  title?: string
+};
+
+function parseHalForms(target: string, body: { [s: string]: any }): string {
+
+  if (body._templates === undefined) {
+    return '';
+  }
+
+  if (body._templates.default === undefined) {
+    return '';
+  }
+
+  const form: HalForm = body._templates.default;
+
+  let html =
+`<form method="${h(form.method.toUpperCase())}" action="${h(target)}" class="long-form">
+  <h3>${h(form.title)}</h3>
+`;
+
+  for (const property of form.properties) {
+
+    html += `
+<label>${h(property.prompt || property.name)}</label>
+<input
+  type="text" name="${h(property.name)}"
+  ${property.readOnly ? 'readonly="readonly" ' : ''}
+  ${property.regex ? 'pattern="' + h(property.regex) + '"' : ''}
+  ${property.required ? 'required="required" ' : ''}
+  ${property.value ? 'value="' + h(property.value) + '"' : ''}
+/>
+    `;
+
+  }
+
+  html += '<button type="submit">Submit</button>';
+  html += '</form>';
+
+  return html;
+
 
 }
