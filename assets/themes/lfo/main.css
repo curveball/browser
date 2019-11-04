@@ -64,6 +64,21 @@ main {
   padding: 2rem;
 }
 
+/* main */
+
+main a {
+  color: var(--default-primary-color);
+  transition: text-decoration .5s;
+}
+
+main a:hover {
+  color: var(--dark-primary-color);
+  text-decoration-color: transparent;
+}
+
+main a:visited { color:#673AB7}
+main a:visited:hover { color:#9C27B0}
+
 h2 {
   margin: 0;
   padding: 1ex .5rem;
@@ -93,7 +108,7 @@ code.hljs {
   color: #cccccc;
   display: block;
   overflow-x: auto;
-} 
+}
 
 table {
   border-collapse: collapse;
@@ -175,20 +190,6 @@ nav a img {
   margin-top: -2px;
 }
 
-/* main */
-
-main a {
-  color: var(--default-primary-color);
-  transition: text-decoration .5s;
-}
-
-main a:hover { 
-  color: var(--dark-primary-color);
-  text-decoration-color: transparent;
-}
-
-main a:visited { color:#673AB7}
-main a:visited:hover { color:#9C27B0}
 
 .link-badge {
   --color: var(--text-primary-color);
