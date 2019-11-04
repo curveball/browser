@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.8.1 (2019-11-04)
+------------------
+
+* Pager buttons had incorrect text color in new theme.
+
+
 0.8.0 (2019-10-09)
 ------------------
 
