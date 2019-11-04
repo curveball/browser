@@ -1,7 +1,7 @@
 import { Context } from '@curveball/core';
 import { Link, SureOptions } from '../types';
-import parseTemplatedLinks from './forms/templated-links';
 import parseHalForms from './forms/hal-forms';
+import parseTemplatedLinks from './forms/templated-links';
 
 export default function forms(ctx: Context, links: Link[], options: SureOptions): string {
 
