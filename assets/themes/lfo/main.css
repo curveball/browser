@@ -123,11 +123,8 @@ code.hljs {
 table {
   border-collapse: collapse;
   margin: 1rem 0;
-  /*! display: flex; */
   width: 100%;
-  overflow: hidden;
 }
-
 
 tbody {
   border-bottom: 1px solid #E0E0E0;
@@ -166,12 +163,10 @@ tr:hover td[rowspan="1"] {
 }
 
 td a {
-  /*! display: block; */
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   display: block;
-  width: 40vw;
   max-width: 30em;
 }
 
