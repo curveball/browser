@@ -12,6 +12,10 @@
   --warning-color         : #F44336;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body, pre, h1, h2, h3, h4, p, table, ul, ol {
   margin: 0;
   padding: 0;
@@ -29,23 +33,27 @@ body {
   font-weight: 300;
   box-sizing: border-box;
   color: #212121;
+  cursor: default;
 }
 
 header {
-  /* background: #03A9F4; */
-  height: 30px;
+  background: #03A9F4;
   color: var(--dark-primary-color);
   padding: 2rem;
   display: flex;
   box-shadow: 0 1px 0 0 #F5F5F5;
-  position: sticky;
+  position: fixed;
   top: 0;
   background: white;
-  z-index: 1;
+  z-index: 3;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 header h1 {
-  flex: 1;
+  /*! flex: 1; */
   color: inherit;
 }
 
@@ -62,10 +70,24 @@ header h1 a:hover {
 
 main {
   padding: 2rem;
-  max-width: 65em; 
-  width: 80vw;
-  margin: 0 auto;
+  max-width: 65em;
+  margin: 10rem auto;
 }
+
+/* main */
+
+main a {
+  color: var(--default-primary-color);
+  transition: text-decoration .5s;
+}
+
+main a:hover {
+  color: var(--dark-primary-color);
+  text-decoration-color: transparent;
+}
+
+main a:visited { color:#673AB7}
+main a:visited:hover { color:#9C27B0}
 
 h2 {
   margin: 0;
@@ -96,13 +118,16 @@ code.hljs {
   color: #cccccc;
   display: block;
   overflow-x: auto;
-} 
+}
 
 table {
   border-collapse: collapse;
   margin: 1rem 0;
+  /*! display: flex; */
   width: 100%;
+  overflow: hidden;
 }
+
 
 tbody {
   border-bottom: 1px solid #E0E0E0;
@@ -115,6 +140,20 @@ th, td {
   padding: 0 1.5ex;
   line-height: 2.5em;
   transition: background .05s;
+  /* border-left: 1px solid #eee; */
+  /*! cursor: default; */
+}
+
+
+tr:first-child {
+  position: sticky;
+  top: 9.9rem;
+  background: #fafafa;
+}
+
+tr:first-child > th {
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 tr:not(:last-child) {
@@ -127,7 +166,13 @@ tr:hover td[rowspan="1"] {
 }
 
 td a {
+  /*! display: block; */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   display: block;
+  width: 40vw;
+  max-width: 30em;
 }
 
 
@@ -137,9 +182,12 @@ nav {
   word-spacing: 5px;
   display: flex;
   box-shadow: 0 1px 1ex 0 #0000001f;
-  position: sticky;
+  position: fixed;
   top: 5.9rem;
   background: white;
+  z-index: 2;
+  left: 0;
+  width: 100%;
 }
 nav h3 {
   word-spacing: 0;
@@ -180,20 +228,6 @@ nav a img {
   margin-top: -2px;
 }
 
-/* main */
-
-main a {
-  color: var(--default-primary-color);
-  transition: text-decoration .5s;
-}
-
-main a:hover { 
-  color: var(--dark-primary-color);
-  text-decoration-color: transparent;
-}
-
-main a:visited { color:#673AB7}
-main a:visited:hover { color:#9C27B0}
 
 .link-badge {
   --color: var(--text-primary-color);
