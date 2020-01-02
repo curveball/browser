@@ -36,17 +36,22 @@ export default function parseTemplatedLinks(links: Link[], options: SureOptions)
     // More formats might be added if they are requested.
 
     // This regex finds blocks like {?foo}
-    const reg = /{\?[A-Za-z]+}/g;
+    const reg = /{\?[A-Za-z,]+}/g;
 
     const matches = link.href.match(reg);
     if (matches) {
       for (const match of matches) {
         // Stripping off {? and }
-        fields.push({
-          name: match.slice(2, -1),
-          value: '',
-          label: match.slice(2, -1),
-        });
+        const fieldNames = match.slice(2, -1);
+
+        // Splitting at ','
+        for(const fieldName of fieldNames.split(',')) {
+          fields.push({
+            name: fieldName,
+            value: '',
+            label: fieldName,
+          });
+        }
       }
     }
 
