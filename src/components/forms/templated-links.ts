@@ -45,7 +45,7 @@ export default function parseTemplatedLinks(links: Link[], options: SureOptions)
         const fieldNames = match.slice(2, -1);
 
         // Splitting at ','
-        for(const fieldName of fieldNames.split(',')) {
+        for (const fieldName of fieldNames.split(',')) {
           fields.push({
             name: fieldName,
             value: '',
