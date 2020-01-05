@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.8.3 (2020-01-05)
+------------------
+
+* A few subtle design adjustments.
+* `@curveball/core` is now a peerDependency for smoother upgrades.
+
+
 0.8.2 (2020-01-02)
 ------------------
 

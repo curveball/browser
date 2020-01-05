@@ -48,7 +48,8 @@
     "sinon": "^7.5.0",
     "ts-node": "^8.4.1",
     "tslint": "^5.20.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.3",
+    "@curveball/core": "^0.9.1"
   },
   "types": "dist/",
   "nyc": {
@@ -57,10 +58,12 @@
     ]
   },
   "dependencies": {
-    "@curveball/core": "^0.9.1",
     "csv-parse": "^4.4.7",
     "highlight.js": "^9.15.10",
     "http-link-header": "^1.0.2",
     "markdown-it": "^10.0.0"
+  },
+  "peerDependencies": {
+    "@curveball/core": "^0.9.1"
   }
 }
