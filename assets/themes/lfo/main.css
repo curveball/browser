@@ -215,7 +215,6 @@ nav a img {
 }
 
 /* Alternate links */
-
 nav .alternate {
   display: flex;
   align-items: center;
@@ -240,9 +239,8 @@ nav .alternate .type-feed {
 
 /* search */
 form.search {
-
-  background: #0288D1;
   display: flex;
+  border-color: #0288D1;
   border-radius: 10px;
   padding: 2px 5px;
 
@@ -257,6 +255,15 @@ form.search input {
 
 form.search input:focus {
   width: 200px;
+}
+
+/* Links table */
+table.links td a {
+  display: block;
+  max-width: 700px;
+  overflow: hidden;
+  text-overflow: ellipse;
+  white-space: nowrap;
 }
 
 /* Body */

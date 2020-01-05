@@ -64,7 +64,7 @@ export default function linksTable(links: Link[], options: SureOptions): string 
 
   return `
     <h2>Links</h2>
-    <table>
+    <table class="links">
       <tr>
         <th>Relationship</th><th>Url</th><th>Title</th>
       </tr>
