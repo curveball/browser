@@ -240,7 +240,7 @@ nav .alternate .type-feed {
 /* search */
 form.search {
   display: flex;
-  border-color: #0288D1;
+  border: 1px solid #0288D1;
   border-radius: 10px;
   padding: 2px 5px;
 
