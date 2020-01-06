@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/evert/hal-browser#readme",
   "devDependencies": {
-    "@curveball/core": "^0.9.4",
+    "@curveball/core": "^0.10.0",
     "@types/chai": "^4.2.7",
     "@types/highlight.js": "^9.12.3",
     "@types/http-link-header": "^1.0.1",
@@ -64,6 +64,6 @@
     "markdown-it": "^10.0.0"
   },
   "peerDependencies": {
-    "@curveball/core": "^0.9.1"
+    "@curveball/core": ">=0.9.1 <1"
   }
 }
