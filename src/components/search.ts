@@ -1,7 +1,8 @@
 import querystring from 'querystring';
 import url from 'url';
-import { Link, SureOptions } from '../types';
+import { SureOptions } from '../types';
 import { h } from '../util';
+import { Link } from 'ketting';
 
 export default function generateSearch(links: Link[], options: SureOptions): string {
 

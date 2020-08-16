@@ -34,7 +34,7 @@ async function renderEmbedded(ctx: Context, rel: string, body: any, options: Sur
   return `
 <details>
   <summary>${h(summary)}</summary>
-  ${await resource(ctx, body, getHalLinks(body), options)}
+  ${await resource(ctx, body, getHalLinks(body, ctx.path), options)}
 </details>
 `;
 

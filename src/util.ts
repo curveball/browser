@@ -3,11 +3,12 @@ import highlight from 'highlight.js';
 import httpLinkHeader from 'http-link-header';
 import url from 'url';
 import {
-  Link,
   NavigationLink,
   NavigationPosition,
   SureOptions,
 } from './types';
+import { Link } from 'ketting';
+
 
 export function h(input: string = ''): string {
 
@@ -51,6 +52,7 @@ export function getNavLinks(links: Link[], options: SureOptions, position: Navig
 
     result.push({
       rel: link.rel,
+      context: link.context,
       href: link.href,
       title: link.title ? link.title : ( nl.defaultTitle ? nl.defaultTitle : link.rel ),
       type: link.type,
@@ -78,7 +80,7 @@ export function fetchLinks(ctx: Context, options: SureOptions): Link[] {
 
   const result: Link[] = Array.from(options.defaultLinks);
 
-  result.push(...getHalLinks(ctx.response.body));
+  result.push(...getHalLinks(ctx.response.body, ctx.path));
 
   const linkHeader = ctx.response.headers.get('Link');
   if (linkHeader) {
@@ -87,6 +89,7 @@ export function fetchLinks(ctx: Context, options: SureOptions): Link[] {
       result.push({
         rel: link.rel,
         href: link.uri,
+        context: ctx.path,
         title: link.title,
         type: link.type
       });
@@ -97,7 +100,7 @@ export function fetchLinks(ctx: Context, options: SureOptions): Link[] {
 
 }
 
-export function getHalLinks(body: any): Link[] {
+export function getHalLinks(body: any, contextUri: string): Link[] {
 
   if (!body || !body._links) {
     return [];
@@ -122,6 +125,7 @@ export function getHalLinks(body: any): Link[] {
       result.push({
         rel: rel,
         href: link.href,
+        context: contextUri,
         type: link.type,
         title: link.title,
         templated: link.templated,

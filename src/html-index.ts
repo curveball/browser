@@ -1,5 +1,6 @@
 import { Context } from '@curveball/core';
-import { Link, SureOptions } from './types';
+import { SureOptions } from './types';
+import { Link } from 'ketting';
 
 import url from 'url';
 import alternate from './components/alternate';
