@@ -1,4 +1,5 @@
-import { Link, SureOptions } from '../types';
+import { Link } from 'ketting';
+import { SureOptions } from '../types';
 import { h } from '../util';
 
 export default function linksTable(links: Link[], options: SureOptions): string {
@@ -10,7 +11,7 @@ export default function linksTable(links: Link[], options: SureOptions): string 
 
   for (const link of links) {
 
-    if (options.hiddenRels.includes(link.rel) || link.rel in options.navigationLinks || link.rendered) {
+    if (options.hiddenRels.includes(link.rel) || link.rel in options.navigationLinks || (link as any).rendered) {
       continue;
     }
 

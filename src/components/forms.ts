@@ -1,5 +1,6 @@
 import { Context } from '@curveball/core';
-import { Link, SureOptions } from '../types';
+import { Link } from 'ketting';
+import { SureOptions } from '../types';
 import parseHalForms from './forms/hal-forms';
 import parseTemplatedLinks from './forms/templated-links';
 

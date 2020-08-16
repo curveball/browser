@@ -1,4 +1,5 @@
-import { Link, SureOptions } from '../../types';
+import { Link } from 'ketting';
+import { SureOptions } from '../../types';
 import { h } from '../../util';
 
 type Field = {
@@ -101,7 +102,7 @@ export default function parseTemplatedLinks(links: Link[], options: SureOptions)
     html += '</form>';
 
     formHtml += html;
-    link.rendered = true;
+    (link as any).rendered = true;
 
   }
 

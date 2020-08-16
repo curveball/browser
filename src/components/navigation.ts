@@ -1,4 +1,5 @@
-import { Link, NavigationLink, SureOptions } from '../types';
+import { Link } from 'ketting';
+import { NavigationLink, SureOptions } from '../types';
 import { getNavLinks, h } from '../util';
 
 export default function navigation(links: Link[], options: SureOptions): string {

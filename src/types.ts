@@ -1,3 +1,5 @@
+import { Link } from 'ketting';
+
 /**
  * Options that may be passed to the middleware.
  */
@@ -78,20 +80,4 @@ export type NavigationLink = {
   // Whether or not to show the 'title' as the button label.
   showLabel?: boolean
 
-};
-
-/**
- * Represents some link.
- */
-export type Link = {
-
-  rel: string,
-  href: string,
-  type?: string,
-  title?: string
-  templated?: boolean,
-  rendered?: boolean,
-  hints?: {
-    status?: 'deprecated' | 'gone'
-  }
 };

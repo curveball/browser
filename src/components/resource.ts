@@ -1,5 +1,6 @@
 import { Context } from '@curveball/core';
-import { Link, SureOptions } from '../types';
+import { Link } from 'ketting';
+import { SureOptions } from '../types';
 import csvBody from './csv-body';
 import embedded from './embedded';
 import forms from './forms';

@@ -1,5 +1,6 @@
+import { Link } from 'ketting';
 import url from 'url';
-import { Link, SureOptions } from '../types';
+import { SureOptions } from '../types';
 import { getNavLinks, h } from '../util';
 
 type Type = {

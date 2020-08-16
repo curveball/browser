@@ -1,4 +1,5 @@
-import { Link, SureOptions } from '../types';
+import { Link } from 'ketting';
+import { SureOptions } from '../types';
 import { getNavLinks, h } from '../util';
 
 export default function generatePager(links: Link[], options: SureOptions): string {
