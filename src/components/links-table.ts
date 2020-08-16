@@ -1,15 +1,16 @@
 import { Link } from 'ketting';
 import { SureOptions } from '../types';
 import { h } from '../util';
+import { State } from 'ketting';
 
-export default function linksTable(links: Link[], options: SureOptions): string {
+export default function linksTable(state: State, options: SureOptions): string {
 
   let linkHtml = '';
 
   // Grouping links by rel.
   const groups: { [rel: string]: Link[] } = {};
 
-  for (const link of links) {
+  for (const link of state.links.getAll()) {
 
     if (options.hiddenRels.includes(link.rel) || link.rel in options.navigationLinks || (link as any).rendered) {
       continue;

@@ -1,5 +1,5 @@
 import { Context } from '@curveball/core';
-import { Link } from 'ketting';
+import { Link, State } from 'ketting';
 import { SureOptions } from './types';
 
 import url from 'url';
@@ -7,19 +7,17 @@ import alternate from './components/alternate';
 import navigation from './components/navigation';
 import resource from './components/resource';
 import search from './components/search';
-import { fetchLinks, h } from './util';
+import { h, contextToState } from './util';
 
 export default async function generateHtmlIndex(ctx: Context, options: SureOptions) {
 
-  checkFormat(ctx);
-  const body = ctx.response.body;
-
-  const links: Link[] = fetchLinks(ctx, options);
+  const state = await contextToState(ctx);
+  const links: Link[] = state.links.getAll();
   const navHtml = navigation(links, options);
   const alternateHtml = alternate(links, options);
-  const [headTitle, bodyTitle] = generateTitle(links, ctx, options);
+  const [headTitle, bodyTitle] = generateTitle(state, options);
   const searchHtml = search(links, options);
-  const resourceHtml = await resource(ctx, body, links, options);
+  const resourceHtml = await resource(ctx, state, options);
 
   const stylesheets = options.stylesheets.map(ss => {
     return `    <link rel="stylesheet" href="${h(url.resolve(options.assetBaseUrl, ss))}" type="text/css" />\n`;
@@ -55,9 +53,9 @@ ${stylesheets}
 }
 
 
-function generateTitle(links: Link[], ctx: Context, options: SureOptions): [string, string] {
+function generateTitle(state: State, options: SureOptions): [string, string] {
 
-  const selfLink = links.find( link => link.rel === 'self' );
+  const selfLink = state.links.get('self');
 
   let title;
   let href;
@@ -66,10 +64,10 @@ function generateTitle(links: Link[], ctx: Context, options: SureOptions): [stri
     title = selfLink.title;
     href = selfLink.href;
   } else {
-    href = ctx.path;
+    href = state.uri;
   }
 
-  const body = ctx.response.body;
+  const body = state.data;
 
   if (body && typeof body === 'object') {
     if (!title && body.title) {
@@ -90,6 +88,7 @@ function generateTitle(links: Link[], ctx: Context, options: SureOptions): [stri
 
 }
 
+/*
 function checkFormat(ctx: Context) {
 
   if ((typeof ctx.response.body === 'string' || ctx.response.body instanceof Buffer) &&
@@ -102,4 +101,4 @@ function checkFormat(ctx: Context) {
     }
   }
 
-}
+}*/

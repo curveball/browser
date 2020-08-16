@@ -1,24 +1,15 @@
-import { Context } from '@curveball/core';
 import { SureOptions } from '../types';
-import { getHalLinks, h } from '../util';
+import { h } from '../util';
 import resource from './resource';
+import { State } from 'ketting';
+import { Context } from '@curveball/core';
 
-export default async function embedded(ctx: Context, body: any, options: SureOptions): Promise<string> {
-
-  if (!body || !body._embedded) {
-    return '';
-  }
+export default async function embedded(ctx: Context, state: State, options: SureOptions): Promise<string> {
 
   let html = '<h2>Embedded</h2>';
-  for (const [rel, linkOrList] of Object.entries(body._embedded)) {
+  for (const embeddedState of state.getEmbedded()) {
 
-    if (Array.isArray(linkOrList)) {
-      for (const link of linkOrList) {
-        html += await renderEmbedded(ctx, rel, link, options);
-      }
-    } else {
-      html += await renderEmbedded(ctx, rel, linkOrList, options);
-    }
+    html += await renderEmbedded(ctx, embeddedState, options);
 
   }
 
@@ -26,15 +17,14 @@ export default async function embedded(ctx: Context, body: any, options: SureOpt
 
 }
 
-async function renderEmbedded(ctx: Context, rel: string, body: any, options: SureOptions): Promise<string> {
+async function renderEmbedded(ctx: Context, state: State, options: SureOptions): Promise<string> {
 
-  const selfLink = body._links.self.href;
-  const summary = rel + ': ' + selfLink;
+  const selfLink = state.links.get('self')!;
 
   return `
 <details>
-  <summary>${h(summary)}</summary>
-  ${await resource(ctx, body, getHalLinks(body, ctx.path), options)}
+  <summary>${h(selfLink.href)}</summary>
+  ${await resource(ctx, state, options)}
 </details>
 `;
 

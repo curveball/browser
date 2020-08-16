@@ -1,5 +1,4 @@
 import { Context } from '@curveball/core';
-import { Link } from 'ketting';
 import { SureOptions } from '../types';
 import csvBody from './csv-body';
 import embedded from './embedded';
@@ -8,44 +7,47 @@ import halBody from './hal-body';
 import linksTable from './links-table';
 import markdownBody from './markdown-body';
 import pager from './pager';
+import { State } from 'ketting';
 
 /**
  * This component renders an entire resource.
  */
-export default async function resource(ctx: Context, body: any, links: Link[], options: SureOptions) {
+export default async function resource(ctx: Context, state: State, options: SureOptions) {
 
-  const formsHtml = forms(ctx, links, options);
-  const linksHtml = linksTable(links, options);
+  const formsHtml = forms(ctx, state, options);
+  const linksHtml = linksTable(state, options);
 
   return `
 ${linksHtml}
 ${formsHtml}
-${await parseBody(ctx, body)}
-${await embedded(ctx, body, options)}
-${pager(links, options)}
+${await parseBody(ctx, state)}
+${await embedded(ctx, state, options)}
+${pager(state, options)}
 `;
 
 }
 
-async function parseBody(ctx: Context, body: any): Promise<string> {
+async function parseBody(ctx: Context, state: State): Promise<string> {
 
-  if (!body) {
+  if (!state.data) {
     // Ignore empty bodies
     return '';
   }
 
-  switch (ctx.response.type) {
+  const contentType = state.contentHeaders().get('Content-Type');
+
+  switch (contentType) {
 
     case 'application/json' :
     case 'application/problem+json' :
     case 'application/hal+json' :
-      return halBody(ctx, body);
+      return halBody(ctx,state);
 
     case 'text/markdown' :
-      return markdownBody(ctx, body);
+      return markdownBody(state);
 
     case 'text/csv' :
-      return csvBody(ctx, body);
+      return csvBody(state);
 
     default:
       return '';
