@@ -1,13 +1,13 @@
 import { Context } from '@curveball/core';
 import highlight from 'highlight.js';
 import httpLinkHeader from 'http-link-header';
+import { Link } from 'ketting';
 import url from 'url';
 import {
   NavigationLink,
   NavigationPosition,
   SureOptions,
 } from './types';
-import { Link } from 'ketting';
 
 
 export function h(input: string = ''): string {

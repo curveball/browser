@@ -1,4 +1,5 @@
 import { Context } from '@curveball/core';
+import { Link } from 'ketting';
 import { SureOptions } from '../types';
 import csvBody from './csv-body';
 import embedded from './embedded';
@@ -7,7 +8,6 @@ import halBody from './hal-body';
 import linksTable from './links-table';
 import markdownBody from './markdown-body';
 import pager from './pager';
-import { Link } from 'ketting';
 
 /**
  * This component renders an entire resource.

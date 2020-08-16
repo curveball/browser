@@ -1,7 +1,7 @@
+import { Link } from 'ketting';
 import url from 'url';
 import { SureOptions } from '../types';
 import { getNavLinks, h } from '../util';
-import { Link } from 'ketting';
 
 type Type = {
   [s: string]: {

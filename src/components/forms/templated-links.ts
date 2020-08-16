@@ -1,6 +1,6 @@
+import { Link } from 'ketting';
 import { SureOptions } from '../../types';
 import { h } from '../../util';
-import { Link } from 'ketting';
 
 type Field = {
   label: string,

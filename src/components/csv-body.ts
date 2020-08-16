@@ -12,7 +12,7 @@ export default async function csvBody(ctx: Context, body: any) {
     <table class="body-csv">
 `;
   // @ts-ignore
-  const data:string[][] = await parse(body);
+  const data: string[][] = await parse(body);
   let first = true;
 
   for (const row of data) {

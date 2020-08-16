@@ -1,6 +1,6 @@
+import { Link } from 'ketting';
 import { SureOptions } from '../types';
 import { h } from '../util';
-import { Link } from 'ketting';
 
 export default function linksTable(links: Link[], options: SureOptions): string {
 
