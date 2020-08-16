@@ -11,7 +11,7 @@ export default async function csvBody(ctx: Context, body: any) {
 `    <h2>Contents</h2>
     <table class="body-csv">
 `;
-  // @ts-ignore
+  // @ts-expect-error csv-parse types are broken AF.
   const data: string[][] = await parse(body);
   let first = true;
 

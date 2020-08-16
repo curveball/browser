@@ -33,6 +33,6 @@ clean:
 	rm -r dist
 
 dist/build: $(SOURCE_FILES)
-	tsc
+	node_modules/.bin/tsc
 	@# Creating a small file to keep track of the last build time
 	touch dist/build
