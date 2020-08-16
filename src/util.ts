@@ -1,6 +1,4 @@
-import { Context } from '@curveball/core';
 import highlight from 'highlight.js';
-import httpLinkHeader from 'http-link-header';
 import { Link } from 'ketting';
 import url from 'url';
 import {
@@ -8,7 +6,8 @@ import {
   NavigationPosition,
   SureOptions,
 } from './types';
-
+import { State, Client } from 'ketting';
+import { Context } from '@curveball/core';
 
 export function h(input: string = ''): string {
 
@@ -22,7 +21,6 @@ export function h(input: string = ''): string {
   return input.replace(/&<>"/g, s => map[s]);
 
 }
-
 
 /**
  * Returns the list of links for a section.
@@ -74,67 +72,36 @@ export function highlightJson(body: any): string {
 }
 
 /**
- * Grab all links from the body.
+ * We use Ketting for a lot of the parsing.
+ *
+ * The main object that contains a response in Ketting is a 'State' object,
+ * to get a State, we need a Response object, as it's part of the fetch()
+ * specification.
+ *
+ * So we go from ctx.response, to Response, to State.
  */
-export function fetchLinks(ctx: Context, options: SureOptions): Link[] {
+export async function contextToState(ctx: Context): Promise<State> {
 
-  const result: Link[] = Array.from(options.defaultLinks);
-
-  result.push(...getHalLinks(ctx.response.body, ctx.path));
-
-  const linkHeader = ctx.response.headers.get('Link');
-  if (linkHeader) {
-    const parsed = httpLinkHeader.parse(linkHeader);
-    for (const link of parsed.refs) {
-      result.push({
-        rel: link.rel,
-        href: link.uri,
-        context: ctx.path,
-        title: link.title,
-        type: link.type
-      });
-    }
-  }
-
-  return result;
-
-}
-
-export function getHalLinks(body: any, contextUri: string): Link[] {
-
-  if (!body || !body._links) {
-    return [];
-  }
-
-  const result: Link[] = [];
-  for (const rel of Object.keys(body._links)) {
-
-    let linksTmp;
-
-    if (Array.isArray(body._links[rel])) {
-      linksTmp = body._links[rel];
+  /**
+   * We need a fake bookmark url
+   */
+  const client = new Client('http://hal-browser.test');
+  const headers: Record<string, string> = {};
+  for(const [name, value] of Object.entries(ctx.response.headers.getAll())) {
+    if (typeof value === 'number') {
+      headers[name] = value.toString();
+    } else if (Array.isArray(value)) {
+      headers[name] = value.join(', ');
     } else {
-      linksTmp = [body._links[rel]];
+      headers[name] = value;
     }
-    for (const link of linksTmp) {
-
-      if (!link.href) {
-        // tslint:disable:no-console
-        console.warn('Incorrect format for HAL link with rel: ' + rel);
-      }
-      result.push({
-        rel: rel,
-        href: link.href,
-        context: contextUri,
-        type: link.type,
-        title: link.title,
-        templated: link.templated,
-        hints: link.hints
-      });
-
-    }
-
   }
 
-  return result;
+  const response = new Response(ctx.response.body, {
+    status: ctx.status,
+    headers,
+  });
+
+  return client.getStateForResponse(ctx.path, response);
+
 }

@@ -1,6 +1,6 @@
-import { Link } from 'ketting';
 import { SureOptions } from '../../types';
 import { h } from '../../util';
+import { State } from 'ketting';
 
 type Field = {
   label: string,
@@ -8,11 +8,11 @@ type Field = {
   name: string
 };
 
-export default function parseTemplatedLinks(links: Link[], options: SureOptions): string {
+export default function parseTemplatedLinks(state: State, options: SureOptions): string {
 
   let formHtml = '';
 
-  for (const link of links) {
+  for (const link of state.links.getAll()) {
 
     if (options.hiddenRels.includes(link.rel) || link.rel in options.navigationLinks) {
       continue;

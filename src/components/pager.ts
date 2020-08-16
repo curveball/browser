@@ -1,12 +1,12 @@
-import { Link } from 'ketting';
+import { State } from 'ketting';
 import { SureOptions } from '../types';
 import { getNavLinks, h } from '../util';
 
-export default function generatePager(links: Link[], options: SureOptions): string {
+export default function generatePager(state: State, options: SureOptions): string {
 
   const html: string[] = [];
 
-  for (const link of getNavLinks(links, options, 'pager')) {
+  for (const link of getNavLinks(state.links.getAll(), options, 'pager')) {
 
     html.push(
       `<a href="${ h(link.href) }" rel="${ h(link.rel) }" title="${ h(link.title) }">` +

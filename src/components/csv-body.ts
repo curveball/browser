@@ -1,18 +1,18 @@
-import { Context } from '@curveball/core';
 import csvParse from 'csv-parse';
 import { promisify } from 'util';
 import { h } from '../util';
+import { State } from 'ketting';
 
 const parse = promisify(csvParse);
 
-export default async function csvBody(ctx: Context, body: any) {
+export default async function csvBody(state: State) {
 
   let html =
 `    <h2>Contents</h2>
     <table class="body-csv">
 `;
   // @ts-expect-error csv-parse types are broken AF.
-  const data: string[][] = await parse(body);
+  const data: string[][] = await parse(state.data);
   let first = true;
 
   for (const row of data) {
