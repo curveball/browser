@@ -53,9 +53,8 @@ export default function renderAlternate(links: Link[], options: SureOptions): st
 
     let href = link.href;
     // If the url is relative, we're adding our secret argument to make the Accept header work.
-    if (href.match(/^\/[^\/]/) !== null) {
+    if (href.match(/^\/[^/]/) !== null && link.type) {
       const urlObj = url.parse(href, true);
-      // @ts-ignore. TS hates this line.
       urlObj.query['_browser-accept'] = link.type;
       delete urlObj.search;
       href = url.format(urlObj);
