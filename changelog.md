@@ -1,6 +1,14 @@
 Changelog
 =========
 
+0.9.0 (2020-08-16) (alpha tag)
+------------------------------
+
+* Using Ketting for all format parsing, which means it will be easier in the
+  future to add support for Siren, Collection+JSON, JSON:API and other formats.
+* Switch to ESlint.
+
+
 0.8.6 (2020-01-05)
 ------------------
 
