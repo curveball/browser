@@ -4,11 +4,10 @@ import { highlightJson } from '../util';
 
 export function HalBody(props: PageProps) {
 
-  const tmpBody = Object.assign({}, props.resourceState.data);
+  let tmpBody = Object.assign({}, props.resourceState.data);
 
-  if (!props.options.fullBody) {
-    delete tmpBody._links;
-    delete tmpBody._embedded;
+  if (props.options.fullBody) {
+    tmpBody = JSON.parse(props.resourceState.serializeBody() as string);
   }
 
   const html = {

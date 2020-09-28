@@ -13,7 +13,7 @@ export function Forms(props: PageProps) {
     }
   }
 
-  if (!forms) {
+  if (!forms.length) {
     return null;
   }
  

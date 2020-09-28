@@ -24,7 +24,7 @@ export function LinksTable(props: PageProps) {
   for (const group of Object.values(groups)) {
 
     const linkCount = group.length;
-    let first = true;
+    let index = 0;
 
     for (const link of group) {
 
@@ -39,13 +39,13 @@ export function LinksTable(props: PageProps) {
             break;
         }
       }
-      linkRows.push(<tr>
-        {first ? <td rowSpan={linkCount}>{link.rel}</td> : null}
+      linkRows.push(<tr key={'link-' + index}>
+        {index===0 ? <td rowSpan={linkCount}>{link.rel}</td> : null}
         {link.templated ? <td>{link.href}</td> : <td><a href={link.href}>{link.href}</a></td> }
         <td>{link.title}{linkBadges}</td>
       </tr>);
 
-      first = false;
+      index++;
 
     }
 

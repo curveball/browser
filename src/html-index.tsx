@@ -15,6 +15,7 @@ export default async function generateHtmlIndex(ctx: Context, options: Options) 
   }
   const state = await contextToState(ctx);
 
+  console.log(options);
   ctx.response.type = 'text/html; charset=utf-8';
   ctx.response.body = ReactDOMServer.renderToString(
     <App resourceState={state} options={options} />
