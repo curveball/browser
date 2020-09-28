@@ -1,7 +1,7 @@
 import { Middleware } from '@curveball/core';
 import generateHtmlIndex from './html-index';
 import serveAsset from './serve-asset';
-import { NavigationLinkMap, Options, SureOptions } from './types';
+import { NavigationLinkMap, Options } from './types';
 
 export const supportedContentTypes = [
   'application/json',
@@ -105,10 +105,12 @@ export { Options } from './types';
 
 export default function browser(options?: Options): Middleware {
 
-  const newOptions = normalizeOptions(options);
-
   return async (ctx, next) => {
 
+    const newOptions = normalizeOptions(options);
+    if (options?.fullBody === undefined && '_browser-fullbody' in ctx.query) {
+      newOptions.fullBody = true;
+    }
     if (newOptions.serveAssets && ctx.path.startsWith('/_hal-browser/assets/')) {
       return serveAsset(ctx);
     }
@@ -174,7 +176,7 @@ export default function browser(options?: Options): Middleware {
  * This makes the rest of the source simpler, and also saves time because it
  * only happens once.
  */
-function normalizeOptions(options?: Options): SureOptions {
+function normalizeOptions(options?: Partial<Options>): Options {
 
   if (typeof options === 'undefined') {
     options = {};
@@ -198,6 +200,7 @@ function normalizeOptions(options?: Options): SureOptions {
     ],
     assetBaseUrl: '/_hal-browser/assets/',
     serveAssets: true,
+    fullBody: false,
   };
 
   const tmpNavLinks = Object.assign(
@@ -223,6 +226,6 @@ function normalizeOptions(options?: Options): SureOptions {
     }
   }
 
-  return <SureOptions> Object.assign(defaults, options);
+  return Object.assign(defaults, options) as Options;
 
 }

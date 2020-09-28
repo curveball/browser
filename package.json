@@ -41,6 +41,7 @@
     "@types/markdown-it": "^10.0.2",
     "@types/mocha": "^8.0.3",
     "@types/node": "^10.17.35",
+    "@types/react": "^16.9.49",
     "@types/sinon": "^9.0.6",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
@@ -59,10 +60,13 @@
     ]
   },
   "dependencies": {
+    "@types/react-dom": "^16.9.8",
     "csv-parse": "^4.12.0",
     "highlight.js": "^10.2.0",
     "ketting": "^6.0.1",
-    "markdown-it": "^11.0.1"
+    "markdown-it": "^11.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "peerDependencies": {
     "@curveball/core": ">=0.9.1 <1"

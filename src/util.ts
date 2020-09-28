@@ -4,7 +4,7 @@ import url from 'url';
 import {
   NavigationLink,
   NavigationPosition,
-  SureOptions,
+  Options,
 } from './types';
 import { State, Client } from 'ketting';
 import { Context } from '@curveball/core';
@@ -27,7 +27,7 @@ export function h(input: string = ''): string {
  *
  * This function sorts and normalizes the link.
  */
-export function getNavLinks(links: Link[], options: SureOptions, position: NavigationPosition): Array<Link & NavigationLink> {
+export function getNavLinks(links: Link[], options: Options, position: NavigationPosition): Array<Link & NavigationLink> {
 
   const result = [];
   for (const link of links) {

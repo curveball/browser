@@ -1,6 +1,5 @@
-import { SureOptions } from '../../types';
-import { h } from '../../util';
-import { State } from 'ketting';
+import React from 'react';
+import { PageProps } from '../../types';
 
 type Field = {
   label: string,
@@ -8,13 +7,12 @@ type Field = {
   name: string
 };
 
-export default function parseTemplatedLinks(state: State, options: SureOptions): string {
+export function TemplatedLinks(props: PageProps) {
 
-  let formHtml = '';
+  const result = [];
+  for (const link of props.resourceState.links.getAll()) {
 
-  for (const link of state.links.getAll()) {
-
-    if (options.hiddenRels.includes(link.rel) || link.rel in options.navigationLinks) {
+    if (props.options.hiddenRels.includes(link.rel) || link.rel in props.options.navigationLinks) {
       continue;
     }
 
@@ -86,31 +84,22 @@ export default function parseTemplatedLinks(state: State, options: SureOptions):
     }
     const title = link.title || link.rel;
 
-    let html =
-`<form method="GET" action="${h(target)}" class="long-form">
-  <h3>${h(title)}</h3>
-`;
-    for (const field of hiddenFields) {
-      html += `<input type="hidden" name="${h(field.name)}" value="${h(field.value)}" />`;
-    }
+    result.push(<form method="GET" action={target} className="long-form">
+      <h3>{title}</h3>
 
-    for (const field of fields) {
-      html += `<label>${h(field.label)}</label><input type="text" name="${h(field.name)}" />`;
-    }
+      {hiddenFields.map( field => 
+        <input type="hidden" name={field.name} value={field.value} />
+        )};
+      {fields.map( field =>
+        <><label>{field.label}</label><input type="text" name={field.name} /></>
+      )}
+      <button type="submit">Submit</button>
+    </form>);
 
-    html += '<button type="submit">Submit</button>';
-    html += '</form>';
-
-    formHtml += html;
     (link as any).rendered = true;
 
   }
 
-  if (!formHtml) {
-    // No links
-    return '';
-  }
-
-  return formHtml;
+  return result;
 
 }

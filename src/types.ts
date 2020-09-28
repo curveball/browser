@@ -1,31 +1,55 @@
-import { Link } from 'ketting';
-
-/**
- * Options that may be passed to the middleware.
- */
-export type Options = {
-  title?: string
-  stylesheets?: string[],
-  navigationLinks?: NavigationLinkMap,
-  assetBaseUrl?: string,
-  serveAssets?: boolean,
-  defaultLinks?: Link[],
-  hiddenRels?: string[],
-};
+import { Link, State } from 'ketting';
 
 /**
  * Options after clean-up.
  *
  * Basically the same but nothing is optional.
  */
-export type SureOptions = {
+export type Options = {
+  /**
+   * Application title
+   */
   title: string,
-  stylesheets: string[]
+  
+  /**
+   * List of custom stylesheets to embed
+   */
+  stylesheets: string[],
+
+  /**
+   * List of links that should be lifted to navigation sections
+   */
   navigationLinks: SureNavigationLinkMap,
+
+  /**
+   * Where the base assets are located
+   */
   assetBaseUrl: string,
+
+  /**
+   * Should this plugin handle serving the assets.
+   *
+   * Disable if the assets are hosted elsewhere
+   */
   serveAssets: boolean,
+
+  /**
+   * List of hardcoded links that should show up on every page.
+   */
   defaultLinks: Link[],
+
+  /**
+   * List of uninteresting link relationships that should be hidden by default.
+   */
   hiddenRels: string[],
+
+  /**
+   * If turned on, full JSON bodies are always rendered.
+   * 
+   * This can also be turned on during runtime by adding a ?_browser-fullbody
+   * query parameter
+   */
+  fullBody: boolean,
 };
 
 /**
@@ -81,3 +105,8 @@ export type NavigationLink = {
   showLabel?: boolean
 
 };
+
+export type PageProps = {
+  resourceState: State,
+  options: Options,
+}
