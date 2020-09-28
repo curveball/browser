@@ -30,6 +30,8 @@ export default async function generateHtmlIndex(ctx: Context, options: SureOptio
   <head>
     <title>${headTitle}</title>
 ${stylesheets}
+    <meta charset="utf-8" />
+    <link rel="icon" href="${h(url.resolve(options.assetBaseUrl, 'curveball.svg'))}" />
   </head>
   <body>
     <header>
