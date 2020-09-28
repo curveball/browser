@@ -51,6 +51,6 @@ export function Search(props: Props) {
     <img src={url.resolve(props.options.assetBaseUrl, 'icon/search.svg')} alt="Search icon" />
     {hiddenFields}
     <input type="search" placeholder="Search" name={matches[2]} />
- </form>;
+  </form>;
 
 }

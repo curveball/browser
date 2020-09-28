@@ -25,8 +25,8 @@ function NavLinks({links}: {links: Array<Link & NavigationLink>}) {
     return <a href={link.href} rel={link.rel} title={link.title}>
       <img src={link.icon} />
       { link.showLabel ? ' ' + link.title : ''}
-      </a>
+    </a>;
   });
-  return <>{elems}</>
+  return <>{elems}</>;
 
 }

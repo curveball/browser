@@ -11,7 +11,7 @@ import { Resource } from './resource';
 export function App(props: PageProps) {
 
   const stylesheets = props.options.stylesheets.map( ss => {
-    return <link rel="stylesheet" href={url.resolve(props.options.assetBaseUrl, ss)} type="text/css" />
+    return <link rel="stylesheet" href={url.resolve(props.options.assetBaseUrl, ss)} type="text/css" />;
   });
 
   const resourceTitle = getResourceTitle(props.resourceState);

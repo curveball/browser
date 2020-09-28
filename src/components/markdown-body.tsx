@@ -18,7 +18,7 @@ export function MarkdownBody(props: PageProps) {
 
       }
     }).render(props.resourceState.data)
-  }
+  };
 
   return <section className="body-markdown" dangerouslySetInnerHTML={html} >
   </section>;

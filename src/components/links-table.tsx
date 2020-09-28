@@ -62,6 +62,6 @@ export function LinksTable(props: PageProps) {
       </tr>
       {linkRows}
     </table>
-  </>
+  </>;
 
 }

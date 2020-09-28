@@ -11,7 +11,7 @@ type HalFormProperty = {
   value?: string,
 };
 
-type HalForm = {
+type HalFormObj = {
   method: string,
   properties: HalFormProperty[],
   title?: string
@@ -23,7 +23,7 @@ export function HalForm(props: PageProps) {
   if (!body?._templates?.default) {
     return null;
   }
-  const form:HalForm = body._templates.default;
+  const form:HalFormObj = body._templates.default;
   const url = new URL(props.resourceState.uri);
   const searchParams = url.searchParams;
 
@@ -33,17 +33,17 @@ export function HalForm(props: PageProps) {
     <h3>{form.title}</h3>
 
     {form.properties.map( property =>
-    <>
-      <label>{property.prompt || property.name}</label>
-      <input
-        type="text"
-        name={property.name}
-        readOnly={property.readOnly}
-        pattern={property.regex}
-        required={property.required}
-        value={property.value}
-      />
-    </>)}
+      <>
+        <label>{property.prompt || property.name}</label>
+        <input
+          type="text"
+          name={property.name}
+          readOnly={property.readOnly}
+          pattern={property.regex}
+          required={property.required}
+          value={property.value}
+        />
+      </>)}
     <button type="submit">Submit</button>
   </form>;
 
