@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'ketting';
 import { PageProps } from '../types';
-import { h } from '../util';
 
 export function LinksTable(props: PageProps) {
 
@@ -41,7 +40,7 @@ export function LinksTable(props: PageProps) {
         }
       }
       linkRows.push(<tr>
-        {first ? <td rowSpan={linkCount}>${h(link.rel)}</td> : null}
+        {first ? <td rowSpan={linkCount}>{link.rel}</td> : null}
         {link.templated ? <td>{link.href}</td> : <td><a href={link.href}>{link.href}</a></td> }
         <td>{link.title}{linkBadges}</td>
       </tr>);

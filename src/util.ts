@@ -9,19 +9,6 @@ import {
 import { State, Client } from 'ketting';
 import { Context } from '@curveball/core';
 
-export function h(input: string = ''): string {
-
-  const map: { [s: string]: string } = {
-    '&' : '&amp;',
-    '<' : '&lt;',
-    '>' : '&gt;',
-    '"' : '&quot'
-  };
-
-  return input.replace(/&<>"/g, s => map[s]);
-
-}
-
 /**
  * Returns the list of links for a section.
  *
