@@ -1,7 +1,7 @@
-import { Link } from 'ketting';
+import React from 'react';
 import url from 'url';
-import { SureOptions } from '../types';
-import { getNavLinks, h } from '../util';
+import { PageProps } from '../types';
+import { getNavLinks } from '../util';
 
 type Type = {
   [s: string]: {
@@ -25,26 +25,28 @@ const types: Type = {
   },
 };
 
-export default function renderAlternate(links: Link[], options: SureOptions): string {
+export function Alternate(props: PageProps) {
 
-  let result = '';
-  let label = '';
-  const alternateHtml: string[] = [];
-  for (const link of getNavLinks(links, options, 'alternate')) {
+  const links = getNavLinks(props.resourceState.links.getAll(), props.options, 'alternate');
+  if (!links.length) {
+    return null;
+  }
 
-    let cssClass = null;
+  const alternateElems = links.map( link => {
+    let cssClass;
+    let label;
+
     if (link.type) {
       const subtype = link.type.split('/')[1];
 
       let typeInfo = types[subtype];
       if (typeInfo === undefined) {
         typeInfo = {
-          cssClass: 'type-' + h(subtype),
+          cssClass: 'type-' + subtype,
           label: subtype.toUpperCase(),
         };
       }
-      // Only using the last part of the mimetype.
-      cssClass = ' class="' + h(typeInfo.cssClass) + '"';
+      cssClass = typeInfo.cssClass;
 
       label = types[subtype] !== undefined ? types[subtype].label : subtype.toUpperCase();
     } else {
@@ -60,26 +62,15 @@ export default function renderAlternate(links: Link[], options: SureOptions): st
       href = url.format(urlObj);
     }
 
-    alternateHtml.push(
-      `<a href="${h(href)}" rel="${ h(link.rel) }" title="${ h(label) }"${cssClass}>${h(label)}</a>`
-    );
+    return <a href={href} rel={link.rel} title={label} className={cssClass}>{label}</a>;
 
-  }
+  });
 
-  if (alternateHtml.length) {
-
-    result =
-`    <div class="alternate">
-      <h3>${h('Other formats')}</h3>
-      <ul>
-        <li>${ alternateHtml.join('</li>\n      <li>')}</li>
-      </ul>
-     </div>
-`;
-
-  }
-
-  return result;
+  return <div className="alternate">
+    <h3>Other formats</h3>
+    <ul>
+      {alternateElems}
+    </ul>
+  </div>;
 
 }
-

@@ -4,30 +4,17 @@ import url from 'url';
 import {
   NavigationLink,
   NavigationPosition,
-  SureOptions,
+  Options,
 } from './types';
 import { State, Client } from 'ketting';
 import { Context } from '@curveball/core';
-
-export function h(input: string = ''): string {
-
-  const map: { [s: string]: string } = {
-    '&' : '&amp;',
-    '<' : '&lt;',
-    '>' : '&gt;',
-    '"' : '&quot'
-  };
-
-  return input.replace(/&<>"/g, s => map[s]);
-
-}
 
 /**
  * Returns the list of links for a section.
  *
  * This function sorts and normalizes the link.
  */
-export function getNavLinks(links: Link[], options: SureOptions, position: NavigationPosition): Array<Link & NavigationLink> {
+export function getNavLinks(links: Link[], options: Options, position: NavigationPosition): Array<Link & NavigationLink> {
 
   const result = [];
   for (const link of links) {
