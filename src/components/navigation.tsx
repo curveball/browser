@@ -19,13 +19,16 @@ export function Navigation(props: PageProps) {
 
 }
 
-function NavLinks({links}: {links: Array<Link & NavigationLink>}) {
+function NavLinks(props: {links: Array<Link & NavigationLink>}) {
 
-  const elems = links.map(link => {
-    return <a href={link.href} rel={link.rel} title={link.title}>
-      <img src={link.icon} />
-      { link.showLabel ? ' ' + link.title : ''}
-    </a>;
+  console.log(props);
+  const elems = props.links.map(link => {
+    return <li>
+      <a href={link.href} rel={link.rel} title={link.title} className="no-label">
+        <img src={link.icon} />
+        <span className="label">{link.title}</span>
+      </a>
+    </li>;
   });
   return <>{elems}</>;
 

@@ -10,9 +10,18 @@ export type Options = {
    * Application title
    */
   title: string,
-  
+ 
   /**
-   * List of custom stylesheets to embed
+   * Theme
+   *
+   * Possible options: spicy-oj, lfo, curveball
+   */
+  theme: 'spicy-oj' | 'lfo' | 'curveball',
+
+  /**
+   * List of custom stylesheets to embed.
+   *
+   * Note that setting this will cause 'theme' to be ignored.
    */
   stylesheets: string[],
 
