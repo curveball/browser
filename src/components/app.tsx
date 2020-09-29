@@ -19,18 +19,18 @@ export function App(props: PageProps) {
 
   return <html>
     <head>
-      <title>{resourceTitle} - {appTitle}</title>
+      <title>{resourceTitle + ' - ' + appTitle}</title>
       <meta charSet="utf-8" />
       {stylesheets}
-      <link rel="icon" href="${h(url.resolve(options.assetBaseUrl, 'curveball.svg'))}" />
+      <link rel="icon" href={url.resolve(props.options.assetBaseUrl, 'curveball.svg')} />
     </head>
     <body>
       <header>
-        <h1><a href="${h(href)}" rel="self">{resourceTitle}</a> - {appTitle}</h1>
+        <h1><span className="resource-title"><a href="${h(href)}" rel="self">{resourceTitle}</a></span> <span className="divider">-</span> <span className="app-title">{appTitle}</span></h1>
         <Search {...props} />
       </header>
 
-      <nav>
+      <nav className="top-nav">
         <Navigation {...props} />
         <Alternate {...props} />
       </nav>

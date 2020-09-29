@@ -103,7 +103,7 @@ const defaultNavigationLinks: NavigationLinkMap = {
 
 export { Options } from './types';
 
-export default function browser(options?: Options): Middleware {
+export default function browser(options?: Partial<Options>): Middleware {
 
   return async (ctx, next) => {
 
@@ -184,14 +184,16 @@ function normalizeOptions(options?: Partial<Options>): Options {
 
   const defaults = {
     title: 'HAL Browser',
+    theme: 'curveball',
     stylesheets: [
-      'themes/lfo/main.css',
-      'themes/lfo/highlight.css'
+      `themes/${options.theme||'curveball'}/main.css`,
+      `themes/${options.theme||'curveball'}/highlight.css`
     ],
     defaultLinks: [
       {
         href: '/',
-        rel: 'home'
+        rel: 'home',
+        title: 'Home',
       }
     ],
     hiddenRels: [
