@@ -89,7 +89,7 @@ export function TemplatedLinks(props: PageProps) {
 
       {hiddenFields.map( field => 
         <input type="hidden" name={field.name} value={field.value} />
-      )};
+      )}
       {fields.map( field =>
         <><label>{field.label}</label><input type="text" name={field.name} /></>
       )}
