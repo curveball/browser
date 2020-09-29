@@ -1,9 +1,10 @@
 Changelog
 =========
 
-0.9.1 (2020-??-??)
-------------------
+0.9.1 (2020-09-28) (alpha tag)
+------------------------------
 
+* New default theme: 'curveball'.
 * All HTML rendering is now handled with React server-side rendering.
 * Added a favicon.
 
