@@ -183,7 +183,7 @@ function normalizeOptions(options?: Partial<Options>): Options {
   }
 
   const defaults = {
-    title: 'HAL Browser',
+    title: 'API Browser',
     theme: 'curveball',
     stylesheets: [
       `themes/${options.theme||'curveball'}/main.css`,
