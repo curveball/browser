@@ -1,15 +1,16 @@
-HAL browser
-===========
+Curveball Browser
+=================
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/evert/hal-browser.svg)](https://greenkeeper.io/)
+This package provides a middleware that automatically turns JSON responses
+from an API into HTML responses.
 
-This package provides a middleware for HAL APIs.
+It will do so by looking if the API was accessed by a HTTP client that prefers
+HTML. Browsers do this by sending an `Accept: text/html` header.
 
-The middleware looks for HAL and JSON responses, and automatically converts
-them into a HTML interface if a browser access them.
+If this middleware spots this, it will kick in and auto-generate a great looing
+HTML document.
 
-It does so via the `Accept: text/html` header. If this header is not provided,
-the middleware does nothing.
+If this header was not provides, this middleware does nothing.
 
 It automatically decorates the following formats:
 
@@ -17,7 +18,8 @@ It automatically decorates the following formats:
 * `application/problem+json`
 * `application/hal+json`
 * `text/markdown`
-
+* `text/csv`
+* `application/prs.hal-forms+json`
 
 Screenshot
 ----------
@@ -87,12 +89,12 @@ An example. If a API normally returns the following HAL format:
 
 The browser will automatically convert it to this HTML format:
 
-![Screenshot from 0.7.0](https://github.com/evert/hal-browser/blob/master/screenshots/0.7.0.png)
+![Screenshot from 0.9.1](https://github.com/evert/hal-browser/blob/master/screenshots/0.9.1.png)
 
 This screenshot is an example of the browser automatically formatting a .csv
 and parsing HTTP `Link` headers:
 
-![Screenshot from 0.7.0](https://github.com/evert/hal-browser/blob/master/screenshots/0.7.0-csv.png)
+![Screenshot from 0.9.1](https://github.com/evert/hal-browser/blob/master/screenshots/0.9.1-csv.png)
 
 The following example converts this:
 
@@ -117,7 +119,7 @@ The following example converts this:
 
 And automatically turns the templated link into a form:
 
-![Screenshot from 0.7.0](https://github.com/evert/hal-browser/blob/master/screenshots/0.7.0-form.png)
+![Screenshot from 0.9.1](https://github.com/evert/hal-browser/blob/master/screenshots/0.9.1-form.png)
 
 
 Supported frameworks

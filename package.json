@@ -1,7 +1,7 @@
 {
-  "name": "hal-browser",
+  "name": "@curveball/browser",
   "version": "0.9.1",
-  "description": "A HAL browser middleware",
+  "description": "Automatic API browser generator. A middleware that turns your JSON responses into HTML if accessed by a browser.",
   "main": "dist/index.js",
   "scripts": {
     "prepublishOnly": "make build",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/evert/hal-browser"
+    "url": "git+https://github.com/evert/browser"
   },
   "files": [
     "README.md",
@@ -31,9 +31,9 @@
   "author": "Evert Pot (https://evertpot.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/evert/hal-browser"
+    "url": "https://github.com/evert/browser"
   },
-  "homepage": "https://github.com/evert/hal-browser#readme",
+  "homepage": "https://github.com/evert/browser#readme",
   "devDependencies": {
     "@curveball/core": "^0.14.2",
     "@types/chai": "^4.2.12",
@@ -51,7 +51,8 @@
     "nyc": "^15.1.0",
     "sinon": "^9.0.3",
     "ts-node": "^9.0.0",
-    "typescript": "^4.0.3"
+    "typescript": "^4.0.3",
+    "@types/react-dom": "^16.9.8"
   },
   "types": "dist/",
   "nyc": {
@@ -60,7 +61,6 @@
     ]
   },
   "dependencies": {
-    "@types/react-dom": "^16.9.8",
     "csv-parse": "^4.12.0",
     "highlight.js": "^10.2.0",
     "ketting": "^6.0.2",
