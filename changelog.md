@@ -1,6 +1,14 @@
 Changelog
 =========
 
+0.9.2 (2020-09-30)
+------------------
+
+* This package is renamed from `hal-browser` to `@curveball/browser`.
+* Lots of visual design tweaks
+* Fixed link header area.
+
+
 0.9.1 (2020-09-28) (alpha tag)
 ------------------------------
 

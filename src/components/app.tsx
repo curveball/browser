@@ -27,7 +27,7 @@ export function App(props: PageProps) {
     </head>
     <body>
       <header>
-        <h1><span className="resource-title"><a href="${h(href)}" rel="self">{resourceTitle}</a></span> <span className="divider">-</span> <span className="app-title">{appTitle}</span></h1>
+        <h1><span className="resource-title"><a href={props.resourceState.uri} rel="self">{resourceTitle}</a></span> <span className="divider">-</span> <span className="app-title">{appTitle}</span></h1>
         <Search {...props} />
       </header>
 
