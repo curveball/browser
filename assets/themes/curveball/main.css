@@ -156,11 +156,7 @@ nav li a img {
 nav .alternate {
   display: flex;
   align-items: center;
-  padding-left: 30px;
-}
-
-nav .alternate a {
-  min-width: 1px;
+  padding-left: 30px
 }
 
 nav .alternate h3 {
@@ -169,6 +165,8 @@ nav .alternate h3 {
   font-size: 16px;
 }
 nav .alternate a {
+  min-width: 1px;
+  margin-left: 3px;
   font-size: 90%;
   background: #555;
   display: inline-block;
