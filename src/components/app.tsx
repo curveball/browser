@@ -11,7 +11,8 @@ import { Resource } from './resource';
 export function App(props: PageProps) {
 
   const stylesheets = props.options.stylesheets.map( ss => {
-    return <link rel="stylesheet" href={url.resolve(props.options.assetBaseUrl, ss)} type="text/css" />;
+    const u = url.resolve(props.options.assetBaseUrl, ss);
+    return <link rel="stylesheet" href={u} type="text/css" key={u} />;
   });
 
   const resourceTitle = getResourceTitle(props.resourceState);
@@ -22,7 +23,7 @@ export function App(props: PageProps) {
       <title>{resourceTitle + ' - ' + appTitle}</title>
       <meta charSet="utf-8" />
       {stylesheets}
-      <link rel="icon" href={url.resolve(props.options.assetBaseUrl, 'curveball.svg')} />
+      <link rel="icon" href={url.resolve(props.options.assetBaseUrl, 'curveball.svg')} key="icon" />
     </head>
     <body>
       <header>

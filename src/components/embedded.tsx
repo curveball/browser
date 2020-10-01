@@ -19,7 +19,7 @@ function Embed(props: PageProps) {
   const selfLink = props.resourceState.links.get('self')!;
 
   return <details>
-    <summary>{selfLink}</summary>
+    <summary>{selfLink.href}</summary>
     <Resource {...props} />
   </details>;
 
