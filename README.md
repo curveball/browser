@@ -122,41 +122,23 @@ And automatically turns the templated link into a form:
 ![Screenshot from 0.9.1](https://github.com/evert/hal-browser/blob/master/screenshots/0.9.1-form.png)
 
 
-Supported frameworks
---------------------
-
-* [Curveball][1] - *DONE*
-* [Express][2] - *DONE*
-* [Koa][3] - TODO
-
 Installation
 ------------
 
-    npm install hal-browser
+    npm install @curveball/browser
 
 
 Getting started
 ---------------
 
-### Curveball
-
 ```typescript
 import { Application } from 'curveball/@core';
-import halBrowser from 'hal-browser';
+import browser from '@curveball/browser';
 
 const app = new Application();
-app.use(halBrowser({});
+app.use(browser({});
 ```
 
-### Express
-
-Express support is handled via a special express middleware. Check out the
-[hal-browser-express][5] package.
-
-
-### Koa
-
-TODO
 
 ### Options
 
@@ -164,6 +146,7 @@ The halBrowser function takes an options object, which can take the following
 settings:
 
 * `title` - Change the main title.
+* `theme` - `curveball` by default, but `lfo` and `spicy-oj` are also provided.
 * `stylesheets` - Provide your own stylesheets. This is an array of strings.
   these are relative urls, and they are automatically expanded based on the
   `assetBaseUrl` setting.
@@ -181,7 +164,7 @@ settings:
 Example:
 
 ```javascript
-app.use(halBrowser({
+app.use(browser({
   title: 'My API',
   stylesheets: [
     '/my-stylesheet.css',
