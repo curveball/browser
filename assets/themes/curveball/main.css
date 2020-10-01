@@ -187,7 +187,7 @@ main {
 }
 
 main h2 {
-  padding: 20px 0 25px;
+  padding: 20px 0 15px;
 }
 
 
@@ -266,7 +266,7 @@ details {
 
 details summary {
   padding: 15px;
-  font-size: 120%;
+  font-size: 16px;
 }
 
 form.long-form h3 {
@@ -274,11 +274,11 @@ form.long-form h3 {
 }
 
 form.long-form {
-  padding: 15px;
+  padding: 0 0 15px;
   display: grid;
   grid-template-columns: max-content max-content max-content;
   grid-gap: 20px;
-  font-size: 18px;
+  font-size: 16px;
   max-width: 600px;
   padding: 20px 0;
   margin: 0;
