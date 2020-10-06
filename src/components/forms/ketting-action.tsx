@@ -66,8 +66,8 @@ export function ActionField(props: FieldProps): React.ReactElement {
         readOnly={field.readOnly}
       />;
       break;
-    case 'radio' :
-      let options = [];
+    case 'radio' : {
+      const options = [];
       for(const [key, value] of field.options!.entries()) {
         options.push(
           <>
@@ -80,10 +80,11 @@ export function ActionField(props: FieldProps): React.ReactElement {
         {options}
       </>;
       break;
+    }
     case 'text' :
       if (field.options) {
 
-        let options = [];
+        const options = [];
         for(const [key, value] of field.options.entries()) {
           options.push(<option value={key}>{value}</option>);
         }
