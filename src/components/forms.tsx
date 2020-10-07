@@ -2,6 +2,7 @@ import React from 'react';
 import { PageProps } from '../types';
 import { HalForm } from './forms/hal-forms';
 import { TemplatedLinks } from './forms/templated-links';
+import { ActionForm } from './forms/ketting-action';
 
 export function Forms(props: PageProps) {
 
@@ -12,6 +13,10 @@ export function Forms(props: PageProps) {
       forms.push(hf);
     }
   }
+
+  const actions = props.resourceState.actions()
+    .map( action => <ActionForm action={action} />);
+  forms.push(...actions);
 
   if (!forms.length) {
     return null;
