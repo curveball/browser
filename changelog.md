@@ -1,6 +1,15 @@
 Changelog
 =========
 
+0.10.0 (2020-10-08)
+-------------------
+
+* The browser plugin will now render Siren and HAL-FORMS forms for you.
+  This will only work great if you use methods and content-types browsers
+  natively support, but support for JSON and other methods are planned.
+* Fix a React warning.
+
+
 0.9.2 (2020-09-30)
 ------------------
 
