@@ -9,7 +9,6 @@ import { contextToState } from './util';
 export default async function generateHtmlIndex(ctx: Context, options: Options) {
 
   normalizeBody(ctx);
-  console.log(ctx.response.body);
   if (!ctx.response.body) {
     return;
   }
