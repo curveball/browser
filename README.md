@@ -20,6 +20,7 @@ It automatically decorates the following formats:
 * `text/markdown`
 * `text/csv`
 * `application/prs.hal-forms+json`
+* `application/vnd.siren+json`
 
 Screenshot
 ----------
