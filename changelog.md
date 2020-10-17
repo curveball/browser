@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.10.2 (2020-10-17)
+-------------------
+
+* Now parsing and formatting Siren resources!
+* Fixed some layout issues related to forms.
+
+
 0.10.1 (2020-10-08)
 -------------------
 
