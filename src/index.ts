@@ -9,7 +9,8 @@ export const supportedContentTypes = [
   'application/problem+json',
   'text/markdown',
   'text/csv',
-  'application/prs.hal-forms+json'
+  'application/prs.hal-forms+json',
+  'application/vnd.siren+json',
 ];
 
 /*

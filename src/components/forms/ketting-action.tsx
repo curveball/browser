@@ -11,8 +11,8 @@ type FieldProps = {
 export function ActionForm(props: FormProps) {
 
   const action = props.action;
-  return <form action={action.uri} method={action.method} encType={action.contentType} id={action.name!}>
-    <h1>{action.title || action.name || 'form'}</h1>
+  return <form action={action.uri} method={action.method} encType={action.contentType} id={action.name!} className="long-form">
+    <h3>{action.title || action.name || 'form'}</h3>
 
     {action.fields.map( field => <ActionField field={field} />) }
 
