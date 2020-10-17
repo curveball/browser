@@ -18,6 +18,7 @@ export function Body(props: PageProps) {
     case 'application/json' :
     case 'application/problem+json' :
     case 'application/hal+json' :
+    case 'application/vnd.siren+json' :
       return <HalBody {...props} />;
 
     case 'text/markdown' :
