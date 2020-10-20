@@ -56,7 +56,7 @@ function getResourceTitle(state: State): string {
     title = selfLink.title;
     href = selfLink.href;
   } else {
-    href = state.uri;
+    href = new URL(state.uri).pathname;
   }
 
   const body = state.data;
