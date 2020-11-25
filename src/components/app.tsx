@@ -56,7 +56,9 @@ function getResourceTitle(state: State): string {
     title = selfLink.title;
     href = selfLink.href;
   } else {
-    href = new URL(state.uri).pathname;
+    // We're passing in localhost because passing in *something*
+    // is required, and we're only interested in the pathname anyway.
+    href = new URL(state.uri, 'http://localhost/').pathname;
   }
 
   const body = state.data;
