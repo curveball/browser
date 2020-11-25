@@ -28,7 +28,7 @@ export function LinksTable(props: PageProps) {
 
     for (const link of group) {
 
-      let linkBadges = [];
+      const linkBadges = [];
       if (link.hints?.allow) {
         for(const method of link.hints.allow) {
           linkBadges.push(<span key={method} className={`link-badge method-${method.toLowerCase()}`}>{method.toUpperCase()}</span>);
