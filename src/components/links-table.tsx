@@ -28,14 +28,19 @@ export function LinksTable(props: PageProps) {
 
     for (const link of group) {
 
-      let linkBadges = null;
-      if (link.hints && link.hints.status) {
+      let linkBadges = [];
+      if (link.hints?.allow) {
+        for(const method of link.hints.allow) {
+          linkBadges.push(<span key={method} className={`link-badge method-${method.toLowerCase()}`}>{method.toUpperCase()}</span>);
+        }
+      }
+      if (link.hints?.status) {
         switch (link.hints.status) {
           case 'deprecated' :
-            linkBadges = <span className="link-badge status-deprecated">Deprecated</span>;
+            linkBadges.push(<span key="deprecated" className="link-badge status-deprecated">Deprecated</span>);
             break;
           case 'gone' :
-            linkBadges = <span className="link-badge status-gone">Gone</span>;
+            linkBadges.push(<span key="gone" className="link-badge status-gone">Gone</span>);
             break;
         }
       }

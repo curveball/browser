@@ -8,7 +8,7 @@ body, td, input, th {
 }
 
 pre {
-  font-family: 'JetBrains Mono', 'Fira Code', 'Inconsolata', 'Ubuntu Mono', monospace; 
+  font-family: 'JetBrains Mono', 'Fira Code', 'Inconsolata', 'Ubuntu Mono', monospace;
 }
 
 p, td, th, li {
@@ -195,14 +195,18 @@ main h2 {
   border-radius: 3px;
   padding: 2px 4px;
   font-weight: bold;
+  margin-left: 3px;
 }
 
-.link-badge.status-deprecated {
-  background: red;
-}
-.link-badge.status-gone {
-  background: red;
-}
+.status-deprecated { background: #d93b3b; }
+.status-gone      { background: #d93b3b; }
+
+.method-post   { background: #2365a8; }
+.method-get    { background: #5c945f; }
+.method-put    { background: #469e98; }
+.method-delete { background: #d93b3b; }
+.method-patch  { background: #7a36ad; }
+.method-search { background: #9c1497; }
 
 main code {
   border-radius: 2px;
