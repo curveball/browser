@@ -85,13 +85,13 @@ export function TemplatedLinks(props: PageProps) {
     const title = link.title || link.rel;
 
     result.push(<form method="GET" action={target} className="long-form">
-      <h3>{title}</h3>
+      <h3 key="h3">{title}</h3>
 
       {hiddenFields.map( field => 
-        <input type="hidden" name={field.name} value={field.value} />
+        <input type="hidden" name={field.name} value={field.value} key={field.name + '-' + field.value}/>
       )}
       {fields.map( field =>
-        <><label>{field.label}</label><input type="text" name={field.name} /></>
+        <React.Fragment key={field.label + '-' + field.name}><label>{field.label}</label><input type="text" name={field.name} /></React.Fragment>
       )}
       <button type="submit">Submit</button>
     </form>);

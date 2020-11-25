@@ -23,8 +23,8 @@ export function Forms(props: PageProps) {
   }
  
   return <>
-    <h2>Forms</h2>
-    {forms}
+    <h2 key="-1">Forms</h2>
+    {forms.map( (form, index) => <span key={index}>{form}</span>)}
   </>;
 
 }
