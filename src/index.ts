@@ -1,7 +1,7 @@
-import { Middleware } from '@curveball/core';
+import { Middleware, invokeMiddlewares } from '@curveball/core';
 import generateHtmlIndex from './html-index';
-import serveAsset from './serve-asset';
 import { NavigationLinkMap, Options } from './types';
+import staticMw from '@curveball/static';
 
 export const supportedContentTypes = [
   'application/json',
@@ -106,14 +106,19 @@ export { Options } from './types';
 
 export default function browser(options?: Partial<Options>): Middleware {
 
+  const stat = staticMw({
+    staticDir: __dirname + '/../assets',
+    pathPrefix: '/_hal-browser/assets',
+  });
+
   return async (ctx, next) => {
 
     const newOptions = normalizeOptions(options);
     if (options?.fullBody === undefined && '_browser-fullbody' in ctx.query) {
       newOptions.fullBody = true;
     }
-    if (newOptions.serveAssets && ctx.path.startsWith('/_hal-browser/assets/')) {
-      return serveAsset(ctx);
+    if (newOptions.serveAssets && ctx.path.startsWith('/_hal-browser/')) {
+      return invokeMiddlewares(ctx, [stat]); 
     }
 
     // Check to see if the client even wants html.
@@ -168,7 +173,6 @@ export default function browser(options?: Partial<Options>): Middleware {
   };
 
 }
-
 
 /**
  * This function does a whole bunch of cleanup of the options object, so
