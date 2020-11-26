@@ -87,7 +87,7 @@ export function TemplatedLinks(props: PageProps) {
     result.push(<form method="GET" action={target} className="long-form">
       <h3 key="h3">{title}</h3>
 
-      {hiddenFields.map( field => 
+      {hiddenFields.map( field =>
         <input type="hidden" name={field.name} value={field.value} key={field.name + '-' + field.value}/>
       )}
       {fields.map( field =>

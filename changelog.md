@@ -1,6 +1,18 @@
 Changelog
 =========
 
+0.10.3 (2020-11-26)
+-------------------
+
+* The browser will now show colored labels for common HTTP methods if they
+  appear as 'link hints'.
+* If no title is given, browser uses the path as the title. The browser no
+  removes the query parameters, as it gets unwieldy.
+* Use `@curveball/static` for serving static assets, which should give better
+  performance.
+* Fixing a few more React key warnings.
+
+
 0.10.2 (2020-10-17)
 -------------------
 
