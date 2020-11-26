@@ -10,7 +10,7 @@ export type Options = {
    * Application title
    */
   title: string,
- 
+
   /**
    * Theme
    *
@@ -54,7 +54,7 @@ export type Options = {
 
   /**
    * If turned on, full JSON bodies are always rendered.
-   * 
+   *
    * This can also be turned on during runtime by adding a ?_browser-fullbody
    * query parameter
    */

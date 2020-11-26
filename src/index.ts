@@ -118,7 +118,7 @@ export default function browser(options?: Partial<Options>): Middleware {
       newOptions.fullBody = true;
     }
     if (newOptions.serveAssets && ctx.path.startsWith('/_hal-browser/')) {
-      return invokeMiddlewares(ctx, [stat]); 
+      return invokeMiddlewares(ctx, [stat]);
     }
 
     // Check to see if the client even wants html.

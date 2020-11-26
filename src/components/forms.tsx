@@ -21,7 +21,7 @@ export function Forms(props: PageProps) {
   if (!forms.length) {
     return null;
   }
- 
+
   return <>
     <h2 key="-1">Forms</h2>
     {forms.map( (form, index) => <span key={index}>{form}</span>)}
