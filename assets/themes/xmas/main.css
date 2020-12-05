@@ -1,0 +1,22 @@
+@import url(../curveball/main.css);
+
+header {
+  background-color: #004400;
+}
+
+nav {
+ background: repeating-linear-gradient(
+  45deg,
+  #440000,
+  #660000 10px,
+  #440000 10px,
+  #660000 20px
+); color: white;
+}
+
+nav li a {
+  color: white;
+}
+nav li a img {
+  filter: invert(1)
+}

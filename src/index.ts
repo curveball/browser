@@ -188,12 +188,15 @@ function normalizeOptions(options?: Partial<Options>): Options {
     options = {};
   }
 
+  const d = new Date();
+  const defaultTheme = d.getMonth()===11 && d.getDate() > 14 ? 'xmas' : 'curveball';
+
   const defaults = {
     title: 'API Browser',
-    theme: 'curveball',
+    theme: defaultTheme,
     stylesheets: [
-      `themes/${options.theme||'curveball'}/main.css`,
-      `themes/${options.theme||'curveball'}/highlight.css`
+      `themes/${options.theme||defaultTheme}/main.css`,
+      `themes/${options.theme||defaultTheme}/highlight.css`
     ],
     defaultLinks: [
       {
