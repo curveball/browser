@@ -107,7 +107,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
       break;
     default:
       ((x: never) => {
-        throw new Error(`${(field as any).type} was unhandled!`);
+        throw new Error(`${(x as any).type} was unhandled!`);
       })(field);
 
   }
