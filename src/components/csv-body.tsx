@@ -1,5 +1,5 @@
-import React from 'react';
-import csvParse from 'csv-parse/lib/sync';
+import * as React from 'react';
+import * as csvParse from 'csv-parse/lib/sync';
 import { PageProps } from '../types';
 
 export function CsvBody(props: PageProps) {

@@ -1,5 +1,5 @@
-import React from 'react';
-import url from 'url';
+import * as React from 'react';
+import * as url from 'url';
 import { PageProps } from '../types';
 import { getNavLinks } from '../util';
 
@@ -58,7 +58,7 @@ export function Alternate(props: PageProps) {
     if (href.match(/^\/[^/]/) !== null && link.type) {
       const urlObj = url.parse(href, true);
       urlObj.query['_browser-accept'] = link.type;
-      delete urlObj.search;
+      urlObj.search = null;
       href = url.format(urlObj);
     }
 

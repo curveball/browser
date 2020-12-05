@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Link } from 'ketting';
 import { NavigationLink, PageProps } from '../types';
 import { getNavLinks } from '../util';

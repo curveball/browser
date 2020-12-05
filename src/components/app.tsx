@@ -1,6 +1,6 @@
 import { State } from 'ketting';
-import React from 'react';
-import url from 'url';
+import * as React from 'react';
+import * as url from 'url';
 import { PageProps } from '../types';
 
 import { Search } from './search';

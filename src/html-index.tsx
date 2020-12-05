@@ -1,7 +1,7 @@
 import { Context } from '@curveball/core';
 import { Options } from './types';
-import ReactDOMServer from 'react-dom/server';
-import React from 'react';
+import * as ReactDOMServer from 'react-dom/server';
+import * as React from 'react';
 
 import { App } from './components/app';
 import { contextToState } from './util';

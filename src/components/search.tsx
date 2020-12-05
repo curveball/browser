@@ -1,7 +1,7 @@
 import { State } from 'ketting';
-import querystring from 'querystring';
-import url from 'url';
-import React from 'react';
+import * as querystring from 'querystring';
+import * as url from 'url';
+import * as React from 'react';
 import { Options } from '../types';
 
 type Props = {

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { PageProps } from '../types';
 import { HalForm } from './forms/hal-forms';
 import { TemplatedLinks } from './forms/templated-links';

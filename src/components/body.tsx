@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { PageProps } from '../types';
 import { MarkdownBody } from './markdown-body';
 import { CsvBody } from './csv-body';

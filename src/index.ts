@@ -109,6 +109,7 @@ export default function browser(options?: Partial<Options>): Middleware {
   const stat = staticMw({
     staticDir: __dirname + '/../assets',
     pathPrefix: '/_hal-browser/assets',
+    maxAge: 3600,
   });
 
   return async (ctx, next) => {

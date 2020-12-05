@@ -1,6 +1,6 @@
-import highlight from 'highlight.js';
+import * as highlight from 'highlight.js';
 import { Link } from 'ketting';
-import url from 'url';
+import * as url from 'url';
 import {
   NavigationLink,
   NavigationPosition,
