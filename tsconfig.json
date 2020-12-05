@@ -21,7 +21,7 @@
           "ES2019"
         ],
         "declaration": true,
-        "eslint": "react"
+        "jsx": "react"
     },
     "include": [
         "src/**/*"
