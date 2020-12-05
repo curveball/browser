@@ -1,6 +1,14 @@
 Changelog
 =========
 
+0.10.4 (2020-12-05)
+-------------------
+
+* Add christmas tree. If not theme is specified, it will automatically enable
+ the last 2 weeks of the year.
+* Cache assets for 1 hour.
+
+
 0.10.3 (2020-11-26)
 -------------------
 
