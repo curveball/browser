@@ -106,17 +106,17 @@ export function ActionField(props: FieldProps): React.ReactElement {
       }
       break;
     case 'textarea' :
-        input = <textarea
-          name={field.name}
-          placeholder={field.placeholder}
-          value={field.value}
-          minLength={field.minLength}
-          maxLength={field.maxLength}
-          required={field.required}
-          readOnly={field.readOnly}
-          cols={field.cols}
-          rows={field.rows}
-        />;
+      input = <textarea
+        name={field.name}
+        placeholder={field.placeholder}
+        value={field.value}
+        minLength={field.minLength}
+        maxLength={field.maxLength}
+        required={field.required}
+        readOnly={field.readOnly}
+        cols={field.cols}
+        rows={field.rows}
+      />;
       break;
     default:
       ((x: never) => {
