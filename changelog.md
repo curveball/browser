@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.11.0-beta.0 (2021-01-20)
+--------------------------
+
+* Upgrade to Ketting 7 beta, which has a lot of HAL Forms improvements and
+  adds a `<textarea>` feature.
+
+
 0.10.4 (2020-12-05)
 -------------------
 
