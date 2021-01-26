@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.11.0-beta.1 (2021-01-25)
+--------------------------
+
+* Update to latest Ketting 7, which fixes a bug related to rendering
+  forms.
+
+
 0.11.0-beta.0 (2021-01-20)
 --------------------------
 
