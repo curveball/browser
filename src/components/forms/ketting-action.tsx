@@ -14,7 +14,7 @@ export function ActionForm(props: FormProps) {
   return <form action={action.uri} method={action.method} encType={action.contentType} id={action.name!} className="long-form">
     <h3>{action.title || action.name || 'form'}</h3>
 
-    {action.fields.map( field => <ActionField field={field} />) }
+    {action.fields.map( field => <ActionField field={field} key={field.name} />) }
 
     <button type="submit">Submit</button>
   </form>;
@@ -29,6 +29,17 @@ export function ActionField(props: FieldProps): React.ReactElement {
   switch(field.type) {
 
     case 'checkbox' :
+      input =
+        <div className="checkboxes">
+          <input
+            type="checkbox"
+            name={field.name}
+            value={field.value?.toString()}
+            defaultChecked={field.value}
+            readOnly={field.readOnly} />
+          <label htmlFor={field.name}>{field.label || field.name}</label>
+        </div>;
+      break;
     case 'color' :
     case 'date' :
     case 'datetime' :
@@ -72,7 +83,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
         options.push(
           <>
             <label htmlFor={field.name + ' ' + key}>{value}</label>
-            <input type="radio" name={field.name} value={key} checked={key===field.value} />
+            <input type="radio" name={field.name} value={key} defaultChecked={key===field.value} />
           </>
         );
       }
@@ -126,7 +137,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
   }
 
   // These elements render their own labels (or don't require them)
-  if (['hidden', 'radio'].includes(input.type)) {
+  if (['hidden', 'radio', 'checkbox'].includes(field.type)) {
     return input;
   }
 
