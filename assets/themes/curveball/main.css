@@ -286,6 +286,10 @@ form.long-form {
   border-radius: 2px;
 }
 
+form.long-form .checkboxes {
+  grid-column: 2 / 3;
+}
+
 form.long-form label {
   grid-column: 1;
   text-align: right;

@@ -1,6 +1,15 @@
 Changelog
 =========
 
+0.11.0-beta.2 (2021-01-26)
+--------------------------
+
+* Correctly render Siren 'title' fields.
+* Better rendering of checkboxes and radio in forms
+* Actually hiding 'hidden' fields.
+* Removed 3 react warnings.
+
+
 0.11.0-beta.1 (2021-01-25)
 --------------------------
 
