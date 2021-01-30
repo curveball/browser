@@ -16,7 +16,8 @@
     "README.md",
     "dist",
     "LICENSE",
-    "assets"
+    "assets",
+    "src",
   ],
   "keywords": [
     "hal",

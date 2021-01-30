@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.11.2 (2021-01-30)
+--------------------
+
+* Include `src/` in NPN package, for better debugging.
+
+
 0.11.1 (2021-01-30)
 -------------------
 
