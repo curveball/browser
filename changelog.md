@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.11.0 (2021-01-30)
+-------------------
+
+* This middleware will now intercept and render `application/schema+json`.
+
+
 0.11.0-beta.2 (2021-01-26)
 --------------------------
 
