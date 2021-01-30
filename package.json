@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/evert/browser#readme",
   "devDependencies": {
-    "@curveball/core": "^0.16.0-beta.0",
+    "@curveball/core": "^0.16.0",
     "@types/chai": "^4.2.14",
     "@types/markdown-it": "^12.0.1",
     "@types/mocha": "^8.2.0",
@@ -58,7 +58,6 @@
     ]
   },
   "dependencies": {
-    "@curveball/router": "^0.3.0-beta.0",
     "@curveball/static": "^0.2.0",
     "csv-parse": "^4.15.0",
     "highlight.js": "^10.5.0",

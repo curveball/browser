@@ -7,6 +7,7 @@ export const supportedContentTypes = [
   'application/json',
   'application/hal+json',
   'application/problem+json',
+  'application/schema+json',
   'text/markdown',
   'text/csv',
   'application/prs.hal-forms+json',
