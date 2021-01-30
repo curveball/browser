@@ -17,7 +17,7 @@
     "dist",
     "LICENSE",
     "assets",
-    "src",
+    "src"
   ],
   "keywords": [
     "hal",
