@@ -118,4 +118,5 @@ export type NavigationLink = {
 export type PageProps = {
   resourceState: State,
   options: Options,
+  csrfToken: string | null,
 }

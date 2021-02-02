@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Action, Field } from 'ketting';
 
 type FormProps = {
+  csrfToken: string | null,
   action: Action
 }
 type FieldProps = {
@@ -14,6 +15,7 @@ export function ActionForm(props: FormProps) {
   return <form action={action.uri} method={action.method} encType={action.contentType} id={action.name!} className="long-form">
     <h3>{action.title || action.name || 'form'}</h3>
 
+    {props.csrfToken ? <input type="hidden" name="csrf-token" value={props.csrfToken} /> : ''}
     {action.fields.map( field => <ActionField field={field} key={field.name} />) }
 
     <button type="submit">Submit</button>
