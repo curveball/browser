@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.12.0 (2021-02-02)
+-------------------
+
+* CSRF tokens will now be added to forms if the `@curveball/session`
+  middleware is loaded.
+
+
 0.11.2 (2021-01-30)
 --------------------
 

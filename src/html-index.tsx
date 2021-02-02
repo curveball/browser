@@ -18,9 +18,19 @@ export default async function generateHtmlIndex(ctx: Context, options: Options) 
     state.links.add(link);
   }
 
+  let csrfToken = null;
+  // We are casting to any here. If the 'session' middleware is included,
+  // the getCsrf method is available, but we don't want to create a dependency
+  // to it.
+  //
+  // Now we can will use getCsrf(), but only if it's defined.
+  if ((ctx as any).getCsrf!==undefined) {
+    csrfToken = await (ctx as any).getCsrf();
+  }
+
   ctx.response.type = 'text/html; charset=utf-8';
   ctx.response.body = ReactDOMServer.renderToString(
-    <App resourceState={state} options={options} />
+    <App resourceState={state} options={options} csrfToken={csrfToken} />
   );
 
 }

@@ -15,7 +15,7 @@ export function Forms(props: PageProps) {
   }
 
   const actions = props.resourceState.actions()
-    .map( action => <ActionForm action={action} />);
+    .map( action => <ActionForm action={action} csrfToken={props.csrfToken}/>);
   forms.push(...actions);
 
   if (!forms.length) {
