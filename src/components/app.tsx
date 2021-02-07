@@ -24,6 +24,7 @@ export function App(props: PageProps) {
       <meta charSet="utf-8" />
       {stylesheets}
       <link rel="icon" href={url.resolve(props.options.assetBaseUrl, 'curveball.svg')} key="icon" />
+      <script type="module" src={url.resolve(props.options.assetBaseUrl, 'js/html-form-enhancer.js')}></script>
     </head>
     <body>
       <header>
