@@ -1,6 +1,15 @@
 Changelog
 =========
 
+0.13.0 (2021-02-08)
+-------------------
+
+* `application/json` is now supported in forms, using a small helper library.
+* Methods other than `POST` and `GET` are supported in forms, using the very
+  same library.
+* Happy Birthday Mom!
+
+
 0.12.0 (2021-02-02)
 -------------------
 
