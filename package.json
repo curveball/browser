@@ -1,6 +1,6 @@
 {
   "name": "@curveball/browser",
-  "version": "0.12.1",
+  "version": "0.13.0",
   "description": "Automatic API browser generator. A middleware that turns your JSON responses into HTML if accessed by a browser.",
   "main": "dist/index.js",
   "scripts": {
