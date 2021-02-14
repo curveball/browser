@@ -72,6 +72,14 @@ function getResourceTitle(state: State): string {
       title = body.name;
     }
   }
+
+
+  if (!title && Object.keys(state.data).length === 0 && state.actions().length === 1) {
+    // If the resource is (mostly) empty and has a single action, we use the
+    // name of the action of the title.
+    title = state.actions()[0].title;
+  }
+
   if (!title) {
     title = href;
   }
