@@ -10,6 +10,10 @@ export function HalBody(props: PageProps) {
     tmpBody = JSON.parse(props.resourceState.serializeBody() as string);
   }
 
+  if (Object.keys(tmpBody).length === 0) {
+    return '';
+  }
+
   const html = {
     __html: highlightJson(tmpBody)
   };

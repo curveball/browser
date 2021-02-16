@@ -1,6 +1,15 @@
 Changelog
 =========
 
+0.14.0 (????-??-??)
+-------------------
+
+* If no title can be detected, but there is exactly 1 action/form in a
+  resource, use the title from the form.
+* Don't render 'Contents' section if there are no properties.
+* Prevent HAL forms from sometimes being rendered twice.
+
+
 0.13.0 (2021-02-08)
 -------------------
 
