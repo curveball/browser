@@ -15,7 +15,7 @@ export function ActionForm(props: FormProps) {
   return <form action={action.uri} method={action.method} encType={action.contentType} id={action.name!} className="long-form">
     <h3>{action.title || action.name || 'form'}</h3>
 
-    {props.csrfToken ? <input type="hidden" name="csrf-token" value={props.csrfToken} /> : ''}
+    {props.csrfToken ? <input type="hidden" name="csrf-token" defaultValue={props.csrfToken} /> : ''}
     {action.fields.map( field => <ActionField field={field} key={field.name} />) }
 
     <button type="submit">Submit</button>
@@ -36,7 +36,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
           <input
             type="checkbox"
             name={field.name}
-            value={field.value?.toString()}
+            defaultValue={field.value?.toString()}
             defaultChecked={field.value}
             readOnly={field.readOnly} />
           <label htmlFor={field.name}>{field.label || field.name}</label>
@@ -60,7 +60,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
         name={field.name}
         type={field.type}
         placeholder={field.placeholder?.toString()}
-        value={field.value?.toString()}
+        defaultValue={field.value?.toString()}
         required={field.required}
         readOnly={field.readOnly}
       />;
@@ -71,7 +71,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
         name={field.name}
         type={field.type}
         placeholder={field.placeholder?.toString()}
-        value={field.value}
+        defaultValue={field.value}
         required={field.required}
         max={field.max}
         min={field.min}
@@ -85,7 +85,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
         options.push(
           <>
             <label htmlFor={field.name + ' ' + key}>{value}</label>
-            <input type="radio" name={field.name} value={key} defaultChecked={key===field.value} />
+            <input type="radio" name={field.name} defaultValue={key} defaultChecked={key===field.value} />
           </>
         );
       }
@@ -101,7 +101,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
         for(const [key, value] of field.options.entries()) {
           options.push(<option value={key}>{value}</option>);
         }
-        input = <select name={field.name} required={field.required} value={field.value}>
+        input = <select name={field.name} required={field.required} defaultValue={field.value}>
           {options}
         </select>;
       } else {
@@ -110,7 +110,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
           type={field.type}
           pattern={field.pattern?.toString()}
           placeholder={field.placeholder}
-          value={field.value}
+          defaultValue={field.value}
           minLength={field.minLength}
           maxLength={field.maxLength}
           required={field.required}
@@ -122,7 +122,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
       input = <textarea
         name={field.name}
         placeholder={field.placeholder}
-        value={field.value}
+        defaultValue={field.value}
         minLength={field.minLength}
         maxLength={field.maxLength}
         required={field.required}
