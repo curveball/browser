@@ -108,7 +108,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
         input = <input
           name={field.name}
           type={field.type}
-          pattern={field.pattern?.toString()}
+          pattern={field.pattern?.toString().slice(1,-1)}
           placeholder={field.placeholder}
           defaultValue={field.value}
           minLength={field.minLength}
