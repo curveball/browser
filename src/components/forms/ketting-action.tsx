@@ -30,7 +30,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
 
   const field = props.field;
 
-  field.type
+  field.type;
 
   switch(field.type) {
 
@@ -118,11 +118,11 @@ export function ActionField(props: FieldProps): React.ReactElement {
         rows={field.rows}
       />;
       break;
-    case 'select' :
+    case 'select' : {
 
       let options: Record<string, string>;
       if ((field as any).options) {
-        options = (field as any).options;   
+        options = (field as any).options;
       } else {
         options = { 'n/a': 'Not yet supported' };
       }
@@ -135,7 +135,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
           </select>;
           break;
         case 'radio' :
-        case 'checkbox' :
+        case 'checkbox' : {
           const inputs = [];
           for(const [k, v] of Object.entries(options)) {
             inputs.push(
@@ -147,14 +147,17 @@ export function ActionField(props: FieldProps): React.ReactElement {
                   defaultValue={v}
                   defaultChecked={field.value?.includes(k)} />
                 <label htmlFor={field.name + '-' + k}>{v}</label>
-               </div>
+              </div>
             );
             break;
+
           }
           renderLabel = false;
           input = <>{inputs}</>;
+        }
       }
       break;
+    }
     default:
       ((x: never) => {
         throw new Error(`${(x as any).type} was unhandled!`);
