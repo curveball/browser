@@ -26,8 +26,12 @@ export function ActionForm(props: FormProps) {
 export function ActionField(props: FieldProps): React.ReactElement {
 
   let input;
+  let renderLabel = true;
 
   const field = props.field;
+
+  field.type
+
   switch(field.type) {
 
     case 'checkbox' :
@@ -42,21 +46,15 @@ export function ActionField(props: FieldProps): React.ReactElement {
             readOnly={field.readOnly} />
           <label htmlFor={field.name}>{field.label || field.name}</label>
         </div>;
+      renderLabel = false;
       break;
     case 'color' :
-    case 'date' :
-    case 'datetime' :
-    case 'datetime-local' :
     case 'email' :
     case 'file' :
-    case 'hidden' :
-    case 'month' :
     case 'password' :
     case 'search' :
     case 'tel' :
-    case 'time' :
     case 'url' :
-    case 'week' :
       input = <input
         name={field.name}
         type={field.type}
@@ -66,13 +64,27 @@ export function ActionField(props: FieldProps): React.ReactElement {
         readOnly={field.readOnly}
       />;
       break;
+    case 'hidden' :
+      input = <input
+        name={field.name}
+        type={field.type}
+        defaultValue={field.value?.toString()}
+      />;
+      renderLabel = false;
+      break;
+    case 'date' :
+    case 'datetime' :
+    case 'datetime-local' :
     case 'number' :
+    case 'month' :
     case 'range' :
+    case 'time' :
+    case 'week' :
       input = <input
         name={field.name}
         type={field.type}
         placeholder={field.placeholder?.toString()}
-        defaultValue={field.value}
+        defaultValue={field.value?.toString()}
         required={field.required}
         max={field.max}
         min={field.min}
@@ -107,7 +119,41 @@ export function ActionField(props: FieldProps): React.ReactElement {
       />;
       break;
     case 'select' :
-      input = <select disabled={true}><option>Not yet supported</option></select>;
+
+      let options: Record<string, string>;
+      if ((field as any).options) {
+        options = (field as any).options;   
+      } else {
+        options = { 'n/a': 'Not yet supported' };
+      }
+
+      switch(field.renderAs) {
+        case 'dropdown' :
+        default :
+          input = <select name={field.name} multiple={field.multiple} defaultValue={field.value}>
+            {Object.keys(options).map( ([k, v]) => <option value={k}>{v}</option> ) }
+          </select>;
+          break;
+        case 'radio' :
+        case 'checkbox' :
+          const inputs = [];
+          for(const [k, v] of Object.entries(options)) {
+            inputs.push(
+              <div className="checkboxes">
+                <input
+                  type={field.type}
+                  name={field.name}
+                  id={field.name + '-' + k}
+                  defaultValue={v}
+                  defaultChecked={field.value?.includes(k)} />
+                <label htmlFor={field.name + '-' + k}>{v}</label>
+               </div>
+            );
+            break;
+          }
+          renderLabel = false;
+          input = <>{inputs}</>;
+      }
       break;
     default:
       ((x: never) => {
@@ -116,8 +162,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
 
   }
 
-  // These elements render their own labels (or don't require them)
-  if (['hidden', 'radio', 'checkbox'].includes(field.type)) {
+  if (!renderLabel) {
     return input;
   }
 

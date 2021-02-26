@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.14.2 (2021-02-26)
+-------------------
+
+* Render select boxes, groups of radios, groups of checkboxes.
+
+
 0.14.1 (2021-02-26)
 -------------------
 
