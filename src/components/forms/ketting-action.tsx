@@ -131,7 +131,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
         case 'dropdown' :
         default :
           input = <select name={field.name} multiple={field.multiple} defaultValue={field.value}>
-            {Object.keys(options).map( ([k, v]) => <option value={k}>{v}</option> ) }
+            {Object.entries(options).map( ([k, v]) => <option value={k} key={k}>{v}</option> ) }
           </select>;
           break;
         case 'radio' :
