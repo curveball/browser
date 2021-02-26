@@ -11,7 +11,7 @@ export function HalBody(props: PageProps) {
   }
 
   if (Object.keys(tmpBody).length === 0) {
-    return '';
+    return <></>;
   }
 
   const html = {

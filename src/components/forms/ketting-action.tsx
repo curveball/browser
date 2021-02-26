@@ -6,7 +6,7 @@ type FormProps = {
   action: Action
 }
 type FieldProps = {
-  field: Field.Field,
+  field: Field,
 }
 
 export function ActionForm(props: FormProps) {
@@ -31,10 +31,11 @@ export function ActionField(props: FieldProps): React.ReactElement {
   switch(field.type) {
 
     case 'checkbox' :
+    case 'radio' :
       input =
         <div className="checkboxes">
           <input
-            type="checkbox"
+            type={field.type}
             name={field.name}
             defaultValue={field.value?.toString()}
             defaultChecked={field.value}
@@ -79,44 +80,18 @@ export function ActionField(props: FieldProps): React.ReactElement {
         readOnly={field.readOnly}
       />;
       break;
-    case 'radio' : {
-      const options = [];
-      for(const [key, value] of field.options!.entries()) {
-        options.push(
-          <>
-            <label htmlFor={field.name + ' ' + key}>{value}</label>
-            <input type="radio" name={field.name} defaultValue={key} defaultChecked={key===field.value} />
-          </>
-        );
-      }
-      input = <>
-        {options}
-      </>;
-      break;
-    }
     case 'text' :
-      if (field.options) {
-
-        const options = [];
-        for(const [key, value] of field.options.entries()) {
-          options.push(<option value={key}>{value}</option>);
-        }
-        input = <select name={field.name} required={field.required} defaultValue={field.value}>
-          {options}
-        </select>;
-      } else {
-        input = <input
-          name={field.name}
-          type={field.type}
-          pattern={field.pattern?.toString().slice(1,-1)}
-          placeholder={field.placeholder}
-          defaultValue={field.value}
-          minLength={field.minLength}
-          maxLength={field.maxLength}
-          required={field.required}
-          readOnly={field.readOnly}
-        />;
-      }
+      input = <input
+        name={field.name}
+        type={field.type}
+        pattern={field.pattern?.toString().slice(1,-1)}
+        placeholder={field.placeholder}
+        defaultValue={field.value}
+        minLength={field.minLength}
+        maxLength={field.maxLength}
+        required={field.required}
+        readOnly={field.readOnly}
+      />;
       break;
     case 'textarea' :
       input = <textarea
@@ -130,6 +105,9 @@ export function ActionField(props: FieldProps): React.ReactElement {
         cols={field.cols}
         rows={field.rows}
       />;
+      break;
+    case 'select' :
+      input = <select disabled={true}><option>Not yet supported</option></select>;
       break;
     default:
       ((x: never) => {
