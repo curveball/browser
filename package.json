@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/evert/browser"
+    "url": "git+https://github.com/curveball/browser"
   },
   "files": [
     "README.md",
@@ -32,9 +32,9 @@
   "author": "Evert Pot (https://evertpot.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/evert/browser"
+    "url": "https://github.com/curveball/browser"
   },
-  "homepage": "https://github.com/evert/browser#readme",
+  "homepage": "https://github.com/curveball/browser#readme",
   "devDependencies": {
     "@curveball/core": "^0.16.2",
     "@types/chai": "^4.2.15",
