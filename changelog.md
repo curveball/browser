@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.14.4 (2021-02-27)
+-------------------
+
+* Build process tweaks to ensure that vendored .js files get included in
+  `assets` directory.
+
+
 0.14.3 (2021-02-26)
 -------------------
 
