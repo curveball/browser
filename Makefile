@@ -42,7 +42,7 @@ assets: assets/js/html-form-enhancer.js assets/js/serialize-json-form.js
 
 assets/js/html-form-enhancer.js: node_modules/html-form-enhancer/dist/html-form-enhancer.js
 	mkdir -p assets/js
-	cp node_modules/html-form-enhancer/dist/html-form-enhancer.js assets/js
+	cp node_modules/html-form-enhancer/dist/html-form-enhancer.* assets/js
 
 assets/js/serialize-json-form.js: node_modules/html-form-enhancer/dist/serialize-json-form.js
-	cp node_modules/html-form-enhancer/dist/serialize-json-form.js assets/js
+	cp node_modules/html-form-enhancer/dist/serialize-json-form.* assets/js
