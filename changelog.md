@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.14.5 (2021-02-27)
+-------------------
+
+* Update 'html-form-enhancer' package, which has a few bug fixes.
+* Include form enhancher .map files in build, for easier debugging.
+
+
 0.14.4 (2021-02-27)
 -------------------
 
