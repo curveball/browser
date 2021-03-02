@@ -1,7 +1,13 @@
 Changelog
 =========
 
-0.14.5 (2021-02-27)
+0.14.6 (2021-03-02)
+-------------------
+
+* Last release did not include updated html-form-enhancer files.
+
+
+0.14.5 (2021-03-02)
 -------------------
 
 * Update 'html-form-enhancer' package, which has a few bug fixes.

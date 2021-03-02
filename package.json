@@ -47,7 +47,7 @@
     "@typescript-eslint/parser": "^4.16.1",
     "chai": "^4.3.1",
     "eslint": "^7.21.0",
-    "html-form-enhancer": "^0.1.7",
+    "html-form-enhancer": "^0.1.9",
     "mocha": "^8.3.0",
     "nyc": "^15.1.0",
     "ts-node": "^9.1.1",
