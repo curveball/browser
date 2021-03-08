@@ -68,6 +68,7 @@ const defaultNavigationLinks: NavigationLinkMap = {
   'edit-form': {
     showLabel: true,
     defaultTitle: 'Edit',
+    icon: 'icon/edit.svg',
   },
   'help': {
     priority: 10,
