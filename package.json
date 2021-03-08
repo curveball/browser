@@ -1,6 +1,6 @@
 {
   "name": "@curveball/browser",
-  "version": "0.14.6",
+  "version": "0.14.7",
   "description": "Automatic API browser generator. A middleware that turns your JSON responses into HTML if accessed by a browser.",
   "main": "dist/index.js",
   "scripts": {
@@ -41,17 +41,17 @@
     "@types/markdown-it": "^12.0.1",
     "@types/mocha": "^8.2.1",
     "@types/node": "^12.20.4",
-    "@types/react": "^17.0.2",
+    "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.1",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
-    "chai": "^4.3.1",
+    "chai": "^4.3.3",
     "eslint": "^7.21.0",
     "html-form-enhancer": "^0.1.9",
-    "mocha": "^8.3.0",
+    "mocha": "^8.3.1",
     "nyc": "^15.1.0",
     "ts-node": "^9.1.1",
-    "typescript": "^4.2.2"
+    "typescript": "^4.2.3"
   },
   "types": "dist/",
   "nyc": {
