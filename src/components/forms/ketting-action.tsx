@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Action, Field } from 'ketting';
+import { Button } from './button';
 
 type FormProps = {
   csrfToken: string | null,
@@ -18,7 +19,7 @@ export function ActionForm(props: FormProps) {
     {props.csrfToken ? <input type="hidden" name="csrf-token" defaultValue={props.csrfToken} /> : ''}
     {action.fields.map( field => <ActionField field={field} key={field.name} />) }
 
-    <button type="submit">Submit</button>
+    <div className="buttonRow"><Button method={action.method} /></div>
   </form>;
 
 }
