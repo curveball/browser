@@ -9,12 +9,12 @@ const methodLabel: Record<string, string> = {
   'GET': 'Query',
   'PATCH' : 'Update',
   'SEARCH' : 'Search',
-}
+};
 
 
 export function Button(props: Props) {
 
   const label = methodLabel[props.method] || 'Submit';
-  return <button type="submit" className={'method-' + props.method.toLowerCase()}>{label}</button>
+  return <button type="submit" className={'method-' + props.method.toLowerCase()}>{label}</button>;
 
 }
