@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { PageProps } from '../../types';
+import { Button } from './button';
 
 type Field = {
   label: string,
@@ -93,7 +94,7 @@ export function TemplatedLinks(props: PageProps) {
       {fields.map( field =>
         <React.Fragment key={field.label + '-' + field.name}><label>{field.label}</label><input type="text" name={field.name} /></React.Fragment>
       )}
-      <button type="submit">Submit</button>
+      <div className="buttonRow"><Button method="GET" /></div>
     </form>);
 
     (link as any).rendered = true;
