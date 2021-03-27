@@ -2,6 +2,7 @@ import * as React from 'react';
 
 type Props = {
   method: string;
+  title?: string|null;
 }
 
 const methodLabel: Record<string, string> = {
@@ -14,7 +15,7 @@ const methodLabel: Record<string, string> = {
 
 export function Button(props: Props) {
 
-  const label = methodLabel[props.method] || 'Submit';
+  const label = props.title || methodLabel[props.method] || 'Submit';
   return <button type="submit" className={'method-' + props.method.toLowerCase()}>{label}</button>;
 
 }
