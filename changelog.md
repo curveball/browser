@@ -1,6 +1,15 @@
 Changelog
 =========
 
+0.14.8 (2021-03-31)
+-------------------
+
+* Tweaks to design of form submission buttons.
+* 'Forms' renamed to 'Actions'.
+* If a form has no fields (or only hidden fields), the form will get rendered
+  as a single button.
+
+
 0.14.7 (2021-03-07)
 -------------------
 
