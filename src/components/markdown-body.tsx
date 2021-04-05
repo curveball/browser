@@ -7,6 +7,7 @@ export function MarkdownBody(props: PageProps) {
 
   const html = {
     __html: md({
+      html: true,
       xhtmlOut: true,
       highlight: (str: string, lang: string) => {
 
