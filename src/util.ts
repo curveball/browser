@@ -54,7 +54,10 @@ export function getNavLinks(links: Link[], options: Options, position: Navigatio
 
 export function highlightJson(body: any): string {
 
-  return highlight.highlight('json', JSON.stringify(body, undefined, '  ')).value;
+  return highlight.highlight(
+    JSON.stringify(body, undefined, '  '),
+    {language: 'json'}
+  ).value;
 
 }
 
