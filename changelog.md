@@ -4,7 +4,8 @@ Changelog
 0.14.9 (2021-04-05)
 -------------------
 
-* Allow HTML tags in markdown
+* Allow HTML tags in markdown.
+* Fix highlight.js depreciation warning.
 
 
 0.14.8 (2021-03-31)
