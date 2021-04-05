@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.14.10 (2021-04-05)
+--------------------
+
+* Fix content-negotiation/alternate links on the root of the API.
+* Fix another React warning.
+
+
 0.14.9 (2021-04-05)
 -------------------
 

@@ -55,14 +55,14 @@ export function Alternate(props: PageProps) {
 
     let href = link.href;
     // If the url is relative, we're adding our secret argument to make the Accept header work.
-    if (href.match(/^\/[^/]/) !== null && link.type) {
+    if ((href==='/' || href.match(/^\/[^/]/) !== null) && link.type) {
       const urlObj = url.parse(href, true);
       urlObj.query['_browser-accept'] = link.type;
       urlObj.search = null;
       href = url.format(urlObj);
     }
 
-    return <a href={href} rel={link.rel} title={label} className={cssClass}>{label}</a>;
+    return <a href={href} rel={link.rel} key={label} title={label} className={cssClass}>{label}</a>;
 
   });
 
