@@ -73,11 +73,15 @@ function getResourceTitle(state: State): string {
     }
   }
 
-
   if (!title && Object.keys(state.data).length === 0 && state.actions().length === 1) {
     // If the resource is (mostly) empty and has a single action, we use the
     // name of the action of the title.
     title = state.actions()[0].title;
+  }
+
+  // As a last resort, we support a 'Title' HTTP header.
+  if (!title && state.contentHeaders().has('Title')) {
+    title = state.contentHeaders().get('Title');
   }
 
   if (!title) {
