@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.15.3 (2021-05-23)
+------------------
+
+* Fix warning when stylesheets aren't specified.
+
+
 0.15.2 (2021-05-23)
 ------------------
 
