@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.14.11 (2021-04-28)
+--------------------
+
+* Upgrade to Ketting 7 for parsing hypermedia bodies.
+* Support the HTTP `Title` header as a last resort to determine a page title.
+
+
 0.14.10 (2021-04-05)
 --------------------
 
