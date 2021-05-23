@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.15.0 (2021-05-23)
+-------------------
+
+* Small BC break: setting custom stylesheets no longer removes the 'theme'
+  stylesheets. To remove the default theme, set `null` for theme.
+
+
 0.14.11 (2021-05-23)
 --------------------
 

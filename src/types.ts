@@ -16,12 +16,10 @@ export type Options = {
    *
    * Possible options: spicy-oj, lfo, curveball
    */
-  theme: 'spicy-oj' | 'lfo' | 'curveball' | 'xmas';
+  theme: 'spicy-oj' | 'lfo' | 'curveball' | 'xmas' | null;
 
   /**
    * List of custom stylesheets to embed.
-   *
-   * Note that setting this will cause 'theme' to be ignored.
    */
   stylesheets: string[];
 

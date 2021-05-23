@@ -196,10 +196,7 @@ function normalizeOptions(options?: Partial<Options>): Options {
   const defaults = {
     title: 'API Browser',
     theme: defaultTheme,
-    stylesheets: [
-      `themes/${options.theme||defaultTheme}/main.css`,
-      `themes/${options.theme||defaultTheme}/highlight.css`
-    ],
+
     defaultLinks: [
       {
         href: '/',
@@ -239,6 +236,15 @@ function normalizeOptions(options?: Partial<Options>): Options {
     }
   }
 
-  return Object.assign(defaults, options) as Options;
+  const newOptions:Options = Object.assign(defaults, options) as Options;
+
+  if (newOptions.theme !== null) {
+    newOptions.stylesheets.push(
+      `themes/${newOptions.theme}/main.css`,
+      `themes/${newOptions.theme}/highlight.css`
+    );
+  }
+
+  return newOptions;
 
 }
