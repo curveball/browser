@@ -7,7 +7,7 @@ type Type = {
   [s: string]: {
     label: string;
     cssClass: string;
-  }
+  };
 };
 
 const types: Type = {

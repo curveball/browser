@@ -3,11 +3,11 @@ import { Action, Field } from 'ketting';
 import { Button } from './button';
 
 type FormProps = {
-  csrfToken: string | null,
-  action: Action
+  csrfToken: string | null;
+  action: Action;
 }
 type FieldProps = {
-  field: Field,
+  field: Field;
 }
 
 /**

@@ -9,48 +9,48 @@ export type Options = {
   /**
    * Application title
    */
-  title: string,
+  title: string;
 
   /**
    * Theme
    *
    * Possible options: spicy-oj, lfo, curveball
    */
-  theme: 'spicy-oj' | 'lfo' | 'curveball' | 'xmas',
+  theme: 'spicy-oj' | 'lfo' | 'curveball' | 'xmas';
 
   /**
    * List of custom stylesheets to embed.
    *
    * Note that setting this will cause 'theme' to be ignored.
    */
-  stylesheets: string[],
+  stylesheets: string[];
 
   /**
    * List of links that should be lifted to navigation sections
    */
-  navigationLinks: SureNavigationLinkMap,
+  navigationLinks: SureNavigationLinkMap;
 
   /**
    * Where the base assets are located
    */
-  assetBaseUrl: string,
+  assetBaseUrl: string;
 
   /**
    * Should this plugin handle serving the assets.
    *
    * Disable if the assets are hosted elsewhere
    */
-  serveAssets: boolean,
+  serveAssets: boolean;
 
   /**
    * List of hardcoded links that should show up on every page.
    */
-  defaultLinks: Link[],
+  defaultLinks: Link[];
 
   /**
    * List of uninteresting link relationships that should be hidden by default.
    */
-  hiddenRels: string[],
+  hiddenRels: string[];
 
   /**
    * If turned on, full JSON bodies are always rendered.
@@ -58,7 +58,7 @@ export type Options = {
    * This can also be turned on during runtime by adding a ?_browser-fullbody
    * query parameter
    */
-  fullBody: boolean,
+  fullBody: boolean;
 };
 
 /**
@@ -67,7 +67,7 @@ export type Options = {
 export type NavigationLinkMap = {
 
   // Navigation links are nullable so they can be overridden
-  [rel: string]: NavigationLink | null | true
+  [rel: string]: NavigationLink | null | true;
 
 };
 
@@ -79,7 +79,7 @@ export type NavigationLinkMap = {
 export type SureNavigationLinkMap = {
 
   // Navigation links are nullable so they can be overridden
-  [rel: string]: NavigationLink
+  [rel: string]: NavigationLink;
 
 };
 
@@ -95,28 +95,28 @@ export type NavigationPosition = 'header' | 'header-right' | 'pager' | 'alternat
 export type NavigationLink = {
 
   // A CSS class. If it's not specified, we'll default to "rel-" + rel
-  cssClass?: string,
+  cssClass?: string;
 
   // A title we'll put in the HTML title= attribute if it wasn't overriden.
-  defaultTitle?: string,
+  defaultTitle?: string;
 
   // A relative URI to an icon. If it's not specified, we'll default to
   // [rel].svg
-  icon?: string,
+  icon?: string;
 
   // Where the icon should appear
-  position?: NavigationPosition,
+  position?: NavigationPosition;
 
   // Set this to to make an icon appear earlier or later. Default is 0, lower is earlier.
-  priority?: number,
+  priority?: number;
 
   // Whether or not to show the 'title' as the button label.
-  showLabel?: boolean
+  showLabel?: boolean;
 
 };
 
 export type PageProps = {
-  resourceState: State,
-  options: Options,
-  csrfToken: string | null,
+  resourceState: State;
+  options: Options;
+  csrfToken: string | null;
 }

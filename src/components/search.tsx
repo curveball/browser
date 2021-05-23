@@ -5,8 +5,8 @@ import * as React from 'react';
 import { Options } from '../types';
 
 type Props = {
-  options: Options,
-  resourceState: State,
+  options: Options;
+  resourceState: State;
 };
 
 export function Search(props: Props) {
