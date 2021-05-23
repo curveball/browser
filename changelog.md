@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.14.11 (2021-04-28)
+0.14.11 (2021-05-23)
 --------------------
 
 * Upgrade to Ketting 7 for parsing hypermedia bodies.

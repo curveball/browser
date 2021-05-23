@@ -3,9 +3,9 @@ import { PageProps } from '../../types';
 import { Button } from './button';
 
 type Field = {
-  label: string,
-  value: string,
-  name: string
+  label: string;
+  value: string;
+  name: string;
 };
 
 export function TemplatedLinks(props: PageProps) {
