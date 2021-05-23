@@ -197,8 +197,10 @@ function normalizeOptions(options?: Partial<Options>): Options {
     title: 'API Browser',
     theme: defaultTheme,
 
+    stylsheets: [],
     defaultLinks: [
       {
+        context: '/',
         href: '/',
         rel: 'home',
         title: 'Home',
