@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.15.1 (2021-05-23)
+-------------------
+
+* Load custom stylesheets after theme sheets.
+
+
 0.15.0 (2021-05-23)
 -------------------
 

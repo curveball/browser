@@ -239,7 +239,7 @@ function normalizeOptions(options?: Partial<Options>): Options {
   const newOptions:Options = Object.assign(defaults, options) as Options;
 
   if (newOptions.theme !== null) {
-    newOptions.stylesheets.push(
+    newOptions.stylesheets.unshift(
       `themes/${newOptions.theme}/main.css`,
       `themes/${newOptions.theme}/highlight.css`
     );
