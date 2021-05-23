@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.15.2 (2021-05-23)
+------------------
+
+* Run the 'normalizeOptions' script only once: when initializing the
+  middleware.
+
+
 0.15.1 (2021-05-23)
 -------------------
 

@@ -114,13 +114,16 @@ export default function browser(options?: Partial<Options>): Middleware {
     maxAge: 3600,
   });
 
+  const realOptions = normalizeOptions(options);
   return async (ctx, next) => {
 
-    const newOptions = normalizeOptions(options);
+    const requestOptions = {
+      ...realOptions
+    };
     if (options?.fullBody === undefined && '_browser-fullbody' in ctx.query) {
-      newOptions.fullBody = true;
+      requestOptions.fullBody = true;
     }
-    if (newOptions.serveAssets && ctx.path.startsWith('/_hal-browser/')) {
+    if (requestOptions.serveAssets && ctx.path.startsWith('/_hal-browser/')) {
       return invokeMiddlewares(ctx, [stat]);
     }
 
@@ -170,7 +173,7 @@ export default function browser(options?: Partial<Options>): Middleware {
     // In addition, we also want to make sure that requests for */* result in
     // the original contenttype. Users have to explicitly request text/html.
     if (ctx.accepts(...supportedContentTypes, 'text/html') === 'text/html') {
-      await generateHtmlIndex(ctx, newOptions);
+      await generateHtmlIndex(ctx, requestOptions);
     }
 
   };
