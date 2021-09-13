@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.15.4 (2021-09-13)
+------------------
+
+* Fix formatting of `datetime-local` value attribute.
+
+
 0.15.3 (2021-05-23)
 ------------------
 
