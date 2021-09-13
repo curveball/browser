@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as hljs from 'highlight.js';
+import hljs from 'highlight.js';
 import * as md from 'markdown-it';
 import { PageProps } from '../types';
 

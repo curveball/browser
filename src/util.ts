@@ -1,4 +1,4 @@
-import * as highlight from 'highlight.js';
+import highlight from 'highlight.js';
 import { Link } from 'ketting';
 import * as url from 'url';
 import {
