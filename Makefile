@@ -7,7 +7,7 @@ all: build
 build: dist/build assets
 
 .PHONY:test
-test:
+test: build
 	node_modules/.bin/nyc node_modules/.bin/mocha
 
 .PHONY:lint
