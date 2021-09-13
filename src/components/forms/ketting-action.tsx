@@ -80,12 +80,18 @@ export function ActionField(props: FieldProps): React.ReactElement {
     case 'month' :
     case 'range' :
     case 'time' :
-    case 'week' :
+    case 'week' : {
+      let value;
+      if (field.value instanceof Date) {
+        value = field.value.toISOString();
+      } else {
+        value = field.value?.toString();
+      }
       input = <input
         name={field.name}
         type={field.type}
         placeholder={field.placeholder?.toString()}
-        defaultValue={field.value?.toString()}
+        defaultValue={value}
         required={field.required}
         max={field.max}
         min={field.min}
@@ -93,6 +99,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
         readOnly={field.readOnly}
       />;
       break;
+    }
     case 'text' :
       input = <input
         name={field.name}
