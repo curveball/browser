@@ -1,4 +1,4 @@
-import highlight from 'highlight.js';
+import * as hljs from 'highlight.js';
 import { Link } from 'ketting';
 import * as url from 'url';
 import {
@@ -54,7 +54,8 @@ export function getNavLinks(links: Link[], options: Options, position: Navigatio
 
 export function highlightJson(body: any): string {
 
-  return highlight.highlight(
+  // @ts-expect-error highlight.js has broken types as of v11.2.0
+  return hljs.highlight(
     JSON.stringify(body, undefined, '  '),
     {language: 'json'}
   ).value;
