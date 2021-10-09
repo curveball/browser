@@ -54,7 +54,7 @@ export function getNavLinks(links: Link[], options: Options, position: Navigatio
 
 export function highlightJson(body: any): string {
 
-  // @ts-expect-error highlight.js has broken types as of v11.2.0
+  /* @ts-expect-error Highlight.js has broken types. Should get fixed in a future version. See https://github.com/highlightjs/highlight.js/issues/3333 */
   return hljs.highlight(
     JSON.stringify(body, undefined, '  '),
     {language: 'json'}
@@ -94,5 +94,93 @@ export async function contextToState(ctx: Context): Promise<State> {
   });
 
   return client.getStateForResponse(ctx.path, response);
+
+}
+
+/**
+ * This is a very rudimentary Templated URI parser.
+ *
+ * Currently we don't parse the entire syntax, because we are using templated
+ * URIs to generate Javascript-free standard HTML forms.
+ *
+ * In these HTML forms, we can only let users define things in the 'query'
+ * part of the URI.
+ *
+ * If the parser encounters a templated URI that's not parsable, it returns
+ * null, otherwise it returns a tuple with three elements:
+ *
+ * 1. The URI that's the target of the form (without query params)
+ * 2. An object containing values that should be added as hidden fields and
+ *    values.
+ * 3. An array with field names that should be rendered as input fields.
+ *
+ * Examples of supported formats:
+ *   http://example/?foo={bar}
+ *   http://example/{?foo}
+ *   http://example/?foo=bar{&bar}
+ *   http://example/?foo=1{&bar,baz,zim}
+ */
+export function getFieldsFromTemplatedUri(input: string): null | [string, Record<string,string>, string[]] {
+
+  const fields: string[] = [];
+  const hiddenFields: Record<string, string> = {}; 
+
+  // We only support 2 styles of templated links:
+  //
+  // https://foo/{?a}{?b}
+  //
+  // and
+  //
+  // https://foo/?foo={bar}
+  //
+  // More formats might be added if they are requested.
+
+  // This regex finds blocks like {?foo}
+  const reg = /{(\?|&)[A-Za-z,]+}/g;
+
+  const matches = input.match(reg);
+  if (matches) {
+    for (const match of matches) {
+      // Stripping off {? and }
+      const fieldNames = match.slice(2, -1);
+
+      // Splitting at ','
+      for (const fieldName of fieldNames.split(',')) {
+        fields.push(fieldName);
+      }
+    }
+  }
+
+  // Removing {?foo} blocks.
+  const [target, querystring] = input.replace(reg, '').split('?');
+
+  if (target.indexOf('{') !== -1) {
+    // We don't support expressions in the path/hostname part of the uri
+    return null;
+  }
+
+  if (querystring) {
+    for (const qsPart of querystring.split('&')) {
+
+      const [field, value] = qsPart.split('=');
+      if (!value) {
+        // No equals sign
+        hiddenFields[field] = '';
+      } else if (value.match(/{.*}$/)) {
+        // Its a parameter in the form foo={bar}
+        fields.push(field);
+      } else {
+        // It's a regular field such as 'foo=bar'
+        hiddenFields[field] = decodeURIComponent(value);
+      }
+
+    }
+  }
+
+  return [
+    target,
+    hiddenFields,
+    fields
+  ];
 
 }

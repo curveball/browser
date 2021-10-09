@@ -2,7 +2,7 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es2019",
-
+        "esModuleInterop": false,
         "strict": true,
         "noFallthroughCasesInSwitch": true,
         "experimentalDecorators": true,
