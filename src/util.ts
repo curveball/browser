@@ -123,7 +123,7 @@ export async function contextToState(ctx: Context): Promise<State> {
 export function getFieldsFromTemplatedUri(input: string): null | [string, Record<string,string>, string[]] {
 
   const fields: string[] = [];
-  const hiddenFields: Record<string, string> = {}; 
+  const hiddenFields: Record<string, string> = {};
 
   // We only support 2 styles of templated links:
   //
