@@ -7,7 +7,7 @@ from an API into HTML responses.
 It will do so by looking if the API was accessed by a HTTP client that prefers
 HTML. Browsers do this by sending an `Accept: text/html` header.
 
-If this middleware spots this, it will kick in and auto-generate a great looing
+If this middleware spots this, it will kick in and auto-generate a great looking
 HTML document.
 
 If this header was not provides, this middleware does nothing.
@@ -25,7 +25,7 @@ It automatically decorates the following formats:
 Screenshot
 ----------
 
-An example. If a API normally returns the following HAL format:
+An example. If an API normally returns the following HAL format:
 
 ```json
 {
