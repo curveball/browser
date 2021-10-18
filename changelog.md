@@ -1,6 +1,18 @@
 Changelog
 =========
 
+0.16.0 (2021-10-18)
+-------------------
+
+* #110: Added a halloween theme, which automatically activates the week
+  preceding halloween.
+* #109: Hightlight.js fixed their types, so the workaround is removed.
+* #108: Browser now supports a few more formats for templated URIs and
+  automaticalling turning them into forms. It also fails more gracefully
+  with invalid forms.
+* Compatible with `esModuleInterop: false`.
+
+
 0.15.5 (2021-09-14)
 -------------------
 
