@@ -194,7 +194,9 @@ function normalizeOptions(options?: Partial<Options>): Options {
   }
 
   const d = new Date();
-  const defaultTheme = d.getMonth()===11 && d.getDate() > 14 ? 'xmas' : 'curveball';
+  let defaultTheme: Options['theme'] = 'curveball';
+  if (d.getMonth()===9 && d.getDate()>25) defaultTheme = 'halloween';
+  if (d.getMonth()===11 && d.getDate()>14) defaultTheme = 'xmas';
 
   const defaults: Partial<Options> = {
     title: 'API Browser',

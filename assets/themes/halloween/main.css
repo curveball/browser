@@ -1,0 +1,28 @@
+@import url(../curveball/main.css);
+
+header {
+  background-color: #000000;
+  background-image: none;
+  padding-left: 15px;
+}
+
+header::before {
+  content: "🎃";
+  padding-right: 10px;
+  font-size: 40px;
+}
+
+nav {
+ background: #FF8000;
+}
+
+nav li a {
+  color: white;
+}
+nav li a img {
+  filter: invert(1)
+}
+
+.status-deprecated::before {
+  content: "🪦"
+}

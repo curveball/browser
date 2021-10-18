@@ -16,7 +16,7 @@ export type Options = {
    *
    * Possible options: spicy-oj, lfo, curveball
    */
-  theme: 'spicy-oj' | 'lfo' | 'curveball' | 'xmas' | null;
+  theme: 'spicy-oj' | 'lfo' | 'curveball' | 'xmas' | 'halloween' | null;
 
   /**
    * List of custom stylesheets to embed.
