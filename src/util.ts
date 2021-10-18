@@ -1,4 +1,4 @@
-import * as hljs from 'highlight.js';
+import hljs from 'highlight.js';
 import { Link } from 'ketting';
 import * as url from 'url';
 import {
@@ -54,7 +54,6 @@ export function getNavLinks(links: Link[], options: Options, position: Navigatio
 
 export function highlightJson(body: any): string {
 
-  /* @ts-expect-error Highlight.js has broken types. Should get fixed in a future version. See https://github.com/highlightjs/highlight.js/issues/3333 */
   return hljs.highlight(
     JSON.stringify(body, undefined, '  '),
     {language: 'json'}
