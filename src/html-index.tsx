@@ -46,7 +46,7 @@ function normalizeBody(ctx: Context) {
     };
     if (ctx.response.headers.has('Location')) {
       ctx.response.body._links = {
-        location: {
+        next: {
           href: ctx.response.headers.get('Location')
         }
       };
