@@ -7,10 +7,23 @@ import { Search } from './search';
 import { Navigation } from './navigation';
 import { Alternate } from './alternate';
 import { Resource } from './resource';
+import { getDefaultTheme } from '../util';
 
 export function App(props: PageProps) {
 
-  const stylesheets = props.options.stylesheets.map( ss => {
+  
+  const stylesheetList = [];
+  if (props.options.theme) {
+    const theme = props.options.theme === 'default' ? getDefaultTheme() : props.options.theme;
+    stylesheetList.push(
+      `themes/${theme}/main.css`,
+      `themes/${theme}/highlight.css`
+    );
+  }
+  stylesheetList.push(...props.options.stylesheets);
+
+
+  const stylesheets = stylesheetList.map( ss => {
     const u = url.resolve(props.options.assetBaseUrl, ss);
     return <link rel="stylesheet" href={u} type="text/css" key={u} />;
   });

@@ -1,5 +1,7 @@
 import { Link, State } from 'ketting';
 
+type Theme = 'default' | 'spicy-oj' | 'lfo' | 'curveball' | 'xmas' | 'halloween' | null;
+
 /**
  * Options after clean-up.
  *
@@ -16,7 +18,7 @@ export type Options = {
    *
    * Possible options: spicy-oj, lfo, curveball
    */
-  theme: 'spicy-oj' | 'lfo' | 'curveball' | 'xmas' | 'halloween' | null;
+  theme: Theme,
 
   /**
    * List of custom stylesheets to embed.
