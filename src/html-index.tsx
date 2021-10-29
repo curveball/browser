@@ -9,6 +9,7 @@ import { contextToState } from './util';
 export default async function generateHtmlIndex(ctx: Context, options: Options) {
 
   normalizeBody(ctx);
+
   if (!ctx.response.body) {
     return;
   }
@@ -37,11 +38,32 @@ export default async function generateHtmlIndex(ctx: Context, options: Options) 
 
 function normalizeBody(ctx: Context) {
 
+  if (!ctx.response.body && ctx.response.status === 201) {
+
+    // A default response body for 201 respones.
+    ctx.response.body = {
+      title: '201 Created',
+    };
+    if (ctx.response.headers.has('Location')) {
+      ctx.response.body._links = {
+        next: {
+          href: ctx.response.headers.get('Location')
+        }
+      };
+      ctx.response.type = 'application/hal+json';
+    }
+
+  }
   if (ctx.response.body instanceof Buffer || ctx.response.body === null) {
     return;
   }
+
+
   if (typeof ctx.response.body === 'object') {
     ctx.response.body = JSON.stringify(ctx.response.body);
+    return;
   }
+
+
 
 }
