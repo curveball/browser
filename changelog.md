@@ -1,6 +1,16 @@
 Changelog
 =========
 
+0.16.1 (2021-10-29)
+-------------------
+
+* If a server returns a `201 Created` status and no body, the browser will
+  now generate a default body so users don't see a white page.
+* Holiday themes now auto-activate, and don't require a server restart. This
+  also means they wont keep lingering after the holiday.
+* Fixed a CSS bug in the Halloween theme around the 'pagers'.
+
+
 0.16.0 (2021-10-18)
 -------------------
 
