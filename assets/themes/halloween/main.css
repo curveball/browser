@@ -12,14 +12,14 @@ header::before {
   font-size: 40px;
 }
 
-nav {
+nav.top-nav {
  background: #FF8000;
 }
 
-nav li a {
+nav.top-nav li a {
   color: white;
 }
-nav li a img {
+nav.top-nav li a img {
   filter: invert(1)
 }
 
