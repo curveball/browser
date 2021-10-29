@@ -1,6 +1,6 @@
 import { Link, State } from 'ketting';
 
-type Theme = 'default' | 'spicy-oj' | 'lfo' | 'curveball' | 'xmas' | 'halloween' | null;
+export type Theme = 'default' | 'spicy-oj' | 'lfo' | 'curveball' | 'xmas' | 'halloween' | null;
 
 /**
  * Options after clean-up.
