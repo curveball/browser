@@ -11,7 +11,7 @@ import { getDefaultTheme } from '../util';
 
 export function App(props: PageProps) {
 
-  
+
   const stylesheetList = [];
   if (props.options.theme) {
     const theme = props.options.theme === 'default' ? getDefaultTheme() : props.options.theme;
