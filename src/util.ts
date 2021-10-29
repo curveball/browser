@@ -5,6 +5,7 @@ import {
   NavigationLink,
   NavigationPosition,
   Options,
+  Theme,
 } from './types';
 import { State, Client } from 'ketting';
 import { Context } from '@curveball/core';
@@ -181,5 +182,20 @@ export function getFieldsFromTemplatedUri(input: string): null | [string, Record
     hiddenFields,
     fields
   ];
+
+}
+
+/**
+ * Returns the default theme
+ *
+ * This might alternate depending on the time of the year.
+ */
+export function getDefaultTheme(): Theme {
+
+  const d = new Date();
+  if (d.getMonth()===9 && d.getDate()>25 || d.getMonth()===1 && d.getDate()<2) return 'halloween';
+  if (d.getMonth()===11 && d.getDate()>14) return 'xmas';
+
+  return 'curveball';
 
 }
