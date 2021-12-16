@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.16.2 (2021-12-16)
+-------------------
+
+* Upgrade html-form-enhancer package, which fixes a bug related to the
+  `action` attribute being sometimes ignored.
+
+
 0.16.1 (2021-10-29)
 -------------------
 
