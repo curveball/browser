@@ -213,6 +213,7 @@ function normalizeOptions(options?: Partial<Options>): Options {
     assetBaseUrl: '/_hal-browser/assets/',
     serveAssets: true,
     fullBody: false,
+    allLinks: false,
   };
 
   const tmpNavLinks = Object.assign(
