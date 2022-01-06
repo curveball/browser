@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.16.3 (2022-01-06)
+-------------------
+
+* Add a curveball logo including the wordmark
+* Add a flag allowing users to see 'all links'. Normally links such as `self` are hidden in links tables, using the new `allLinks` flag every link will always appear in responses.
+
 0.16.2 (2021-12-16)
 -------------------
 
