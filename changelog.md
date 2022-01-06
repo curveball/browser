@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.16.3 (2022-01-06)
+
+* Add a curveball logo including the wordmark
+* Add a flag allowing users to see 'all links'
+
 0.16.2 (2021-12-16)
 -------------------
 
