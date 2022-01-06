@@ -10,7 +10,9 @@ export function LinksTable(props: PageProps) {
 
   for (const link of props.resourceState.links.getAll()) {
 
-    if (props.options.hiddenRels.includes(link.rel) || link.rel in props.options.navigationLinks || (link as any).rendered) {
+    if (!props.options.allLinks &&
+        (props.options.hiddenRels.includes(link.rel) || link.rel in props.options.navigationLinks || (link as any).rendered))
+    {
       continue;
     }
 

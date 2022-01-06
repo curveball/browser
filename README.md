@@ -161,6 +161,13 @@ settings:
 * `hiddenRels` - List of relationship types that will be hidden from the user by
   default. This can be used for links that are simply not interesting for a human
   to see. (default: `['self', 'curies']`.
+* `fullBody` - If turned on, full JSON bodies are always rendered. This can also
+  be turned on during runtime by adding a `?_browser-fullbody` query parameter.
+* `allLinks` - By default the Browser will hide links from the 'Links' table
+  that will be rendered as 'navigation buttons', forms (templated links), or are
+  considered special (the 'self' link). While this might be a nicer interface
+  for an average user browsing the hypermedia graph, as a developer you might
+  just want to see all the links.
 
 Example:
 

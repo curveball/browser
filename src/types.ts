@@ -59,6 +59,18 @@ export type Options = {
    * query parameter
    */
   fullBody: boolean;
+
+  /**
+   * By default the Browser will hide links from the 'Links' table that will
+   * be rendered as 'navigation buttons', forms (templated links), or are
+   * considered special (the 'self' link).
+   *
+   * While this might be a nicer interface for an average user browsing the
+   * hypermedia graph, as a developer you might just want to see all the links
+   *
+   * Turning 'allLinks' on ensures that everything always shows.
+   */
+  allLinks: boolean;
 };
 
 /**
