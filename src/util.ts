@@ -193,7 +193,7 @@ export function getFieldsFromTemplatedUri(input: string): null | [string, Record
 export function getDefaultTheme(): Theme {
 
   const d = new Date();
-  if (d.getMonth()===9 && d.getDate()>25 || d.getMonth()===1 && d.getDate()<2) return 'halloween';
+  if (d.getMonth()===9 && d.getDate()>25 || d.getMonth()===10 && d.getDate()<2) return 'halloween';
   if (d.getMonth()===11 && d.getDate()>14) return 'xmas';
 
   return 'curveball';
