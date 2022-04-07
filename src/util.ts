@@ -53,15 +53,6 @@ export function getNavLinks(links: Link[], options: Options, position: Navigatio
 
 }
 
-export function highlightJson(body: any): string {
-
-  return hljs.highlight(
-    JSON.stringify(body, undefined, '  '),
-    {language: 'json'}
-  ).value;
-
-}
-
 /**
  * We use Ketting for a lot of the parsing.
  *
