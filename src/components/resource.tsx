@@ -1,11 +1,12 @@
 import * as React from 'react';
 
-import { PageProps } from '../types';
+import { Body } from './body';
 import { Embedded } from './embedded';
 import { Forms } from './forms';
 import { LinksTable } from './links-table';
+import { PageProps } from '../types';
 import { Pager } from './pager';
-import { Body } from './body';
+import { ResourceMetaData } from './resource-metadata';
 
 export function Resource(props: PageProps) {
 
@@ -13,8 +14,10 @@ export function Resource(props: PageProps) {
     <LinksTable {...props} />
     <Forms {...props} />
     <Body {...props} />
+    <Pager {...props} />
     <Embedded {...props} />
     <Pager {...props} />
+    <ResourceMetaData {...props} />
   </>;
 
 }

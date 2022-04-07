@@ -53,7 +53,6 @@ export function App(props: PageProps) {
       <main>
         <Resource {...props} />
       </main>
-
     </body>
   </html>;
 
