@@ -1,4 +1,3 @@
-import hljs from 'highlight.js';
 import { Link } from 'ketting';
 import * as url from 'url';
 import {
