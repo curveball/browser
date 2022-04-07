@@ -13,6 +13,7 @@ export default async function generateHtmlIndex(ctx: Context, options: Options) 
   if (!ctx.response.body) {
     return;
   }
+
   const state = await contextToState(ctx);
 
   for(const link of options.defaultLinks) {
@@ -31,7 +32,7 @@ export default async function generateHtmlIndex(ctx: Context, options: Options) 
 
   ctx.response.type = 'text/html; charset=utf-8';
   ctx.response.body = ReactDOMServer.renderToString(
-    <App resourceState={state} options={options} csrfToken={csrfToken} />
+    <App resourceState={state} options={options} csrfToken={csrfToken} originalBody={ctx.response.body}/>
   );
 
 }

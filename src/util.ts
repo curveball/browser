@@ -1,4 +1,3 @@
-import hljs from 'highlight.js';
 import { Link } from 'ketting';
 import * as url from 'url';
 import {
@@ -9,6 +8,10 @@ import {
 } from './types';
 import { State, Client } from 'ketting';
 import { Context } from '@curveball/core';
+import * as nodeFetch from 'node-fetch';
+
+// @ts-expect-error Signatures aren't 100% identical
+if (!global.Request) global.Request = nodeFetch.Request;
 
 /**
  * Returns the list of links for a section.
@@ -53,15 +56,6 @@ export function getNavLinks(links: Link[], options: Options, position: Navigatio
 
 }
 
-export function highlightJson(body: any): string {
-
-  return hljs.highlight(
-    JSON.stringify(body, undefined, '  '),
-    {language: 'json'}
-  ).value;
-
-}
-
 /**
  * We use Ketting for a lot of the parsing.
  *
@@ -93,7 +87,7 @@ export async function contextToState(ctx: Context): Promise<State> {
     headers,
   });
 
-  return client.getStateForResponse(ctx.path, response);
+  return client.getStateForResponse(ctx.path, response as any);
 
 }
 

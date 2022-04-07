@@ -7,7 +7,7 @@ body, td, input, th {
   color: #444;
 }
 
-pre {
+.hljs, code  {
   font-family: 'JetBrains Mono', 'Fira Code', 'Inconsolata', 'Ubuntu Mono', monospace;
 }
 
@@ -319,3 +319,41 @@ button {
   line-height: 2;
   border-radius: .25ex;
 }
+
+.hljs ul {
+  list-style: none;
+  padding-left: 10px;
+  margin: 0;
+}
+.hljs ul li {
+  padding-left: 10px;
+  margin: 0;
+  line-height: normal;
+}
+.hljs a {
+  color: inherit;
+}
+
+.hljs details {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.hljs summary {
+  margin: 0;
+  padding: 0;
+}
+
+.hljs details[open] .hidden-when-open {
+  display: none;
+}
+
+.hljs summary .teaser {
+  border: 1px dotted #ccc;
+}
+
+.hidden-copy-paste {
+  font-size: 0;
+}
+
+

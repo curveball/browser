@@ -129,6 +129,7 @@ export type NavigationLink = {
 
 export type PageProps = {
   resourceState: State;
+  originalBody: string;
   options: Options;
   csrfToken: string | null;
 }
