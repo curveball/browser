@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/curveball/browser#readme",
   "devDependencies": {
-    "@curveball/core": "^0.16.2",
+    "@curveball/core": "^0.17.0",
     "@types/chai": "^4.2.15",
     "@types/markdown-it": "^12.0.1",
     "@types/mocha": "^9.0.0",
