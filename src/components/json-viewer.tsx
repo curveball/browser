@@ -46,20 +46,17 @@ function renderJsonValue(value: JsonValue, asLink?: boolean): React.ReactNode {
 
 }
 
-function renderJsonObject(value: Record<string, JsonValue>) {
+function renderJsonObject(value: Record<string, JsonValue>, skipOpen = false) {
 
   return <>
-    <span className="hljs-punctuation">{'{'}</span><br />
+    {skipOpen ? null : <><span className="hljs-punctuation">{'{'}</span><br /></>}
     <ul>
       {(Object.entries(value).map(([key, value], idx, arr) => {
-        return <li>
-          <span className="hidden-copy-paste">"</span>
-          <span className="hljs-attr">{key}</span>
-          <span className="hidden-copy-paste">"</span>
-          <span className="hljs-punctuation">: </span>
-          {renderJsonValue(value, isLikelyAUri(key))}
-          {idx < arr.length -1 ? <span className="hljs-punctuation">,</span>:null}
-        </li>;
+        return renderCollapsableRow(
+          key,
+          value,
+          idx >= arr.length -1
+        );
       }))}
     </ul>
     <span className="hljs-punctuation">{'}'}</span>
@@ -67,6 +64,39 @@ function renderJsonObject(value: Record<string, JsonValue>) {
 
 }
 
+function renderCollapsableRow(key: string, value: JsonValue, isLast: boolean): React.ReactNode {
+
+  if (isJsonObject(value)) {
+
+    // Open by default, unless the key starts with undescore
+    // This ensures that stuff like _links, _embedded starts closed
+    const open = !key.startsWith('_');
+
+    return <li><details open={open}>
+      <summary>
+        <span className="hidden-copy-paste">"</span>
+        <span className="hljs-attr">{key}</span>
+        <span className="hidden-copy-paste">"</span>
+        <span className="hljs-punctuation">: {'{'}</span>
+        <span className="hidden-when-open">
+          <span className="hljs-punctuation"> <em>{Object.keys(value).length} properties</em> {'}'}</span>
+        </span>
+      </summary>
+      {renderJsonObject(value, true)}
+      {isLast ? null : <span className="hljs-punctuation">,</span>}
+    </details></li>;
+  } else {
+    return <li>
+      <span className="hidden-copy-paste">"</span>
+      <span className="hljs-attr">{key}</span>
+      <span className="hidden-copy-paste">"</span>
+      <span className="hljs-punctuation">: </span>
+      {renderJsonValue(value, isLikelyAUri(key))}
+      {isLast ? null : <span className="hljs-punctuation">,</span>}
+    </li>;
+  }
+
+}
 
 /**
  * Checks at a name of a property and returns true if it's probably a uri
@@ -94,5 +124,16 @@ function isLegalLink(uri: string): boolean {
     }
   }
   return false;
+
+}
+
+/**
+ * Ugly way to find out something is a JSON object
+ */
+function isJsonObject(value: JsonValue): value is Record<string, JsonValue> {
+
+  if (typeof value !== 'object') return false;
+  if (value===null || Array.isArray(value)) return false;
+  return true;
 
 }

@@ -334,6 +334,26 @@ button {
   color: inherit;
 }
 
+.hljs details {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.hljs summary {
+  margin: 0;
+  padding: 0;
+}
+
+.hljs details[open] .hidden-when-open {
+  display: none;
+}
+
+.hljs summary .teaser {
+  border: 1px dotted #ccc;
+}
+
 .hidden-copy-paste {
   font-size: 0;
 }
+
+
