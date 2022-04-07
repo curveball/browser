@@ -9,7 +9,12 @@ export function Embedded(props: PageProps) {
 
   return <>
     <h2>Embedded</h2>
-    { embeds.map( embeddedState => <Embed resourceState={embeddedState} options={props.options} csrfToken={props.csrfToken} />) }
+    { embeds.map( embeddedState => <Embed
+      resourceState={embeddedState}
+      options={props.options}
+      csrfToken={props.csrfToken}
+      originalBody={embeddedState.serializeBody() as string}
+    />) }
   </>;
 
 }
