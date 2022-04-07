@@ -1,6 +1,19 @@
 Changelog
 =========
 
+0.17.0 (2022-04-07)
+-------------------
+
+Brand new JSON viewer!
+
+* Supports collapsing/expanding part of the tree
+* Automatically generate hyperlinks for strings that are likely links.
+* Shows the _original_ JSON, including `_links` and `_embedded`, but these
+  are collapsed by default. This should aid in debugging.
+* No longer showing double-quotes around JSON property names, but they
+  magically re-appear when copy pasting.
+
+
 0.16.5 (2022-02-01)
 -------------------
 
