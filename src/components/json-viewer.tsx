@@ -53,7 +53,9 @@ function renderJsonObject(value: Record<string, JsonValue>) {
     <ul>
       {(Object.entries(value).map(([key, value], idx, arr) => {
         return <li>
+          <span className="hidden-copy-paste">"</span>
           <span className="hljs-attr">{key}</span>
+          <span className="hidden-copy-paste">"</span>
           <span className="hljs-punctuation">: </span>
           {renderJsonValue(value, isLikelyAUri(key))}
           {idx < arr.length -1 ? <span className="hljs-punctuation">,</span>:null}

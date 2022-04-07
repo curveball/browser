@@ -333,3 +333,7 @@ button {
 .hljs a {
   color: inherit;
 }
+
+.hidden-copy-paste {
+  font-size: 0;
+}
