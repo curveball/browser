@@ -24,7 +24,7 @@ function renderJsonValue(value: JsonValue, asLink?: boolean): React.ReactNode {
   }
   if (typeof value === 'string') {
     if (asLink && isLegalLink(value)) {
-      return <span className="hljs-string"><a href={value}>"{value}"</a></span>;
+      return <span className="hljs-string">"<a href={value}>{value}</a>"</span>;
     } else {
       return <span className="hljs-string">"{value}"</span>;
     }
