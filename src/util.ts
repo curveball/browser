@@ -8,6 +8,10 @@ import {
 } from './types';
 import { State, Client } from 'ketting';
 import { Context } from '@curveball/core';
+import * as nodeFetch from 'node-fetch';
+
+// @ts-expect-error Signatures aren't 100% identical
+if (!global.Request) global.Request = nodeFetch.Request;
 
 /**
  * Returns the list of links for a section.
@@ -83,7 +87,7 @@ export async function contextToState(ctx: Context): Promise<State> {
     headers,
   });
 
-  return client.getStateForResponse(ctx.path, response);
+  return client.getStateForResponse(ctx.path, response as any);
 
 }
 

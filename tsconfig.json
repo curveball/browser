@@ -18,7 +18,8 @@
             ]
         },
         "lib": [
-          "ES2019"
+          "ES2019",
+          "DOM"
         ],
         "declaration": true,
         "jsx": "react"
