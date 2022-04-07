@@ -36,7 +36,7 @@ function renderJsonValue(value: JsonValue, asLink?: boolean): React.ReactNode {
     return <>
       <span className="hljs-punctuation">[</span><ul>
         {(value.map((item, idx) => {
-          return <li>{renderJsonValue(item)}{idx < value.length -1 ? <span className="hljs-punctuation">,</span>:null}</li>;
+          return <li key={idx}>{renderJsonValue(item)}{idx < value.length -1 ? <span className="hljs-punctuation">,</span>:null}</li>;
         }))}
       </ul><span className="hljs-punctuation">]</span>
     </>;
@@ -72,7 +72,7 @@ function renderCollapsableRow(key: string, value: JsonValue, isLast: boolean): R
     // This ensures that stuff like _links, _embedded starts closed
     const open = !key.startsWith('_');
 
-    return <li><details open={open}>
+    return <li key={key}><details open={open}>
       <summary>
         <span className="hidden-copy-paste">"</span>
         <span className="hljs-attr">{key}</span>
