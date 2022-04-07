@@ -7,7 +7,7 @@ body, td, input, th {
   color: #444;
 }
 
-pre {
+.hljs, code  {
   font-family: 'JetBrains Mono', 'Fira Code', 'Inconsolata', 'Ubuntu Mono', monospace;
 }
 
@@ -328,6 +328,7 @@ button {
 .hljs ul li {
   padding-left: 10px;
   margin: 0;
+  line-height: normal;
 }
 .hljs a {
   color: inherit;
