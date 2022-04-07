@@ -319,3 +319,16 @@ button {
   line-height: 2;
   border-radius: .25ex;
 }
+
+.hljs ul {
+  list-style: none;
+  padding-left: 10px;
+  margin: 0;
+}
+.hljs ul li {
+  padding-left: 10px;
+  margin: 0;
+}
+.hljs a {
+  color: inherit;
+}
