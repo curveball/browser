@@ -338,7 +338,7 @@ button {
   border: 0;
   margin: 0;
   padding: 0;
-  box-shadow: 0;
+  box-shadow: none;
 }
 
 .hljs summary {
