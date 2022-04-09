@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.17.3 (2022-04-08)
+-------------------
+
+* Add a missing key= atribute, which should reduce noisy warnings.
+
+
 0.17.2 (2022-04-07)
 -------------------
 
