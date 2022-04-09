@@ -86,7 +86,7 @@ function renderCollapsableRow(key: string, value: JsonValue, isLast: boolean): R
       {isLast ? null : <span className="hljs-punctuation">,</span>}
     </details></li>;
   } else {
-    return <li>
+    return <li key={key}>
       <span className="hidden-copy-paste">"</span>
       <span className="hljs-attr">{key}</span>
       <span className="hidden-copy-paste">"</span>
