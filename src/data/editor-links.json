@@ -1,0 +1,26 @@
+{
+  "me": {
+    "description": "A link to yourself at a different URL",
+    "href": "http://gmpg.org/xfn/11"
+  },
+  "item": {
+    "description": "A member of a collection",
+    "href": "https://datatracker.ietf.org/doc/html/rfc6573#section-2.1"
+  },
+  "authenticate": {
+    "description": "Links to a page that a user can be use to authenticate itself for the current resource.",
+    "href": "https://datatracker.ietf.org/doc/html/draft-pot-authentication-link-01#section-2"
+  },
+  "authenticated-as": {
+    "description": "Links to a resource that represents the currently authenticated user",
+    "href": "https://datatracker.ietf.org/doc/html/draft-pot-authentication-link-01#section-3",
+  },
+  "logout": {
+    "description": "Links to the resource where the currently authenticated user can end their session",
+    "href": "https://datatracker.ietf.org/doc/html/draft-pot-authentication-link-01#section-4",
+  },
+  "register-user": {
+    "description": "Links to a resource where a user can sign up for the current resource.",
+    "href": "https://datatracker.ietf.org/doc/html/draft-pot-authentication-link-01#section-5"
+  }
+}

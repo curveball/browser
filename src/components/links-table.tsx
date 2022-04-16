@@ -2,6 +2,19 @@ import * as React from 'react';
 import { Link } from 'ketting';
 import { PageProps } from '../types';
 
+// List of links from the IANA website, auto generated
+import * as ianaLinks from '../data/iana-links.json';
+// List of links from this project, overrides some IANA links with better
+// descriptions
+import * as editorLinks from '../data/editor-links.json';
+
+type LinkDescriptions = Record<string, {href: string; description: string}>;
+
+const linkDescriptions: LinkDescriptions = {
+  ...ianaLinks,
+  ...editorLinks,
+};
+
 export function LinksTable(props: PageProps) {
 
   const linkRows = [];
@@ -47,7 +60,7 @@ export function LinksTable(props: PageProps) {
         }
       }
       linkRows.push(<tr key={'link-' + index}>
-        {index===0 ? <td rowSpan={linkCount}>{link.rel}</td> : null}
+        {index===0 ? <td rowSpan={linkCount}><LinkRel link={link} /></td> : null}
         {link.templated ? <td>{link.href}</td> : <td><a href={link.href}>{link.href}</a></td> }
         <td>{link.title}{linkBadges}</td>
       </tr>);
@@ -70,5 +83,21 @@ export function LinksTable(props: PageProps) {
       {linkRows}
     </table>
   </>;
+
+}
+
+type LinkRelProps = {
+  link: Link;
+}
+
+function LinkRel(props: LinkRelProps) {
+
+  const rel = props.link.rel;
+  if (linkDescriptions[rel]!==undefined) {
+    const ianaLink = linkDescriptions[rel];
+    return <a className="definition" title={ianaLink.description} href={ianaLink.href}>{rel}</a>;
+  } else {
+    return <>{rel}</>;
+  }
 
 }
