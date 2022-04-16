@@ -1,6 +1,15 @@
 Changelog
 =========
 
+0.17.4 (2022-04-16)
+-------------------
+
+* Known IANA link relationships now have a tooltip with a definition. When
+  the rels are clicked, you are now taken to a related (IETF or other)
+  standard page.
+* Cosmetic improvements in the CSV table output.
+
+
 0.17.3 (2022-04-08)
 -------------------
 
