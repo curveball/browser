@@ -33,9 +33,11 @@ export function CsvBody(props: PageProps) {
 
   return <>
     <h2>Contents</h2>
-    <table className="body-csv">
-      { table }
-    </table>
+    <div className="body-csv">
+      <table>
+        { table }
+      </table>
+    </div>
   </>;
 
 }
