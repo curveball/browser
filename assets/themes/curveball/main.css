@@ -188,7 +188,14 @@ main h2 {
   padding: 20px 0 15px;
 }
 
+/* A link for definitions. This usually shows up softer */
+a.definition {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  color: inherit;
+}
 
+/* These are little badges that show up next to links, like the methods they support or 'deprecated' */
 .link-badge {
   background: #666;
   color: white;
