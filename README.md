@@ -90,12 +90,12 @@ An example. If an API normally returns the following HAL format:
 
 The browser will automatically convert it to this HTML format:
 
-![Screenshot from 0.9.1](https://github.com/evert/hal-browser/blob/master/screenshots/0.9.1.png)
+![Screenshot from 0.9.1](https://github.com/curveball/browser/blob/main/screenshots/0.9.1.png)
 
 This screenshot is an example of the browser automatically formatting a .csv
 and parsing HTTP `Link` headers:
 
-![Screenshot from 0.9.1](https://github.com/evert/hal-browser/blob/master/screenshots/0.9.1-csv.png)
+![Screenshot from 0.9.1](https://github.com/curveball/browser/blob/main/screenshots/0.9.1-csv.png)
 
 The following example converts this:
 
@@ -120,7 +120,7 @@ The following example converts this:
 
 And automatically turns the templated link into a form:
 
-![Screenshot from 0.9.1](https://github.com/evert/hal-browser/blob/master/screenshots/0.9.1-form.png)
+![Screenshot from 0.9.1](https://github.com/curveball/browser/blob/main/screenshots/0.9.1-form.png)
 
 
 Installation
