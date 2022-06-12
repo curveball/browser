@@ -1,10 +1,10 @@
 import * as React from 'react';
-import * as csvParse from 'csv-parse/lib/sync';
+import { parse } from 'csv-parse/sync';
 import { PageProps } from '../types';
 
 export function CsvBody(props: PageProps) {
 
-  const data: string[][] = csvParse(props.resourceState.data);
+  const data: string[][] = parse(props.resourceState.data);
 
   const table = [];
   let first = true;

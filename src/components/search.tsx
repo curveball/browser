@@ -40,7 +40,7 @@ export function Search(props: Props) {
   const newUrl = matches[1] + matches[3];
 
   const [action, queryStr] = newUrl.split('?');
-  const query:Record<string,string|string[]> = querystring.parse(queryStr);
+  const query:Record<string,string|string[]|undefined> = querystring.parse(queryStr);
 
   const hiddenFields = Object.entries(query).map( entry => {
     return <input type="hidden" name={entry[0]} value={entry[1]} />;
