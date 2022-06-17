@@ -1,10 +1,12 @@
 import { Context } from '@curveball/core';
-import { Options } from './types';
+import { Options, JsonSchema } from './types';
 import * as ReactDOMServer from 'react-dom/server';
 import * as React from 'react';
 
 import { App } from './components/app';
 import { contextToState } from './util';
+
+import '@curveball/validator';
 
 export default async function generateHtmlIndex(ctx: Context, options: Options) {
 
@@ -30,9 +32,23 @@ export default async function generateHtmlIndex(ctx: Context, options: Options) 
     csrfToken = await (ctx as any).getCsrf();
   }
 
+  const jsonSchemas = new Map<string, JsonSchema>();
+
+  if (ctx.schemas) {
+    for(const schema of ctx.schemas) {
+      jsonSchemas.set(schema.id, schema.schema);
+    }
+  }
+
   ctx.response.type = 'text/html; charset=utf-8';
   ctx.response.body = ReactDOMServer.renderToString(
-    <App resourceState={state} options={options} csrfToken={csrfToken} originalBody={ctx.response.body}/>
+    <App
+      resourceState={state}
+      options={options}
+      csrfToken={csrfToken}
+      originalBody={ctx.response.body}
+      jsonSchemas={jsonSchemas}
+    />
   );
 
 }
