@@ -132,4 +132,15 @@ export type PageProps = {
   originalBody: string;
   options: Options;
   csrfToken: string | null;
+  jsonSchemas: Map<string, JsonSchema>;
+}
+
+/**
+ * A very basic type for json schema. It's just barely enough.
+ */
+export type JsonSchema = {
+  '$id'?: string;
+  description?: string;
+  properties?: Record<string, JsonSchema>;
+  items?: JsonSchema | JsonSchema[];
 }

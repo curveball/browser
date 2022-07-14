@@ -7,13 +7,20 @@ export function Embedded(props: PageProps) {
   const embeds = props.resourceState.getEmbedded();
   if (!embeds.length) return null;
 
+  const {
+    // The purpose of these two is just to remove them from embeddedProps
+    resourceState,
+    originalBody,
+
+    ...embeddedProps
+  } = props;
+
   return <>
     <h2>Embedded</h2>
     { embeds.map( embeddedState => <Embed
       resourceState={embeddedState}
-      options={props.options}
-      csrfToken={props.csrfToken}
       originalBody={embeddedState.serializeBody() as string}
+      {...embeddedProps}
     />) }
   </>;
 

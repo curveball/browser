@@ -1,4 +1,4 @@
-SOURCE_FILES:=$(shell find src/ -type f -name '*.ts')
+SOURCE_FILES:=$(shell find src/ -type f -name '*.ts' )
 
 .PHONY:all
 all: build
