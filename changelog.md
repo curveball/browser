@@ -1,6 +1,16 @@
 Changelog
 =========
 
+0.18.0 (2022-07-14)
+-------------------
+
+* Now integrates with `@curveball/validator`. If `describedby` links is
+  specified, and it contains a reference to a JSON schema known by the
+  validator plugin, it will parse the json schema and extract property
+  descriptions.
+* Dropped Node 12 support
+
+
 0.17.4 (2022-04-16)
 -------------------
 
