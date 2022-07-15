@@ -1,6 +1,6 @@
 {
   "name": "@curveball/browser",
-  "version": "0.17.4",
+  "version": "0.18.0",
   "description": "Automatic API browser generator. A middleware that turns your JSON responses into HTML if accessed by a browser.",
   "main": "dist/index.js",
   "scripts": {
@@ -51,7 +51,7 @@
     "chai": "^4.3.3",
     "eslint": "^8.1.0",
     "html-form-enhancer": "^0.1.9",
-    "jsdom": "^19.0.0",
+    "jsdom": "^20.0.0",
     "mocha": "^10.0.0",
     "nyc": "^15.1.0",
     "ts-node": "^10.0.0",
