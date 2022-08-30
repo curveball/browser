@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useId } from 'react';
 import { Action, Field } from 'ketting';
 import { Button } from './button';
 
@@ -26,6 +27,7 @@ export function ActionForm(props: FormProps) {
 
 export function ActionField(props: FieldProps): React.ReactElement {
 
+  const id = useId();
   let input;
   let renderLabel = true;
 
@@ -40,12 +42,13 @@ export function ActionField(props: FieldProps): React.ReactElement {
       input =
         <div className="checkboxes">
           <input
+            id={`${field.name}-${id}`}
             type={field.type}
             name={field.name}
             defaultValue={field.value?.toString()}
             defaultChecked={field.value}
             readOnly={field.readOnly} />
-          <label htmlFor={field.name}>{field.label || field.name}</label>
+          <label htmlFor={`${field.name}-${id}`}>{field.label || field.name}</label>
         </div>;
       renderLabel = false;
       break;
@@ -57,6 +60,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
     case 'tel' :
     case 'url' :
       input = <input
+        id={`${field.name}-${id}`}
         name={field.name}
         type={field.type}
         placeholder={field.placeholder?.toString()}
@@ -88,6 +92,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
         value = field.value?.toString();
       }
       input = <input
+        id={`${field.name}-${id}`}
         name={field.name}
         type={field.type}
         placeholder={field.placeholder?.toString()}
@@ -102,6 +107,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
     }
     case 'text' :
       input = <input
+        id={`${field.name}-${id}`}
         name={field.name}
         type={field.type}
         pattern={field.pattern?.toString().slice(1,-1)}
@@ -115,6 +121,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
       break;
     case 'textarea' :
       input = <textarea
+        id={`${field.name}-${id}`}
         name={field.name}
         placeholder={field.placeholder}
         defaultValue={field.value}
@@ -138,7 +145,11 @@ export function ActionField(props: FieldProps): React.ReactElement {
       switch(field.renderAs) {
         case 'dropdown' :
         default :
-          input = <select name={field.name} multiple={field.multiple} defaultValue={field.value}>
+          input = <select
+            id={`${field.name}-${id}`}
+            name={field.name}
+            multiple={field.multiple}
+            defaultValue={field.value}>
             {Object.entries(options).map( ([k, v]) => <option value={k} key={k}>{v}</option> ) }
           </select>;
           break;
@@ -149,9 +160,9 @@ export function ActionField(props: FieldProps): React.ReactElement {
             inputs.push(
               <div className="checkboxes">
                 <input
+                  id={field.name + '-' + k}
                   type={field.type}
                   name={field.name}
-                  id={field.name + '-' + k}
                   defaultValue={v}
                   defaultChecked={field.value?.includes(k)} />
                 <label htmlFor={field.name + '-' + k}>{v}</label>
@@ -178,7 +189,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
   }
 
   return <>
-    <label htmlFor={field.name}>{field.label || field.name}</label>
+    <label htmlFor={`${field.name}-${id}`}>{field.label || field.name}</label>
     {input}
   </>;
 
