@@ -37,24 +37,25 @@
   },
   "homepage": "https://github.com/curveball/browser#readme",
   "devDependencies": {
-    "@curveball/core": "^0.19.0",
+    "@curveball/kernel": "^0.20.0",
     "@curveball/validator": "^0.9.0",
     "@types/chai": "^4.2.15",
     "@types/markdown-it": "^12.0.1",
-    "@types/mocha": "^9.0.0",
-    "@types/node": "^14.18.21",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^14.18.26",
     "@types/node-fetch": "^2.6.1",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
-    "@typescript-eslint/eslint-plugin": "^5.9.1",
-    "@typescript-eslint/parser": "^5.9.1",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
     "chai": "^4.3.3",
-    "eslint": "^8.1.0",
+    "eslint": "^8.23.0",
     "html-form-enhancer": "^0.1.9",
     "jsdom": "^20.0.0",
     "mocha": "^10.0.0",
     "nyc": "^15.1.0",
-    "ts-node": "^10.0.0",
+    "sinon": "^14.0.0",
+    "ts-node": "^10.9.1",
     "typescript": "^4.2.3"
   },
   "engines": {
@@ -76,9 +77,6 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
-  "peerDependencies": {
-    "@curveball/core": ">=0.14 <1"
-  },
   "mocha": {
     "require": "ts-node/register",
     "recursive": true,
@@ -87,5 +85,8 @@
       "js",
       "tsx"
     ]
+  },
+  "peerDependencies": {
+    "@curveball/kernel": "^0.20.0"
   }
 }
