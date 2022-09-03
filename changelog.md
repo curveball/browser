@@ -1,6 +1,14 @@
 Changelog
 =========
 
+0.19.0 (2022-09-03)
+------------------
+
+* Upgraded from `@curveball/core` to `@curveball/kernel`.
+* Updated to the latest Ketting, which fixes a problem with rendering HAL
+  checkboxes. (@syedfkabir).
+
+
 0.18.0 (2022-07-14)
 -------------------
 

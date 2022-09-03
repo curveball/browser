@@ -87,6 +87,6 @@
     ]
   },
   "peerDependencies": {
-    "@curveball/kernel": "^0.20.0"
+    "@curveball/kernel": ">=0.20.0 <1"
   }
 }
