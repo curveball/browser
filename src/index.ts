@@ -1,4 +1,4 @@
-import { Middleware, invokeMiddlewares } from '@curveball/core';
+import { Middleware, invokeMiddlewares } from '@curveball/kernel';
 import generateHtmlIndex from './html-index';
 import { NavigationLinkMap, Options } from './types';
 import staticMw from '@curveball/static';

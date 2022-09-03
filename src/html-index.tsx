@@ -1,4 +1,4 @@
-import { Context } from '@curveball/core';
+import { Context } from '@curveball/kernel';
 import { Options, JsonSchema } from './types';
 import * as ReactDOMServer from 'react-dom/server';
 import * as React from 'react';
