@@ -7,7 +7,7 @@ import {
   Theme,
 } from './types';
 import { State, Client } from 'ketting';
-import { Context } from '@curveball/core';
+import { Context } from '@curveball/kernel';
 import * as nodeFetch from 'node-fetch';
 
 // @ts-expect-error Signatures aren't 100% identical
