@@ -71,7 +71,7 @@
     "@curveball/static": "^0.3.0",
     "csv-parse": "^5.1.0",
     "highlight.js": "^11.2.0",
-    "ketting": "^7.5.0",
+    "ketting": "^7.5.1",
     "markdown-it": "^13.0.1",
     "node-fetch": "^2.6.7",
     "react": "^18.1.0",
