@@ -95,7 +95,7 @@ function renderCollapsableRow(key: string, value: JsonValue, isLast: boolean, js
             <span className="hljs-punctuation"> <em>{Object.keys(value).length} properties</em> {'}'}</span>
           </span>
         </summary>
-        {renderJsonObject(value, true)}
+        {renderJsonObject(value, true, jsonSchema)}
         {isLast ? null : <span className="hljs-punctuation">,</span>}
       </details></li>
     </React.Fragment>;
@@ -107,7 +107,7 @@ function renderCollapsableRow(key: string, value: JsonValue, isLast: boolean, js
         <span className="hljs-attr">{key}</span>
         <span className="hidden-copy-paste">"</span>
         <span className="hljs-punctuation">: </span>
-        {renderJsonValue(value, isLikelyAUri(key))}
+        {renderJsonValue(value, isLikelyAUri(key), jsonSchema)}
         {isLast ? null : <span className="hljs-punctuation">,</span>}
       </li>
     </React.Fragment>;
