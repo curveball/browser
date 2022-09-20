@@ -9,11 +9,6 @@ on:
       - main
       - 'version-*.x'
   pull_request:
-    branches:
-      - main
-      - 'version-*.x'
-
-
 
 jobs:
   node-test:
