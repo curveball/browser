@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.18.1 (2022-09-20)
+-------------------
+
+* Update to latest Ketting
+* Backport of #151: datetime-local fields were not rendered correctly. (@mhum)
+
 0.18.0 (2022-07-14)
 -------------------
 
