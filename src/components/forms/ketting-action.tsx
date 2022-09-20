@@ -83,7 +83,7 @@ export function ActionField(props: FieldProps): React.ReactElement {
     case 'week' : {
       let value;
       if (field.value instanceof Date) {
-        value = field.value.toISOString();
+        value = field.value.toISOString().slice(0, -1);
       } else {
         value = field.value?.toString();
       }
