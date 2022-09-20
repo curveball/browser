@@ -264,7 +264,7 @@ main code {
   overflow-x: auto;
 }
 
-.body-csv td, body-csv th {
+.body-csv td, .body-csv th {
   white-space: nowrap;
   padding: 5px 50px 5px 5px;
 }

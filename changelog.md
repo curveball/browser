@@ -1,6 +1,15 @@
 Changelog
 =========
 
+0.19.3 (2022-09-20)
+-------------------
+
+* #145: Form elements now have `id` attributes and `<label>`s that point to them. (@ikbensiep)
+* #141: JSON-Schema comments were not rendered in nested objects in the JSON viewer. (@syedfkabi)
+* #151: `datetime-local` fields weren't rendered correctly if they have a value. (@mhum)
+* Fixed a table layout issue.
+
+
 0.19.2 (2022-09-03)
 -------------------
 
