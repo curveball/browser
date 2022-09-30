@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.19.4 (2022-09-29)
+-------------------
+
+* If a response has a 'description' property, the browser now renders this
+  paragraph near the top of the screen.
+
+
 0.19.3 (2022-09-20)
 -------------------
 
