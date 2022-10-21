@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.19.5 (2022-10-21)
+-------------------
+
+* `html-form-enhancer.js` was missing from the latest release, which caused
+  some HAL forms to not work.
+
+
 0.19.4 (2022-09-29)
 -------------------
 
