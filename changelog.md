@@ -1,6 +1,14 @@
 Changelog
 =========
 
+0.19.6 (2022-10-22)
+-------------------
+
+* We're now guessing the label on submit button for HAL forms based on the
+  verb used in the form title.
+* Fix a bug in `html-form-enhancer.js`
+
+
 0.19.5 (2022-10-21)
 -------------------
 
