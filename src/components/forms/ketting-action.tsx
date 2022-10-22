@@ -20,7 +20,7 @@ export function ActionForm(props: FormProps) {
     {props.csrfToken ? <input type="hidden" name="csrf-token" defaultValue={props.csrfToken} /> : ''}
     {action.fields.map( field => <ActionField field={field} key={field.name} />) }
 
-    <div className="buttonRow"><Button method={action.method} /></div>
+    <div className="buttonRow"><Button method={action.method} titleHint={action.title} /></div>
   </form>;
 
 }
