@@ -1,26 +1,21 @@
 {
   "https://level3.rest/patterns/list#list": {
-    "rel": "list",
     "description": "The containing List for this Entry.",
     "href": "https://level3.rest/patterns/list#list"
   },
   "https://level3.rest/patterns/list#list-entry": {
-    "rel": "list-entry",
     "description": "A resource element in this List resource. Each Entry is an individual resource.",
     "href": "https://level3.rest/patterns/list#list-entry"
   },
   "https://level3.rest/patterns/list/editable#add-entry": {
-    "rel": "add-entry",
     "description": "Adds an Entry to the List.",
     "href": "https://level3.rest/patterns/list/editable#add-entry"
   },
   "https://level3.rest/patterns/list/editable#empty-list": {
-    "rel": "empty-list",
     "description": "Action resource that will empty all the Entries from the List.",
     "href": "https://level3.rest/patterns/list/editable#empty-list"
   },
   "https://level3.rest/patterns/list/editable#empties-list": {
-    "rel": "empties-list",
     "description": "The List this Action will empty.",
     "href": "https://level3.rest/patterns/list/editable#empties-list"
   },
