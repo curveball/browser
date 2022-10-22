@@ -1,0 +1,155 @@
+{
+  "https://level3.rest/patterns/list#list": {
+    "rel": "list",
+    "description": "The containing List for this Entry.",
+    "href": "https://level3.rest/patterns/list#list"
+  },
+  "https://level3.rest/patterns/list#list-entry": {
+    "rel": "list-entry",
+    "description": "A resource element in this List resource. Each Entry is an individual resource.",
+    "href": "https://level3.rest/patterns/list#list-entry"
+  },
+  "https://level3.rest/patterns/list/editable#add-entry": {
+    "rel": "add-entry",
+    "description": "Adds an Entry to the List.",
+    "href": "https://level3.rest/patterns/list/editable#add-entry"
+  },
+  "https://level3.rest/patterns/list/editable#empty-list": {
+    "rel": "empty-list",
+    "description": "Action resource that will empty all the Entries from the List.",
+    "href": "https://level3.rest/patterns/list/editable#empty-list"
+  },
+  "https://level3.rest/patterns/list/editable#empties-list": {
+    "rel": "empties-list",
+    "description": "The List this Action will empty.",
+    "href": "https://level3.rest/patterns/list/editable#empties-list"
+  },
+  "https://level3.rest/patterns/list/editable#adds-to-list": {
+    "description": "The List this resource will add an Entry to.",
+    "href": "https://level3.rest/patterns/list/editable#adds-to-list"
+  },
+  "https://level3.rest/patterns/tree#top": {
+    "description": "The top node of the tree.",
+    "href": "https://level3.rest/patterns/tree#top"
+  },
+  "https://level3.rest/patterns/tree#child": {
+    "description": "A child node in the tree.",
+    "href": "https://level3.rest/patterns/tree#child"
+  },
+  "https://level3.rest/patterns/tree#parent": {
+    "description": "The parent node for this resource.",
+    "href": "https://level3.rest/patterns/tree#parent"
+  },
+  "https://level3.rest/patterns/filter#filter-info": {
+    "description": "Describes the current filtering configuration.",
+    "href": "https://level3.rest/patterns/filter#filter-info"
+  },
+  "https://level3.rest/patterns/filter#filter": {
+    "description": "Configures the filtration of the collection.",
+    "href": "https://level3.rest/patterns/filter#filter"
+  },
+  "https://level3.rest/patterns/filter#filters": {
+    "description": "The collection resource being filtered.",
+    "href": "https://level3.rest/patterns/filter#filters"
+  },
+  "https://level3.rest/patterns/sort#sort-info": {
+    "description": "Describes the current sorting configuration.",
+    "href": "https://level3.rest/patterns/sort#sort-info"
+  },
+  "https://level3.rest/patterns/sort#sorter": {
+    "description": "Configures the sorting of the collection.",
+    "href": "https://level3.rest/patterns/sort#sorter"
+  },
+  "https://level3.rest/patterns/sort#sorts": {
+    "description": "The collection resource being sorted.",
+    "href": "https://level3.rest/patterns/sort#sorts"
+  },
+  "https://level3.rest/patterns/page#next": {
+    "description": "The next page in a sequence of paged resources.",
+    "href": "https://level3.rest/patterns/page#next"
+  },
+  "https://level3.rest/patterns/page#previous": {
+    "description": "The previous page in a sequence of paged resources.",
+    "href": "https://level3.rest/patterns/page#previous"
+  },
+  "https://level3.rest/patterns/page/offset#page-info": {
+    "description": "Describes the current page position and pagination configuration.",
+    "href": "https://level3.rest/patterns/page/offset#page-info"
+  },
+  "https://level3.rest/patterns/page/offset#paginator": {
+    "description": "Describes and configures the pagination of this collection.",
+    "href": "https://level3.rest/patterns/page/offset#paginator"
+  },
+  "https://level3.rest/patterns/page/offset#paginates": {
+    "description": "The collection resource being paginated.",
+    "href": "https://level3.rest/patterns/page/offset#paginates"
+  },
+  "https://level3.rest/patterns/page/cursor#cursor-info": {
+    "description": "Describes the current cursor configuration and cursor mark.",
+    "href": "https://level3.rest/patterns/page/cursor#cursor-info"
+  },
+  "https://level3.rest/patterns/page/cursor#cursor": {
+    "description": "Describes and configures the cursor configuration of this collection.",
+    "href": "https://level3.rest/patterns/page/cursor#cursor"
+  },
+  "https://level3.rest/patterns/page/cursor#paginates": {
+    "description": "The collection resource being paginated.",
+    "href": "https://level3.rest/patterns/page/cursor#paginates"
+  },
+  "https://level3.rest/patterns/chooser#choice": {
+    "description": "A possible choice for a Chooser.",
+    "href": "https://level3.rest/patterns/chooser#choice"
+  },
+  "https://level3.rest/patterns/chooser#chosen": {
+    "description": "A selected choice in a Chooser.",
+    "href": "https://level3.rest/patterns/chooser#chosen"
+  },
+  "https://level3.rest/patterns/stepper#increment": {
+    "description": "Increases the value of a Stepper resource. Link may contain an 'anchor' property pointing to the field being incremented.",
+    "href": "https://level3.rest/patterns/stepper#increment"
+  },
+  "https://level3.rest/patterns/stepper#decrement": {
+    "description": "Decreases the value of a Stepper resource. Link may contain an 'anchor' property pointing to the field being decremented.",
+    "href": "https://level3.rest/patterns/stepper#decrement"
+  },
+  "https://level3.rest/patterns/stepper#increments": {
+    "description": "The Stepper resource that will be incremented. Link may contain an 'anchor' property pointing to the field being incremented.",
+    "href": "https://level3.rest/patterns/stepper#increments"
+  },
+  "https://level3.rest/patterns/stepper#decrements": {
+    "description": "The Stepper resource that will be decremented. Link may contain an 'anchor' property pointing to the field being decremented.",
+    "href": "https://level3.rest/patterns/stepper#decrements"
+  },
+  "https://level3.rest/patterns/toggle#toggle": {
+    "description": "Toggles a Toggler resource to it's opposite value. Link may contain an 'anchor' property pointing to the field being toggled.",
+    "href": "https://level3.rest/patterns/toggle#toggle"
+  },
+  "https://level3.rest/patterns/toggle#toggles": {
+    "description": "The Toggler resource being toggled to an opposite value. Link may contain an 'anchor' property pointing to the field being toggled.",
+    "href": "https://level3.rest/patterns/toggle#toggles"
+  },
+  "https://level3.rest/patterns/process#activity": {
+    "description": "An Activity in a Process.",
+    "href": "https://level3.rest/patterns/process#activity"
+  },
+  "https://level3.rest/patterns/process#process": {
+    "description": "The Process that orchestrates a set of Activities.",
+    "href": "https://level3.rest/patterns/process#process"
+  },
+  "https://level3.rest/patterns/process#blocks": {
+    "description": "The Process this Activity is currently blocking from moving forward.",
+    "href": "https://level3.rest/patterns/process#blocks"
+  },
+  "https://level3.rest/patterns/process#blocked-by": {
+    "description": "An Activity that is currently blocking a Process from moving forward.",
+    "href": "https://level3.rest/patterns/process#blocked-by"
+  },
+  "https://level3.rest/patterns/metadata#metadata": {
+    "description": "Metadata describing a Content resource.",
+    "href": "https://level3.rest/patterns/metadata#metadata"
+  },
+  "https://level3.rest/patterns/metadata#content": {
+    "description": "The Content resource described by this Metadata.",
+    "href": "https://level3.rest/patterns/metadata#content"
+  }
+}

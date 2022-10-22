@@ -7,12 +7,15 @@ import * as ianaLinks from '../data/iana-links.json';
 // List of links from this project, overrides some IANA links with better
 // descriptions
 import * as editorLinks from '../data/editor-links.json';
+//List of links from the Level3 REST (https://level3.rest) specification.
+import * as level3RestLinks from '../data/level3-rest-links.json';
 
 type LinkDescriptions = Record<string, {href: string; description: string}>;
 
 const linkDescriptions: LinkDescriptions = {
   ...ianaLinks,
   ...editorLinks,
+  ...level3RestLinks
 };
 
 export function LinksTable(props: PageProps) {
