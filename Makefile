@@ -46,3 +46,7 @@ assets/js/html-form-enhancer.js: node_modules/html-form-enhancer/dist/html-form-
 
 assets/js/serialize-json-form.js: node_modules/html-form-enhancer/dist/serialize-json-form.js
 	cp node_modules/html-form-enhancer/dist/serialize-json-form.* assets/js
+
+
+src/data/iana-links.json:
+	node util/fetch-link-relation-data.mjs > src/data/iana-links.json

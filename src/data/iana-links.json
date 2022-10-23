@@ -6,7 +6,7 @@
   },
   "acl": {
     "rel": "acl",
-    "description": "Asserts that the link target provides an access control description for the link context.",
+    "description": "Asserts that the link target provides an access control resource for the link context.",
     "href": "https://solidproject.org/TR/wac#acl-link-relation"
   },
   "alternate": {
@@ -79,8 +79,8 @@
     "description": "Refers to a table of contents.",
     "href": "https://www.w3.org/TR/html401/"
   },
-  "convertedFrom": {
-    "rel": "convertedFrom",
+  "convertedfrom": {
+    "rel": "convertedfrom",
     "description": "The document linked to was later converted to the document that contains this link relation.  For example, an RFC can\n      have a link to the Internet-Draft that became the RFC; in that case,\n      the link relation would be \"convertedFrom\".",
     "href": "https://datatracker.ietf.org/doc/html/rfc7991"
   },
@@ -184,78 +184,78 @@
     "description": "Refers to an index.",
     "href": "https://www.w3.org/TR/html401/"
   },
-  "intervalAfter": {
-    "rel": "intervalAfter",
+  "intervalafter": {
+    "rel": "intervalafter",
     "description": "refers to a resource associated with a time interval that ends before the beginning of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalAfter"
   },
-  "intervalBefore": {
-    "rel": "intervalBefore",
+  "intervalbefore": {
+    "rel": "intervalbefore",
     "description": "refers to a resource associated with a time interval that begins after the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalBefore"
   },
-  "intervalContains": {
-    "rel": "intervalContains",
+  "intervalcontains": {
+    "rel": "intervalcontains",
     "description": "refers to a resource associated with a time interval that begins after the beginning of the time interval associated with the context resource, and ends before the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalContains"
   },
-  "intervalDisjoint": {
-    "rel": "intervalDisjoint",
+  "intervaldisjoint": {
+    "rel": "intervaldisjoint",
     "description": "refers to a resource associated with a time interval that begins after the end of the time interval associated with the context resource, or ends before the beginning of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalDisjoint"
   },
-  "intervalDuring": {
-    "rel": "intervalDuring",
+  "intervalduring": {
+    "rel": "intervalduring",
     "description": "refers to a resource associated with a time interval that begins before the beginning of the time interval associated with the context resource, and ends after the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalDuring"
   },
-  "intervalEquals": {
-    "rel": "intervalEquals",
+  "intervalequals": {
+    "rel": "intervalequals",
     "description": "refers to a resource associated with a time interval whose beginning coincides with the beginning of the time interval associated with the context resource, and whose end coincides with the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalEquals"
   },
-  "intervalFinishedBy": {
-    "rel": "intervalFinishedBy",
+  "intervalfinishedby": {
+    "rel": "intervalfinishedby",
     "description": "refers to a resource associated with a time interval that begins after the beginning of the time interval associated with the context resource, and whose end coincides with the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalFinishedBy"
   },
-  "intervalFinishes": {
-    "rel": "intervalFinishes",
+  "intervalfinishes": {
+    "rel": "intervalfinishes",
     "description": "refers to a resource associated with a time interval that begins before the beginning of the time interval associated with the context resource, and whose end coincides with the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalFinishes"
   },
-  "intervalIn": {
-    "rel": "intervalIn",
+  "intervalin": {
+    "rel": "intervalin",
     "description": "refers to a resource associated with a time interval that begins before or is coincident with the beginning of the time interval associated with the context resource, and ends after or is coincident with the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalIn"
   },
-  "intervalMeets": {
-    "rel": "intervalMeets",
+  "intervalmeets": {
+    "rel": "intervalmeets",
     "description": "refers to a resource associated with a time interval whose beginning coincides with the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalMeets"
   },
-  "intervalMetBy": {
-    "rel": "intervalMetBy",
+  "intervalmetby": {
+    "rel": "intervalmetby",
     "description": "refers to a resource associated with a time interval whose end coincides with the beginning of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalMetBy"
   },
-  "intervalOverlappedBy": {
-    "rel": "intervalOverlappedBy",
+  "intervaloverlappedby": {
+    "rel": "intervaloverlappedby",
     "description": "refers to a resource associated with a time interval that begins before the beginning of the time interval associated with the context resource, and ends after the beginning of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalOverlappedBy"
   },
-  "intervalOverlaps": {
-    "rel": "intervalOverlaps",
+  "intervaloverlaps": {
+    "rel": "intervaloverlaps",
     "description": "refers to a resource associated with a time interval that begins before the end of the time interval associated with the context resource, and ends after the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalOverlaps"
   },
-  "intervalStartedBy": {
-    "rel": "intervalStartedBy",
+  "intervalstartedby": {
+    "rel": "intervalstartedby",
     "description": "refers to a resource associated with a time interval whose beginning coincides with the beginning of the time interval associated with the context resource, and ends before the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalStartedBy"
   },
-  "intervalStarts": {
-    "rel": "intervalStarts",
+  "intervalstarts": {
+    "rel": "intervalstarts",
     "description": "refers to a resource associated with a time interval whose beginning coincides with the beginning of the time interval associated with the context resource, and ends after the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalStarts"
   },
@@ -278,6 +278,11 @@
     "rel": "license",
     "description": "Refers to a license associated with this context.",
     "href": "https://datatracker.ietf.org/doc/html/rfc4946"
+  },
+  "linkset": {
+    "rel": "linkset",
+    "description": "The link target of a link with the \"linkset\" relation type provides a set of links, including links in which the link\n      context of the link participates.",
+    "href": "https://datatracker.ietf.org/doc/html/rfc9264"
   },
   "lrdd": {
     "rel": "lrdd",
@@ -369,8 +374,8 @@
     "description": "The Target IRI points to an Original Resource.",
     "href": "https://datatracker.ietf.org/doc/html/rfc7089"
   },
-  "P3Pv1": {
-    "rel": "P3Pv1",
+  "p3pv1": {
+    "rel": "p3pv1",
     "description": "Refers to a P3P privacy policy for the context.",
     "href": "https://www.w3.org/TR/P3P/#syntax_link"
   },
@@ -498,6 +503,10 @@
     "rel": "service-meta",
     "description": "Identifies general metadata for the context that is primarily intended for consumption by machines.",
     "href": "https://datatracker.ietf.org/doc/html/rfc8631"
+  },
+  "siptrunkingcapability": {
+    "rel": "siptrunkingcapability",
+    "description": "refers to a capability document that defines parameters  or configuration requirements for automated peering and communication \n      channel negotiation of the Session Initiation Protocol (SIP)."
   },
   "sponsored": {
     "rel": "sponsored",
