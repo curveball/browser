@@ -37,7 +37,6 @@ for(const record of dom.getElementsByTagName('record')) {
   }
 
   relationships[rel] = {
-    rel,
     description,
     href,
   };

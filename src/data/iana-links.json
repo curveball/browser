@@ -1,605 +1,484 @@
 {
   "about": {
-    "rel": "about",
     "description": "Refers to a resource that is the subject of the link's context.",
     "href": "https://datatracker.ietf.org/doc/html/rfc6903"
   },
   "acl": {
-    "rel": "acl",
     "description": "Asserts that the link target provides an access control resource for the link context.",
     "href": "https://solidproject.org/TR/wac#acl-link-relation"
   },
   "alternate": {
-    "rel": "alternate",
     "description": "Refers to a substitute for this context",
     "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-alternate"
   },
   "amphtml": {
-    "rel": "amphtml",
     "description": "Used to reference alternative content that uses the AMP profile of the HTML format.",
     "href": "https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml/"
   },
   "appendix": {
-    "rel": "appendix",
     "description": "Refers to an appendix.",
     "href": "https://www.w3.org/TR/html401/"
   },
   "apple-touch-icon": {
-    "rel": "apple-touch-icon",
     "description": "Refers to an icon for the context. Synonym for icon.",
     "href": "https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW3"
   },
   "apple-touch-startup-image": {
-    "rel": "apple-touch-startup-image",
     "description": "Refers to a launch screen for the context.",
     "href": "https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW3"
   },
   "archives": {
-    "rel": "archives",
     "description": "Refers to a collection of records, documents, or other materials of historical interest.",
     "href": "http://www.w3.org/TR/2011/WD-html5-20110113/links.html#rel-archives"
   },
   "author": {
-    "rel": "author",
     "description": "Refers to the context's author.",
     "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-author"
   },
   "blocked-by": {
-    "rel": "blocked-by",
     "description": "Identifies the entity that blocks access to a resource following receipt of a legal demand.",
     "href": "https://datatracker.ietf.org/doc/html/rfc7725"
   },
   "bookmark": {
-    "rel": "bookmark",
     "description": "Gives a permanent link to use for bookmarking purposes.",
     "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-bookmark"
   },
   "canonical": {
-    "rel": "canonical",
     "description": "Designates the preferred version of a resource (the IRI and its contents).",
     "href": "https://datatracker.ietf.org/doc/html/rfc6596"
   },
   "chapter": {
-    "rel": "chapter",
     "description": "Refers to a chapter in a collection of resources.",
     "href": "https://www.w3.org/TR/html401/"
   },
   "cite-as": {
-    "rel": "cite-as",
     "description": "Indicates that the link target is preferred over the link context for the purpose of permanent citation.",
     "href": "https://datatracker.ietf.org/doc/html/rfc8574"
   },
   "collection": {
-    "rel": "collection",
     "description": "The target IRI points to a resource which represents the collection resource for the context IRI.",
     "href": "https://datatracker.ietf.org/doc/html/rfc6573"
   },
   "contents": {
-    "rel": "contents",
     "description": "Refers to a table of contents.",
     "href": "https://www.w3.org/TR/html401/"
   },
   "convertedfrom": {
-    "rel": "convertedfrom",
     "description": "The document linked to was later converted to the document that contains this link relation.  For example, an RFC can\n      have a link to the Internet-Draft that became the RFC; in that case,\n      the link relation would be \"convertedFrom\".",
     "href": "https://datatracker.ietf.org/doc/html/rfc7991"
   },
   "copyright": {
-    "rel": "copyright",
     "description": "Refers to a copyright statement that applies to the\n    link's context.",
     "href": "https://www.w3.org/TR/html401/"
   },
   "create-form": {
-    "rel": "create-form",
     "description": "The target IRI points to a resource where a submission form can be obtained.",
     "href": "https://datatracker.ietf.org/doc/html/rfc6861"
   },
   "current": {
-    "rel": "current",
     "description": "Refers to a resource containing the most recent item(s) in a collection of resources.",
     "href": "https://datatracker.ietf.org/doc/html/rfc5005"
   },
   "describedby": {
-    "rel": "describedby",
     "description": "Refers to a resource providing information about the link's context.",
     "href": "http://www.w3.org/TR/powder-dr/#assoc-linking"
   },
   "describes": {
-    "rel": "describes",
     "description": "The relationship A 'describes' B asserts that resource A provides a description of resource B. There are no\n      constraints on the format or representation of either A or B,\n      neither are there any further constraints on either resource.",
     "href": "https://datatracker.ietf.org/doc/html/rfc6892"
   },
   "disclosure": {
-    "rel": "disclosure",
     "description": "Refers to a list of patent disclosures made with respect to  material for which 'disclosure' relation is specified.",
     "href": "https://datatracker.ietf.org/doc/html/rfc6579"
   },
   "dns-prefetch": {
-    "rel": "dns-prefetch",
     "description": "Used to indicate an origin that will be used to fetch required  resources for the link context, and that the user agent ought to resolve \n      as early as possible.",
     "href": "https://www.w3.org/TR/resource-hints/"
   },
   "duplicate": {
-    "rel": "duplicate",
     "description": "Refers to a resource whose available representations are byte-for-byte identical with the corresponding representations of\n      the context IRI.",
     "href": "https://datatracker.ietf.org/doc/html/rfc6249"
   },
   "edit": {
-    "rel": "edit",
     "description": "Refers to a resource that can be used to edit the link's context.",
     "href": "https://datatracker.ietf.org/doc/html/rfc5023"
   },
   "edit-form": {
-    "rel": "edit-form",
     "description": "The target IRI points to a resource where a submission form for editing associated resource can be obtained.",
     "href": "https://datatracker.ietf.org/doc/html/rfc6861"
   },
   "edit-media": {
-    "rel": "edit-media",
     "description": "Refers to a resource that can be used to edit media associated with the link's context.",
     "href": "https://datatracker.ietf.org/doc/html/rfc5023"
   },
   "enclosure": {
-    "rel": "enclosure",
     "description": "Identifies a related resource that is potentially large and might require special handling.",
     "href": "https://datatracker.ietf.org/doc/html/rfc4287"
   },
   "external": {
-    "rel": "external",
     "description": "Refers to a resource that is not part of the same site as the current context.",
     "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-external"
   },
   "first": {
-    "rel": "first",
     "description": "An IRI that refers to the furthest preceding resource\n    in a series of resources.",
     "href": "https://datatracker.ietf.org/doc/html/rfc8288"
   },
   "glossary": {
-    "rel": "glossary",
     "description": "Refers to a glossary of terms.",
     "href": "https://www.w3.org/TR/html401/"
   },
   "help": {
-    "rel": "help",
     "description": "Refers to context-sensitive help.",
     "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-help"
   },
   "hosts": {
-    "rel": "hosts",
     "description": "Refers to a resource hosted by the server indicated by the link context.",
     "href": "https://datatracker.ietf.org/doc/html/rfc6690"
   },
   "hub": {
-    "rel": "hub",
     "description": "Refers to a hub that enables registration for\n    notification of updates to the context.",
     "href": "https://www.w3.org/TR/websub/"
   },
   "icon": {
-    "rel": "icon",
     "description": "Refers to an icon representing the link's context.",
     "href": "https://html.spec.whatwg.org/multipage/links.html#rel-icon"
   },
   "index": {
-    "rel": "index",
     "description": "Refers to an index.",
     "href": "https://www.w3.org/TR/html401/"
   },
   "intervalafter": {
-    "rel": "intervalafter",
     "description": "refers to a resource associated with a time interval that ends before the beginning of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalAfter"
   },
   "intervalbefore": {
-    "rel": "intervalbefore",
     "description": "refers to a resource associated with a time interval that begins after the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalBefore"
   },
   "intervalcontains": {
-    "rel": "intervalcontains",
     "description": "refers to a resource associated with a time interval that begins after the beginning of the time interval associated with the context resource, and ends before the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalContains"
   },
   "intervaldisjoint": {
-    "rel": "intervaldisjoint",
     "description": "refers to a resource associated with a time interval that begins after the end of the time interval associated with the context resource, or ends before the beginning of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalDisjoint"
   },
   "intervalduring": {
-    "rel": "intervalduring",
     "description": "refers to a resource associated with a time interval that begins before the beginning of the time interval associated with the context resource, and ends after the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalDuring"
   },
   "intervalequals": {
-    "rel": "intervalequals",
     "description": "refers to a resource associated with a time interval whose beginning coincides with the beginning of the time interval associated with the context resource, and whose end coincides with the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalEquals"
   },
   "intervalfinishedby": {
-    "rel": "intervalfinishedby",
     "description": "refers to a resource associated with a time interval that begins after the beginning of the time interval associated with the context resource, and whose end coincides with the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalFinishedBy"
   },
   "intervalfinishes": {
-    "rel": "intervalfinishes",
     "description": "refers to a resource associated with a time interval that begins before the beginning of the time interval associated with the context resource, and whose end coincides with the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalFinishes"
   },
   "intervalin": {
-    "rel": "intervalin",
     "description": "refers to a resource associated with a time interval that begins before or is coincident with the beginning of the time interval associated with the context resource, and ends after or is coincident with the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalIn"
   },
   "intervalmeets": {
-    "rel": "intervalmeets",
     "description": "refers to a resource associated with a time interval whose beginning coincides with the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalMeets"
   },
   "intervalmetby": {
-    "rel": "intervalmetby",
     "description": "refers to a resource associated with a time interval whose end coincides with the beginning of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalMetBy"
   },
   "intervaloverlappedby": {
-    "rel": "intervaloverlappedby",
     "description": "refers to a resource associated with a time interval that begins before the beginning of the time interval associated with the context resource, and ends after the beginning of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalOverlappedBy"
   },
   "intervaloverlaps": {
-    "rel": "intervaloverlaps",
     "description": "refers to a resource associated with a time interval that begins before the end of the time interval associated with the context resource, and ends after the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalOverlaps"
   },
   "intervalstartedby": {
-    "rel": "intervalstartedby",
     "description": "refers to a resource associated with a time interval whose beginning coincides with the beginning of the time interval associated with the context resource, and ends before the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalStartedBy"
   },
   "intervalstarts": {
-    "rel": "intervalstarts",
     "description": "refers to a resource associated with a time interval whose beginning coincides with the beginning of the time interval associated with the context resource, and ends after the end of the time interval associated with the context resource",
     "href": "https://www.w3.org/TR/owl-time/#time:intervalStarts"
   },
   "item": {
-    "rel": "item",
     "description": "The target IRI points to a resource that is a member of the collection represented by the context IRI.",
     "href": "https://datatracker.ietf.org/doc/html/rfc6573"
   },
   "last": {
-    "rel": "last",
     "description": "An IRI that refers to the furthest following resource in a series of resources.",
     "href": "https://datatracker.ietf.org/doc/html/rfc8288"
   },
   "latest-version": {
-    "rel": "latest-version",
     "description": "Points to a resource containing the latest (e.g., current) version of the context.",
     "href": "https://datatracker.ietf.org/doc/html/rfc5829"
   },
   "license": {
-    "rel": "license",
     "description": "Refers to a license associated with this context.",
     "href": "https://datatracker.ietf.org/doc/html/rfc4946"
   },
   "linkset": {
-    "rel": "linkset",
     "description": "The link target of a link with the \"linkset\" relation type provides a set of links, including links in which the link\n      context of the link participates.",
     "href": "https://datatracker.ietf.org/doc/html/rfc9264"
   },
   "lrdd": {
-    "rel": "lrdd",
     "description": "Refers to further information about the link's context, expressed as a LRDD (\"Link-based Resource Descriptor Document\")\n      resource.  See  for information about\n      processing this relation type in host-meta documents. When used\n      elsewhere, it refers to additional links and other metadata.\n      Multiple instances indicate additional LRDD resources. LRDD\n      resources MUST have an \"application/xrd+xml\" representation, and\n      MAY have others.",
     "href": "https://datatracker.ietf.org/doc/html/rfc6415"
   },
   "manifest": {
-    "rel": "manifest",
     "description": "Links to a manifest file for the context.",
     "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-manifest"
   },
   "mask-icon": {
-    "rel": "mask-icon",
     "description": "Refers to a mask that can be applied to the icon for the context.",
     "href": "https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html#//apple_ref/doc/uid/TP40002051-CH18-SW1"
   },
   "media-feed": {
-    "rel": "media-feed",
     "description": "Refers to a feed of personalised media recommendations relevant to the link context.",
     "href": "https://wicg.github.io/media-feeds/#discovery-of-media-feeds"
   },
   "memento": {
-    "rel": "memento",
     "description": "The Target IRI points to a Memento, a fixed resource that will not change state anymore.",
     "href": "https://datatracker.ietf.org/doc/html/rfc7089"
   },
   "micropub": {
-    "rel": "micropub",
     "description": "Links to the context's Micropub endpoint.",
     "href": "https://www.w3.org/TR/micropub/#endpoint-discovery-p-1"
   },
   "modulepreload": {
-    "rel": "modulepreload",
     "description": "Refers to a module that the user agent is to preemptively fetch and store for use in the current context.",
     "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-modulepreload"
   },
   "monitor": {
-    "rel": "monitor",
     "description": "Refers to a resource that can be used to monitor changes in an HTTP resource.",
     "href": "https://datatracker.ietf.org/doc/html/rfc5989"
   },
   "monitor-group": {
-    "rel": "monitor-group",
     "description": "Refers to a resource that can be used to monitor changes in a specified group of HTTP resources.",
     "href": "https://datatracker.ietf.org/doc/html/rfc5989"
   },
   "next": {
-    "rel": "next",
     "description": "Indicates that the link's context is a part of a series, and that the next in the series is the link target.",
     "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-next"
   },
   "next-archive": {
-    "rel": "next-archive",
     "description": "Refers to the immediately following archive resource.",
     "href": "https://datatracker.ietf.org/doc/html/rfc5005"
   },
   "nofollow": {
-    "rel": "nofollow",
     "description": "Indicates that the context’s original author or publisher does not endorse the link target.",
     "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-nofollow"
   },
   "noopener": {
-    "rel": "noopener",
     "description": "Indicates that any newly created top-level browsing context which results from following the link will not be an auxiliary browsing context.",
     "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-noopener"
   },
   "noreferrer": {
-    "rel": "noreferrer",
     "description": "Indicates that no referrer information is to be leaked when following the link.",
     "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-noreferrer"
   },
   "opener": {
-    "rel": "opener",
     "description": "Indicates that any newly created top-level browsing context which results from following the link will be an auxiliary browsing context.",
     "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-opener"
   },
   "openid2.local_id": {
-    "rel": "openid2.local_id",
     "description": "Refers to an OpenID Authentication server on which the context relies for an assertion that the end user controls an Identifier.",
     "href": "https://openid.net/specs/openid-authentication-2_0.html#rfc.section.7.3.3"
   },
   "openid2.provider": {
-    "rel": "openid2.provider",
     "description": "Refers to a resource which accepts OpenID Authentication protocol messages for the context.",
     "href": "https://openid.net/specs/openid-authentication-2_0.html#rfc.section.7.3.3"
   },
   "original": {
-    "rel": "original",
     "description": "The Target IRI points to an Original Resource.",
     "href": "https://datatracker.ietf.org/doc/html/rfc7089"
   },
   "p3pv1": {
-    "rel": "p3pv1",
     "description": "Refers to a P3P privacy policy for the context.",
     "href": "https://www.w3.org/TR/P3P/#syntax_link"
   },
   "payment": {
-    "rel": "payment",
     "description": "Indicates a resource where payment is accepted.",
     "href": "https://datatracker.ietf.org/doc/html/rfc8288"
   },
   "pingback": {
-    "rel": "pingback",
     "description": "Gives the address of the pingback resource for the link context.",
     "href": "http://www.hixie.ch/specs/pingback/pingback"
   },
   "preconnect": {
-    "rel": "preconnect",
     "description": "Used to indicate an origin that will be used to fetch required  resources for the link context. Initiating an early connection, which \n      includes the DNS lookup, TCP handshake, and optional TLS negotiation, \n      allows the user agent to mask the high latency costs of establishing a \n      connection.",
     "href": "https://www.w3.org/TR/resource-hints/"
   },
   "predecessor-version": {
-    "rel": "predecessor-version",
     "description": "Points to a resource containing the predecessor version in the version history.",
     "href": "https://datatracker.ietf.org/doc/html/rfc5829"
   },
   "prefetch": {
-    "rel": "prefetch",
     "description": "The prefetch link relation type is used to identify a resource  that might be required by the next navigation from the link context, and \n      that the user agent ought to fetch, such that the user agent can deliver a \n      faster response once the resource is requested in the future.",
     "href": "http://www.w3.org/TR/resource-hints/"
   },
   "preload": {
-    "rel": "preload",
     "description": "Refers to a resource that should be loaded early in the  processing of the link's context, without blocking rendering.",
     "href": "http://www.w3.org/TR/preload/"
   },
   "prerender": {
-    "rel": "prerender",
     "description": "Used to identify a resource that might be required by the next  navigation from the link context, and that the user agent ought to fetch \n      and execute, such that the user agent can deliver a faster response once \n      the resource is requested in the future.",
     "href": "https://www.w3.org/TR/resource-hints/"
   },
   "prev": {
-    "rel": "prev",
     "description": "Indicates that the link's context is a part of a series, and that the previous in the series is the link target.",
     "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-prev"
   },
   "preview": {
-    "rel": "preview",
     "description": "Refers to a resource that provides a preview of the link's context.",
     "href": "https://datatracker.ietf.org/doc/html/rfc6903"
   },
   "previous": {
-    "rel": "previous",
     "description": "Refers to the previous resource in an ordered series of resources.  Synonym for \"prev\".",
     "href": "https://www.w3.org/TR/html401/"
   },
   "prev-archive": {
-    "rel": "prev-archive",
     "description": "Refers to the immediately preceding archive resource.",
     "href": "https://datatracker.ietf.org/doc/html/rfc5005"
   },
   "privacy-policy": {
-    "rel": "privacy-policy",
     "description": "Refers to a privacy policy associated with the link's context.",
     "href": "https://datatracker.ietf.org/doc/html/rfc6903"
   },
   "profile": {
-    "rel": "profile",
     "description": "Identifying that a resource representation conforms\nto a certain profile, without affecting the non-profile semantics\nof the resource representation.",
     "href": "https://datatracker.ietf.org/doc/html/rfc6906"
   },
   "publication": {
-    "rel": "publication",
     "description": "Links to a publication manifest. A manifest represents  structured information about a publication, such as informative metadata, \n      a list of resources, and a default reading order.",
     "href": "https://www.w3.org/TR/pub-manifest/#link-relation-type-registration"
   },
   "related": {
-    "rel": "related",
     "description": "Identifies a related resource.",
     "href": "https://datatracker.ietf.org/doc/html/rfc4287"
   },
   "restconf": {
-    "rel": "restconf",
     "description": "Identifies the root of RESTCONF API as configured on this HTTP server. The \"restconf\" relation defines the root of the API defined in RFC8040.\n      Subsequent revisions of RESTCONF will use alternate relation values to support \n      protocol versioning.",
     "href": "https://datatracker.ietf.org/doc/html/rfc8040"
   },
   "replies": {
-    "rel": "replies",
     "description": "Identifies a resource that is a reply to the context of the link.",
     "href": "https://datatracker.ietf.org/doc/html/rfc4685"
   },
   "ruleinput": {
-    "rel": "ruleinput",
     "description": "The resource identified by the link target provides an input value to an \n    instance of a rule, where the resource which represents the rule instance is \n    identified by the link context.",
     "href": "https://openconnectivity.org/specs/OCF_Core_Optional_Specification_v2.2.0.pdf"
   },
   "search": {
-    "rel": "search",
     "description": "Refers to a resource that can be used to search through the link's context and related resources.",
     "href": "http://www.opensearch.org/Specifications/OpenSearch/1.1"
   },
   "section": {
-    "rel": "section",
     "description": "Refers to a section in a collection of resources.",
     "href": "https://www.w3.org/TR/html401/"
   },
   "self": {
-    "rel": "self",
     "description": "Conveys an identifier for the link's context.",
     "href": "https://datatracker.ietf.org/doc/html/rfc4287"
   },
   "service": {
-    "rel": "service",
     "description": "Indicates a URI that can be used to retrieve a service document.",
     "href": "https://datatracker.ietf.org/doc/html/rfc5023"
   },
   "service-desc": {
-    "rel": "service-desc",
     "description": "Identifies service description for the context that is primarily intended for consumption by machines.",
     "href": "https://datatracker.ietf.org/doc/html/rfc8631"
   },
   "service-doc": {
-    "rel": "service-doc",
     "description": "Identifies service documentation for the context that is primarily intended for human consumption.",
     "href": "https://datatracker.ietf.org/doc/html/rfc8631"
   },
   "service-meta": {
-    "rel": "service-meta",
     "description": "Identifies general metadata for the context that is primarily intended for consumption by machines.",
     "href": "https://datatracker.ietf.org/doc/html/rfc8631"
   },
   "siptrunkingcapability": {
-    "rel": "siptrunkingcapability",
     "description": "refers to a capability document that defines parameters  or configuration requirements for automated peering and communication \n      channel negotiation of the Session Initiation Protocol (SIP)."
   },
   "sponsored": {
-    "rel": "sponsored",
     "description": "Refers to a resource that is within a context that is \n\t\tsponsored (such as advertising or another compensation agreement).",
     "href": "https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html"
   },
   "start": {
-    "rel": "start",
     "description": "Refers to the first resource in a collection of resources.",
     "href": "https://www.w3.org/TR/html401"
   },
   "status": {
-    "rel": "status",
     "description": "Identifies a resource that represents the context's status.",
     "href": "https://datatracker.ietf.org/doc/html/rfc8631"
   },
   "stylesheet": {
-    "rel": "stylesheet",
     "description": "Refers to a stylesheet.",
     "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-stylesheet"
   },
   "subsection": {
-    "rel": "subsection",
     "description": "Refers to a resource serving as a subsection in a collection of resources.",
     "href": "https://www.w3.org/TR/html401/"
   },
   "successor-version": {
-    "rel": "successor-version",
     "description": "Points to a resource containing the successor version in the version history.",
     "href": "https://datatracker.ietf.org/doc/html/rfc5829"
   },
   "sunset": {
-    "rel": "sunset",
     "description": "Identifies a resource that provides information about the context's retirement policy.",
     "href": "https://datatracker.ietf.org/doc/html/rfc8594"
   },
   "tag": {
-    "rel": "tag",
     "description": "Gives a tag (identified by the given address) that applies to the current document.",
     "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-tag"
   },
   "terms-of-service": {
-    "rel": "terms-of-service",
     "description": "Refers to the terms of service associated with the link's context.",
     "href": "https://datatracker.ietf.org/doc/html/rfc6903"
   },
   "timegate": {
-    "rel": "timegate",
     "description": "The Target IRI points to a TimeGate for an Original Resource.",
     "href": "https://datatracker.ietf.org/doc/html/rfc7089"
   },
   "timemap": {
-    "rel": "timemap",
     "description": "The Target IRI points to a TimeMap for an Original Resource.",
     "href": "https://datatracker.ietf.org/doc/html/rfc7089"
   },
   "type": {
-    "rel": "type",
     "description": "Refers to a resource identifying the abstract semantic type of which the link's context is considered to be an instance.",
     "href": "https://datatracker.ietf.org/doc/html/rfc6903"
   },
   "ugc": {
-    "rel": "ugc",
     "description": "Refers to a resource that is within a context that is User Generated Content.",
     "href": "https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html"
   },
   "up": {
-    "rel": "up",
     "description": "Refers to a parent document in a hierarchy of documents.",
     "href": "https://datatracker.ietf.org/doc/html/rfc8288"
   },
   "version-history": {
-    "rel": "version-history",
     "description": "Points to a resource containing the version history for the context.",
     "href": "https://datatracker.ietf.org/doc/html/rfc5829"
   },
   "via": {
-    "rel": "via",
     "description": "Identifies a resource that is the source of the information in the link's context.",
     "href": "https://datatracker.ietf.org/doc/html/rfc4287"
   },
   "webmention": {
-    "rel": "webmention",
     "description": "Identifies a target URI that supports the Webmention protocol.\n    This allows clients that mention a resource in some form of publishing process\n    to contact that endpoint and inform it that this resource has been mentioned.",
     "href": "http://www.w3.org/TR/webmention/"
   },
   "working-copy": {
-    "rel": "working-copy",
     "description": "Points to a working copy for this resource.",
     "href": "https://datatracker.ietf.org/doc/html/rfc5829"
   },
   "working-copy-of": {
-    "rel": "working-copy-of",
     "description": "Points to the versioned resource from which this working copy was obtained.",
     "href": "https://datatracker.ietf.org/doc/html/rfc5829"
   }
