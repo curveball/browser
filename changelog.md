@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.19.7 (2022-10-22)
+-------------------
+
+* #159: Added level3.rest link relationship descriptions (@mattbishop).
+* #160: Update rels from the iana link relation registry.
+
+
 0.19.6 (2022-10-22)
 -------------------
 
