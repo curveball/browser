@@ -403,9 +403,6 @@
     "description": "Identifies general metadata for the context that is primarily intended for consumption by machines.",
     "href": "https://datatracker.ietf.org/doc/html/rfc8631"
   },
-  "siptrunkingcapability": {
-    "description": "refers to a capability document that defines parameters  or configuration requirements for automated peering and communication \n      channel negotiation of the Session Initiation Protocol (SIP)."
-  },
   "sponsored": {
     "description": "Refers to a resource that is within a context that is \n\t\tsponsored (such as advertising or another compensation agreement).",
     "href": "https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html"
