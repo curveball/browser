@@ -20,6 +20,7 @@ export function Embedded(props: PageProps) {
     { embeds.map( embeddedState => <Embed
       resourceState={embeddedState}
       originalBody={embeddedState.serializeBody() as string}
+      key={embeddedState.uri}
       {...embeddedProps}
     />) }
   </>;
