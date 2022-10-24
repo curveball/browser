@@ -97,8 +97,8 @@ function LinkRel(props: LinkRelProps) {
 
   const rel = props.link.rel;
   if (linkDescriptions[rel]!==undefined) {
-    const ianaLink = linkDescriptions[rel];
-    return <a className="definition" title={ianaLink.description} href={ianaLink.href}>{rel}</a>;
+    const link = linkDescriptions[rel];
+    return <a className="definition" title={link.description} href={link.href}>{rel}</a>;
   } else {
     return <>{rel}</>;
   }
