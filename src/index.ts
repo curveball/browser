@@ -30,6 +30,7 @@ export const supportedContentTypes = [
  */
 
 const defaultNavigationLinks: NavigationLinkMap = {
+  'acl': true,
   'alternate': {
     position: 'alternate',
   },
