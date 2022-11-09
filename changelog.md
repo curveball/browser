@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.19.9 (2022-11-09)
+-------------------
+
+* Forms/Actions now recognize a few more verbs in titles to give the submit
+  button a better label.
+
+
 0.19.8 (2022-10-31)
 -------------------
 
