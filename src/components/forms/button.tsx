@@ -33,6 +33,7 @@ const methodLabel: Record<string, string> = {
 const titleHintGuess: Record<string, string> = {
   'add': 'Add',
   'edit': 'Edit',
+  'remove': 'Remove',
 };
 
 export function Button(props: Props) {
