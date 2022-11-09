@@ -24,16 +24,20 @@ type Props = {
 }
 
 const methodLabel: Record<string, string> = {
-  'DELETE': 'Delete',
-  'GET': 'Query',
-  'PATCH' : 'Update',
-  'SEARCH' : 'Search',
+  DELETE: 'Delete',
+  GET: 'Query',
+  PATCH : 'Update',
+  SEARCH : 'Search',
 };
 
 const titleHintGuess: Record<string, string> = {
-  'add': 'Add',
-  'edit': 'Edit',
-  'remove': 'Remove',
+  add: 'Add',
+  delete: 'Delete',
+  edit: 'Edit',
+  find: 'Find',
+  remove: 'Remove',
+  search: 'Search',
+  select: 'Select',
 };
 
 export function Button(props: Props) {
