@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.19.8 (2022-10-22)
+0.19.8 (2022-10-31)
 -------------------
 
 * Show a default icon for `acl` links.
