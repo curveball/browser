@@ -137,7 +137,7 @@ import { Application } from 'curveball/@core';
 import browser from '@curveball/browser';
 
 const app = new Application();
-app.use(browser({});
+app.use(browser({}));
 ```
 
 
