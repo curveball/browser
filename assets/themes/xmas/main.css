@@ -2,6 +2,13 @@
 
 header {
   background-color: #004400;
+  background-image: none;
+  padding-left: 15px;
+}
+header::before {
+  content: "🎄";
+  padding-right: 10px;
+  font-size: 40px;
 }
 
 nav {
