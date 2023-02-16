@@ -2,24 +2,16 @@
   "name": "@curveball/browser",
   "version": "0.19.10",
   "description": "Automatic API browser generator. A middleware that turns your JSON responses into HTML if accessed by a browser.",
-  "main": "dist/index.js",
-  "scripts": {
-    "prepublishOnly": "make build",
-    "test": "make test",
-    "lint": "make lint",
-    "tsc": "tsc"
+  "type": "module",
+  "exports": {
+    "require": "./cjs/index.js",
+    "import": "./esm/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/curveball/browser"
+  "main": "cjs/index.js",
+  "homepage": "https://github.com/curveball/browser#readme",
+  "bugs": {
+    "url": "https://github.com/curveball/browser"
   },
-  "files": [
-    "README.md",
-    "dist",
-    "LICENSE",
-    "assets",
-    "src"
-  ],
   "keywords": [
     "hal",
     "hateoas",
@@ -32,40 +24,17 @@
   ],
   "author": "Evert Pot (https://evertpot.com/)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/curveball/browser"
+  "scripts": {
+    "prepublishOnly": "make build",
+    "test": "make test",
+    "lint": "make lint",
+    "fix": "make fix",
+    "tsc": "tsc",
+    "start": "make start"
   },
-  "homepage": "https://github.com/curveball/browser#readme",
-  "devDependencies": {
-    "@curveball/kernel": "^0.20.0",
-    "@curveball/validator": "^0.10.0",
-    "@types/chai": "^4.2.15",
-    "@types/markdown-it": "^12.0.1",
-    "@types/mocha": "^10.0.0",
-    "@types/node": "^14.18.26",
-    "@types/node-fetch": "^2.6.1",
-    "@types/react": "^18.0.12",
-    "@types/react-dom": "^18.0.5",
-    "@typescript-eslint/eslint-plugin": "^5.36.1",
-    "@typescript-eslint/parser": "^5.36.1",
-    "chai": "^4.3.3",
-    "eslint": "^8.23.0",
-    "html-form-enhancer": "^0.1.9",
-    "jsdom": "^20.0.0",
-    "mocha": "^10.0.0",
-    "nyc": "^15.1.0",
-    "sinon": "^15.0.1",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.2.3"
-  },
-  "engines": {
-    "node": ">= 14"
-  },
-  "types": "dist/",
-  "nyc": {
-    "extension": [
-      ".ts"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/curveball/browser"
   },
   "dependencies": {
     "@curveball/static": "^0.3.0",
@@ -77,8 +46,46 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
+  "peerDependencies": {
+    "@curveball/kernel": ">=0.21.0 <1"
+  },
+  "devDependencies": {
+    "@curveball/kernel": "^0.21.0",
+    "@curveball/validator": "^0.10.0",
+    "@types/chai": "^4.2.15",
+    "@types/markdown-it": "^12.0.1",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^16.18.12",
+    "@types/node-fetch": "^2.6.1",
+    "@types/react": "^18.0.12",
+    "@types/react-dom": "^18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "chai": "^4.3.3",
+    "eslint": "^8.23.0",
+    "html-form-enhancer": "^0.1.9",
+    "jsdom": "^20.0.0",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "sinon": "^15.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.2.3"
+  },
+  "engines": {
+    "node": ">= 16"
+  },
+  "files": [
+    "package.json",
+    "README.md",
+    "esm",
+    "cjs",
+    "LICENSE",
+    "src"
+  ],
   "mocha": {
-    "require": "ts-node/register",
+    "loader": [
+      "ts-node/esm"
+    ],
     "recursive": true,
     "extension": [
       "ts",
@@ -86,7 +93,9 @@
       "tsx"
     ]
   },
-  "peerDependencies": {
-    "@curveball/kernel": ">=0.20.0 <1"
+  "nyc": {
+    "extension": [
+      ".ts"
+    ]
   }
 }

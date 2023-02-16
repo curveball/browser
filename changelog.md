@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.20.0 (????-??-??)
+-------------------
+
+* This package now supports ESM and CommonJS modules.
+* No longer supports Node 14. Please use Node 16 or higher.
+
+
 0.19.10 (2022-12-23)
 --------------------
 
@@ -30,8 +37,8 @@ Changelog
 0.19.6 (2022-10-22)
 -------------------
 
-* We're now guessing the label on submit button for HAL forms based on the
-  verb used in the form title.
+* We're now guessing the label on submit button for HAL forms based on the verb
+  used in the form title.
 * Fix a bug in `html-form-enhancer.js`
 
 
@@ -52,9 +59,12 @@ Changelog
 0.19.3 (2022-09-20)
 -------------------
 
-* #145: Form elements now have `id` attributes and `<label>`s that point to them. (@ikbensiep)
-* #141: JSON-Schema comments were not rendered in nested objects in the JSON viewer. (@syedfkabi)
-* #151: `datetime-local` fields weren't rendered correctly if they have a value. (@mhum)
+* #145: Form elements now have `id` attributes and `<label>`s that point to
+  them. (@ikbensiep)
+* #141: JSON-Schema comments were not rendered in nested objects in the JSON
+  viewer. (@syedfkabi)
+* #151: `datetime-local` fields weren't rendered correctly if they have a
+  value. (@mhum)
 * Fixed a table layout issue.
 
 
@@ -71,7 +81,7 @@ Changelog
 
 
 0.19.0 (2022-09-03)
-------------------
+-------------------
 
 * Upgraded from `@curveball/core` to `@curveball/kernel`.
 * Updated to the latest Ketting, which fixes a problem with rendering HAL
@@ -91,9 +101,9 @@ Changelog
 0.17.4 (2022-04-16)
 -------------------
 
-* Known IANA link relationships now have a tooltip with a definition. When
-  the rels are clicked, you are now taken to a related (IETF or other)
-  standard page.
+* Known IANA link relationships now have a tooltip with a definition. When the
+  rels are clicked, you are now taken to a related (IETF or other) standard
+  page.
 * Cosmetic improvements in the CSV table output.
 
 
@@ -119,11 +129,10 @@ Changelog
 -------------------
 
 Brand new JSON viewer!
-
 * Supports collapsing/expanding part of the tree
 * Automatically generate hyperlinks for strings that are likely links.
-* Shows the _original_ JSON, including `_links` and `_embedded`, but these
-  are collapsed by default. This should aid in debugging.
+* Shows the _original_ JSON, including `_links` and `_embedded`, but these are
+  collapsed by default. This should aid in debugging.
 * No longer showing double-quotes around JSON property names, but they
   magically re-appear when copy pasting.
 
@@ -139,24 +148,28 @@ Brand new JSON viewer!
 
 * Add a curveball logo with outline
 
+
 0.16.3 (2022-01-06)
 -------------------
 
 * Add a curveball logo including the wordmark
-* Add a flag allowing users to see 'all links'. Normally links such as `self` are hidden in links tables, using the new `allLinks` flag every link will always appear in responses.
+* Add a flag allowing users to see 'all links'. Normally links such as `self`
+  are hidden in links tables, using the new `allLinks` flag every link will
+  always appear in responses.
+
 
 0.16.2 (2021-12-16)
 -------------------
 
-* Upgrade html-form-enhancer package, which fixes a bug related to the
-  `action` attribute being sometimes ignored.
+* Upgrade html-form-enhancer package, which fixes a bug related to the `action`
+  attribute being sometimes ignored.
 
 
 0.16.1 (2021-10-29)
 -------------------
 
-* If a server returns a `201 Created` status and no body, the browser will
-  now generate a default body so users don't see a white page.
+* If a server returns a `201 Created` status and no body, the browser will now
+  generate a default body so users don't see a white page.
 * Holiday themes now auto-activate, and don't require a server restart. This
   also means they wont keep lingering after the holiday.
 * Fixed a CSS bug in the Halloween theme around the 'pagers'.
@@ -169,8 +182,8 @@ Brand new JSON viewer!
   preceding halloween.
 * #109: Hightlight.js fixed their types, so the workaround is removed.
 * #108: Browser now supports a few more formats for templated URIs and
-  automaticalling turning them into forms. It also fails more gracefully
-  with invalid forms.
+  automaticalling turning them into forms. It also fails more gracefully with
+  invalid forms.
 * Compatible with `esModuleInterop: false`.
 
 
@@ -181,19 +194,19 @@ Brand new JSON viewer!
 
 
 0.15.4 (2021-09-13)
-------------------
+-------------------
 
 * Fix formatting of `datetime-local` value attribute.
 
 
 0.15.3 (2021-05-23)
-------------------
+-------------------
 
 * Fix warning when stylesheets aren't specified.
 
 
 0.15.2 (2021-05-23)
-------------------
+-------------------
 
 * Run the 'normalizeOptions' script only once: when initializing the
   middleware.
@@ -308,12 +321,12 @@ Brand new JSON viewer!
 0.12.0 (2021-02-02)
 -------------------
 
-* CSRF tokens will now be added to forms if the `@curveball/session`
-  middleware is loaded.
+* CSRF tokens will now be added to forms if the `@curveball/session` middleware
+  is loaded.
 
 
 0.11.2 (2021-01-30)
---------------------
+-------------------
 
 * Include `src/` in NPN package, for better debugging.
 
@@ -342,15 +355,14 @@ Brand new JSON viewer!
 0.11.0-beta.1 (2021-01-25)
 --------------------------
 
-* Update to latest Ketting 7, which fixes a bug related to rendering
-  forms.
+* Update to latest Ketting 7, which fixes a bug related to rendering forms.
 
 
 0.11.0-beta.0 (2021-01-20)
 --------------------------
 
-* Upgrade to Ketting 7 beta, which has a lot of HAL Forms improvements and
-  adds a `<textarea>` feature.
+* Upgrade to Ketting 7 beta, which has a lot of HAL Forms improvements and adds
+  a `<textarea>` feature.
 
 
 0.10.4 (2020-12-05)
@@ -389,9 +401,9 @@ Brand new JSON viewer!
 0.10.0 (2020-10-08)
 -------------------
 
-* The browser plugin will now render Siren and HAL-FORMS forms for you.
-  This will only work great if you use methods and content-types browsers
-  natively support, but support for JSON and other methods are planned.
+* The browser plugin will now render Siren and HAL-FORMS forms for you. This
+  will only work great if you use methods and content-types browsers natively
+  support, but support for JSON and other methods are planned.
 * Fix a React warning.
 
 
@@ -403,17 +415,19 @@ Brand new JSON viewer!
 * Fixed link header area.
 
 
-0.9.1 (2020-09-28) (alpha tag)
-------------------------------
+0.9.1 (2020-09-28)
+------------------
 
+* Alpha release.
 * New default theme: 'curveball'.
 * All HTML rendering is now handled with React server-side rendering.
 * Added a favicon.
 
 
-0.9.0 (2020-08-16) (alpha tag)
-------------------------------
+0.9.0 (2020-08-16)
+------------------
 
+* Alpha release.
 * Using Ketting for all format parsing, which means it will be easier in the
   future to add support for Siren, Collection+JSON, JSON:API and other formats.
 * Switch to ESlint.
@@ -478,29 +492,30 @@ Brand new JSON viewer!
 ------------------
 
 * Default icons for the following rels: `authenticate`, `authenticated-as`,
-  `register-user`, `logout` from [draft-pot-authentication-link][authentication-link].
+  `register-user`, `logout` from
+  [draft-pot-authentication-link][authentication-link].
 
 
 0.7.3 (2019-04-17)
 ------------------
 
-* Now showing links as 'Deprecated' or 'Gone' if they are marked as such
-  using [draft-nottingham-link-hint][link-hint].
+* Now showing links as 'Deprecated' or 'Gone' if they are marked as such using
+  [draft-nottingham-link-hint][link-hint].
 
 
 0.7.2 (2019-03-26)
 ------------------
 
-* Fixed bug: `Content-Disposition` was checked in the Request headers, not
-  the response headers.
+* Fixed bug: `Content-Disposition` was checked in the Request headers, not the
+  response headers.
 
 
 0.7.1 (2019-03-25)
 ------------------
 
-* #41: Don't touch responses with `Content-Disposition: attachment`. The
-  intent of that header is to allow people to create downloads for users,
-  so it's unlikely they want the response re-skinned as HTML.
+* #41: Don't touch responses with `Content-Disposition: attachment`. The intent
+  of that header is to allow people to create downloads for users, so it's
+  unlikely they want the response re-skinned as HTML.
 * Updated dependencies.
 * Stricted typescript settings.
 
@@ -566,13 +581,13 @@ Brand new JSON viewer!
 
 
 0.5.3 (2018-09-04)
------------------
+------------------
 
 * Catching a wider net of versions for dependencies.
 
 
 0.5.2 (2018-08-25)
------------------
+------------------
 
 * Pull `type` parameter from HTTP Link header as well.
 
@@ -627,8 +642,8 @@ Brand new JSON viewer!
 0.2.3 (2018-07-07)
 ------------------
 
-* Another mime-type tweak. Apprarently this problem only appears in
-  some environments. Sorry for the noise.
+* Another mime-type tweak. Apprarently this problem only appears in some
+  environments. Sorry for the noise.
 
 
 0.2.2 (2018-07-07)
@@ -653,8 +668,9 @@ Brand new JSON viewer!
 * Lots of tiny tweaks and bugfixes.
 * Serve `.svg` and `.css` files out of the box.
 
+
 0.0.2 (2018-07-02)
------------------
+------------------
 
 * Added styles to package.
 * Bit more docs.
@@ -666,4 +682,5 @@ Brand new JSON viewer!
 * First version
 
 [link-hint]: https://tools.ietf.org/html/draft-nottingham-link-hint
-[authentication-link]: https://tools.ietf.org/html/draft-pot-authentication-link-00
+[authentication-link]:
+https://tools.ietf.org/html/draft-pot-authentication-link-00
