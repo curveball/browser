@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'ketting';
-import { PageProps } from '../types';
+import { PageProps } from '../types.js';
 
 // List of links from the IANA website, auto generated
 import * as ianaLinks from '../data/iana-links.json';

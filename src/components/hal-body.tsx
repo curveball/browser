@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PageProps, JsonSchema } from '../types';
+import { PageProps, JsonSchema } from '../types.js';
 
 import JsonViewer from './json-viewer';
 

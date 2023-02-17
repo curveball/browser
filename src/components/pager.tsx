@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { PageProps } from '../types';
-import { getNavLinks } from '../util';
+import { PageProps } from '../types.js';
+import { getNavLinks } from '../util.js';
 
 export function Pager(props: PageProps) {
 

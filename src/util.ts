@@ -5,7 +5,7 @@ import {
   NavigationPosition,
   Options,
   Theme,
-} from './types';
+} from './types.js';
 import { State, Client } from 'ketting';
 import { Context } from '@curveball/kernel';
 import * as nodeFetch from 'node-fetch';

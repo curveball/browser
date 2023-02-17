@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { JsonSchema } from '../types';
+import { JsonSchema } from '../types.js';
 
 type Props = {
   data: string;

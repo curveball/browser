@@ -1,4 +1,4 @@
-import { getFieldsFromTemplatedUri } from '../src/util';
+import { getFieldsFromTemplatedUri } from '../src/util.js';
 import { expect } from 'chai';
 
 describe('Templated URI parser', () => {

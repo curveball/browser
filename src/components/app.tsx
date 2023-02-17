@@ -1,13 +1,13 @@
 import { State } from 'ketting';
 import * as React from 'react';
 import * as url from 'url';
-import { PageProps } from '../types';
+import { PageProps } from '../types.js';
 
-import { Search } from './search';
-import { Navigation } from './navigation';
-import { Alternate } from './alternate';
-import { Resource } from './resource';
-import { getDefaultTheme } from '../util';
+import { Search } from './search.js';
+import { Navigation } from './navigation.js';
+import { Alternate } from './alternate.js';
+import { Resource } from './resource.js';
+import { getDefaultTheme } from '../util.js';
 
 export function App(props: PageProps) {
 

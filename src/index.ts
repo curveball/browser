@@ -1,6 +1,6 @@
 import { Middleware, invokeMiddlewares } from '@curveball/kernel';
-import generateHtmlIndex from './html-index';
-import { NavigationLinkMap, Options } from './types';
+import generateHtmlIndex from './html-index.js';
+import { NavigationLinkMap, Options } from './types.js';
 import staticMw from '@curveball/static';
 
 export const supportedContentTypes = [

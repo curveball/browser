@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as url from 'url';
-import { PageProps } from '../types';
-import { getNavLinks } from '../util';
+import { PageProps } from '../types.js';
+import { getNavLinks } from '../util.js';
 
 type Type = {
   [s: string]: {

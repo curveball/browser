@@ -1,51 +1,56 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Node.js CI
+name: Node.js Test Runner
 
 on:
   push:
-    branches:
-      - main
-      - 'version-*.x'
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
-      - 'version-*.x'
+    branches: [ main ]
 
 jobs:
   node-test:
-    name: Node.js tests
+    name: Node.js tests (ESM)
 
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [16.x, 18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
 
-  bun-test:
-    name: Bun tests
+  cjs-test:
+    name: Node.js tests (CommonJS)
 
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Bun
-      uses: antongolub/action-setup-bun@v1
-    - run: bun install
-    - run: bun run build
-    - run: bun run mocha
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }} (CommonJS)
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: make test-cjs
 
   lint:
     name: Lint
@@ -53,9 +58,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Use Node.js
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
         node-version: 18.x
     - run: npm ci
