@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { PageProps } from '../types';
-import { MarkdownBody } from './markdown-body';
-import { CsvBody } from './csv-body';
-import { HalBody } from './hal-body';
+import { PageProps } from '../types.js';
+import { MarkdownBody } from './markdown-body.js';
+import { CsvBody } from './csv-body.js';
+import { HalBody } from './hal-body.js';
 
 export function Body(props: PageProps) {
 

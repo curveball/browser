@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { PageProps } from '../types';
-import { TemplatedLinks } from './forms/templated-links';
-import { ActionForm } from './forms/ketting-action';
-import { ButtonForm } from './forms/ketting-action-button';
+import { TemplatedLinks } from './forms/templated-links.js';
+import { ActionForm } from './forms/ketting-action.js';
+import { ButtonForm } from './forms/ketting-action-button.js';
 
 export function Forms(props: PageProps) {
 

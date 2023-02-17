@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { PageProps } from '../types';
-import { Resource } from './resource';
+import { PageProps } from '../types.js';
+import { Resource } from './resource.js';
 
 export function Embedded(props: PageProps) {
 

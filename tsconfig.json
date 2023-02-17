@@ -21,7 +21,9 @@
           "DOM",
           "ES2020"
         ],
-        "declaration": true
+        "declaration": true,
+        "jsx": "react",
+        "resolveJsonModule": true
     },
     "include": [
         "src/**/*"

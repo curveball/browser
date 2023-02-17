@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'ketting';
-import { NavigationLink, PageProps } from '../types';
-import { getNavLinks } from '../util';
+import { NavigationLink, PageProps } from '../types.js';
+import { getNavLinks } from '../util.js';
 
 export function Navigation(props: PageProps) {
 
