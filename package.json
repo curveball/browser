@@ -80,7 +80,8 @@
     "esm",
     "cjs",
     "LICENSE",
-    "src"
+    "src",
+    "assets"
   ],
   "mocha": {
     "loader": [
