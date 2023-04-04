@@ -1,8 +1,8 @@
 import { State } from 'ketting';
 import * as React from 'react';
 import * as url from 'url';
-import { PageProps } from '../types.js';
 
+import { PageProps } from '../types.js';
 import { Search } from './search.js';
 import { Navigation } from './navigation.js';
 import { Alternate } from './alternate.js';

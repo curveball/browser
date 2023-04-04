@@ -3,8 +3,8 @@ import { Options, JsonSchema } from './types';
 import * as ReactDOMServer from 'react-dom/server';
 import * as React from 'react';
 
-import { App } from './components/app';
-import { contextToState } from './util';
+import { App } from './components/app.js';
+import { contextToState } from './util.js';
 
 import '@curveball/validator';
 
