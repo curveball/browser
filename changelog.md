@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.20.2 (????-??-??)
+0.20.2 (2023-04-04)
 -------------------
 
 * Fix import errors in ESM distribution.
