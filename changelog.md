@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.20.1 (????-??-??)
+-------------------
+
+* Assets were not distributed in the npm package.
+
+
 0.20.0 (2023-02-17)
 -------------------
 
