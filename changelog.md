@@ -5,6 +5,7 @@ Changelog
 -------------------
 
 * form enhancer script was missing from build
+* Update to latest IANA link relation file.
 
 
 0.20.2 (2023-04-04)

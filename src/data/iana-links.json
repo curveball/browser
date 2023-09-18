@@ -93,7 +93,7 @@
   },
   "dns-prefetch": {
     "description": "Used to indicate an origin that will be used to fetch required  resources for the link context, and that the user agent ought to resolve \n      as early as possible.",
-    "href": "https://www.w3.org/TR/resource-hints/"
+    "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-dns-prefetch"
   },
   "duplicate": {
     "description": "Refers to a resource whose available representations are byte-for-byte identical with the corresponding representations of\n      the context IRI.",
@@ -313,7 +313,7 @@
   },
   "preconnect": {
     "description": "Used to indicate an origin that will be used to fetch required  resources for the link context. Initiating an early connection, which \n      includes the DNS lookup, TCP handshake, and optional TLS negotiation, \n      allows the user agent to mask the high latency costs of establishing a \n      connection.",
-    "href": "https://www.w3.org/TR/resource-hints/"
+    "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-preconnect"
   },
   "predecessor-version": {
     "description": "Points to a resource containing the predecessor version in the version history.",
@@ -321,7 +321,7 @@
   },
   "prefetch": {
     "description": "The prefetch link relation type is used to identify a resource  that might be required by the next navigation from the link context, and \n      that the user agent ought to fetch, such that the user agent can deliver a \n      faster response once the resource is requested in the future.",
-    "href": "http://www.w3.org/TR/resource-hints/"
+    "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-prefetch"
   },
   "preload": {
     "description": "Refers to a resource that should be loaded early in the  processing of the link's context, without blocking rendering.",
@@ -329,7 +329,7 @@
   },
   "prerender": {
     "description": "Used to identify a resource that might be required by the next  navigation from the link context, and that the user agent ought to fetch \n      and execute, such that the user agent can deliver a faster response once \n      the resource is requested in the future.",
-    "href": "https://www.w3.org/TR/resource-hints/"
+    "href": "https://www.w3.org/TR/2023/DISC-resource-hints-20230314/"
   },
   "prev": {
     "description": "Indicates that the link's context is a part of a series, and that the previous in the series is the link target.",
@@ -377,7 +377,7 @@
   },
   "search": {
     "description": "Refers to a resource that can be used to search through the link's context and related resources.",
-    "href": "http://www.opensearch.org/Specifications/OpenSearch/1.1"
+    "href": "https://github.com/dewitt/opensearch"
   },
   "section": {
     "description": "Refers to a section in a collection of resources.",
@@ -402,6 +402,10 @@
   "service-meta": {
     "description": "Identifies general metadata for the context that is primarily intended for consumption by machines.",
     "href": "https://datatracker.ietf.org/doc/html/rfc8631"
+  },
+  "sip-trunking-capability": {
+    "description": "Refers to a capability set document that defines parameters \n    or configuration requirements for automated peering and communication-channel \n    negotiation of the Session Initiation Protocol (SIP).",
+    "href": "https://datatracker.ietf.org/doc/html/rfc9409"
   },
   "sponsored": {
     "description": "Refers to a resource that is within a context that is \n\t\tsponsored (such as advertising or another compensation agreement).",
