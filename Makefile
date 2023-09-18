@@ -4,7 +4,7 @@ SOURCE_FILES:=$(shell find src/ -type f -name '*.ts')
 all: build
 
 .PHONY:build
-build: cjs/build esm/build
+build: cjs/build esm/build assets
 
 .PHONY:test
 test:
@@ -51,3 +51,20 @@ esm/build: $(SOURCE_FILES)
 	echo '{"type": "module"}' > esm/package.json
 	@# Creating a small file to keep track of the last build time
 	touch esm/build
+
+
+
+.PHONY:assets
+assets: assets/js/html-form-enhancer.js assets/js/serialize-json-form.js
+
+assets/js/html-form-enhancer.js: node_modules/html-form-enhancer/dist/html-form-enhancer.js
+	mkdir -p assets/js
+	cp node_modules/html-form-enhancer/dist/html-form-enhancer.* assets/js
+	touch cjs/build
+
+assets/js/serialize-json-form.js: node_modules/html-form-enhancer/dist/serialize-json-form.js
+	cp node_modules/html-form-enhancer/dist/serialize-json-form.* assets/js
+
+
+src/data/iana-links.json:
+	node util/fetch-link-relation-data.mjs > src/data/iana-links.json

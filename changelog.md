@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.20.3 (????-??-??)
+-------------------
+
+* form enhancer script was missing from build
+
+
 0.20.2 (2023-04-04)
 -------------------
 
@@ -141,6 +147,7 @@ Changelog
 -------------------
 
 Brand new JSON viewer!
+
 * Supports collapsing/expanding part of the tree
 * Automatically generate hyperlinks for strings that are likely links.
 * Shows the _original_ JSON, including `_links` and `_embedded`, but these are
