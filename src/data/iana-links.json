@@ -239,6 +239,10 @@
     "description": "Refers to a mask that can be applied to the icon for the context.",
     "href": "https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html#//apple_ref/doc/uid/TP40002051-CH18-SW1"
   },
+  "me": {
+    "description": "Links to a resource about the author of the link's context.",
+    "href": "https://microformats.org/wiki/rel-me"
+  },
   "media-feed": {
     "description": "Refers to a feed of personalised media recommendations relevant to the link context.",
     "href": "https://wicg.github.io/media-feeds/#discovery-of-media-feeds"
