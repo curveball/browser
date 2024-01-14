@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.20.5 (????-??-??)
+-------------------
+
+* Support for Typescript 5.
+* Updated IANA links database.
+
+
 0.20.4 (2024-01-14)
 -------------------
 
