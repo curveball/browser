@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.20.4 (????-??-??)
+0.20.4 (2024-01-14)
 -------------------
 
 * Fix: button imports were broken for ESM.
