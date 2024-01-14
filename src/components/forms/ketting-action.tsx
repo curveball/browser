@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useId } from 'react';
 import { Action, Field } from 'ketting';
-import { Button } from './button';
+import { Button } from './button.js';
 
 type FormProps = {
   csrfToken: string | null;
