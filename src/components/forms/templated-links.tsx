@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { PageProps } from '../../types';
-import { Button } from './button';
-import { getFieldsFromTemplatedUri } from '../../util';
+import { PageProps } from '../../types.js';
+import { Button } from './button.js';
+import { getFieldsFromTemplatedUri } from '../../util.js';
 
 export function TemplatedLinks(props: PageProps) {
 
