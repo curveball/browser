@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.20.3 (????-??-??)
+0.20.3 (2024-01-14)
 -------------------
 
 * form enhancer script was missing from build
