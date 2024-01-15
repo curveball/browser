@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0.1 (????-??-??)
+1.0.1 (2024-01-15)
 ------------------
 
 * Fix weird Typescript / Node disagreement on whether JSON import assertions
