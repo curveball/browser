@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.0.1 (????-??-??)
+------------------
+
+* Fix weird Typescript / Node disagreement on whether JSON import assertions
+  are required or forbidden
+
+
 1.0.0 (2024-01-15)
 ------------------
 

@@ -1,21 +1,20 @@
 import * as React from 'react';
 import { Link } from 'ketting';
 import { PageProps } from '../types.js';
-
-// List of links from the IANA website, auto generated
-import ianaLinks from '../data/iana-links.json';
-// List of links from this project, overrides some IANA links with better
-// descriptions
-import editorLinks from '../data/editor-links.json';
-//List of links from the Level 3 REST (https://level3.rest) specification.
-import level3RestLinks from '../data/level3-rest-links.json';
+import { readFileSync } from 'node:fs';
 
 type LinkDescriptions = Record<string, {href: string; description: string}>;
 
+function loadLinkData(fileName: string) {
+  return JSON.parse(
+    readFileSync(new URL(import.meta.url + '/..').pathname + '/../data/' + fileName + '.json', 'utf-8')
+  );
+}
+
 const linkDescriptions: LinkDescriptions = {
-  ...ianaLinks,
-  ...editorLinks,
-  ...level3RestLinks
+  ...loadLinkData('iana-links'),
+  ...loadLinkData('editor-links'),
+  ...loadLinkData('level3-rest-links')
 };
 
 export function LinksTable(props: PageProps) {
