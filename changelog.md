@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.0.3 (2024-01-15)
+------------------
+
+* Added a DOCTYPE so we're not in quircks mode.
+* Added a bug related to loading image assets.
+
+
 1.0.2 (2024-01-15)
 ------------------
 
