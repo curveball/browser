@@ -37,7 +37,7 @@
     "url": "git+https://github.com/curveball/browser"
   },
   "dependencies": {
-    "@curveball/static": "^0.4.0",
+    "@curveball/static": "^1",
     "csv-parse": "^5.1.0",
     "highlight.js": "^11.2.0",
     "ketting": "^7.5.1",
@@ -47,11 +47,11 @@
     "react-dom": "^18.1.0"
   },
   "peerDependencies": {
-    "@curveball/kernel": ">=0.21.0 <1"
+    "@curveball/kernel": "^1"
   },
   "devDependencies": {
-    "@curveball/kernel": "^0.21.0",
-    "@curveball/validator": "^0.10.0",
+    "@curveball/kernel": "^1",
+    "@curveball/validator": "^1",
     "@types/chai": "^4.3.11",
     "@types/markdown-it": "^13.0.7",
     "@types/mocha": "^10.0.1",
