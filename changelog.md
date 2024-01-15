@@ -4,7 +4,7 @@ Changelog
 1.0.2 (2024-01-15)
 ------------------
 
-* Another JSON file. Files are now explictly included and in the root
+* Another JSON fail. Files are now explictly included and in the root
   directory.
 
 
