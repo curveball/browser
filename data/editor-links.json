@@ -13,11 +13,11 @@
   },
   "authenticated-as": {
     "description": "Links to a resource that represents the currently authenticated user",
-    "href": "https://datatracker.ietf.org/doc/html/draft-pot-authentication-link-01#section-3",
+    "href": "https://datatracker.ietf.org/doc/html/draft-pot-authentication-link-01#section-3"
   },
   "logout": {
     "description": "Links to the resource where the currently authenticated user can end their session",
-    "href": "https://datatracker.ietf.org/doc/html/draft-pot-authentication-link-01#section-4",
+    "href": "https://datatracker.ietf.org/doc/html/draft-pot-authentication-link-01#section-4"
   },
   "register-user": {
     "description": "Links to a resource where a user can sign up for the current resource.",

@@ -7,7 +7,7 @@ type LinkDescriptions = Record<string, {href: string; description: string}>;
 
 function loadLinkData(fileName: string) {
   return JSON.parse(
-    readFileSync(new URL(import.meta.url + '/..').pathname + '/../data/' + fileName + '.json', 'utf-8')
+    readFileSync(new URL(import.meta.url + '/..').pathname + '../../data/' + fileName + '.json', 'utf-8')
   );
 }
 

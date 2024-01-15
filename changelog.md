@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.0.2 (????-??-??)
+------------------
+
+* Another JSON file. Files are now explictly included and in the root
+  directory.
+
+
 1.0.1 (2024-01-15)
 ------------------
 

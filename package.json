@@ -76,7 +76,8 @@
     "dist",
     "LICENSE",
     "src",
-    "assets"
+    "assets",
+    "data"
   ],
   "mocha": {
     "loader": [
