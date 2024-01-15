@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { PageProps, JsonSchema } from '../types.js';
 
-import JsonViewer from './json-viewer';
+import JsonViewer from './json-viewer.js';
 
 export function HalBody(props: PageProps) {
 

@@ -105,7 +105,7 @@ const defaultNavigationLinks: NavigationLinkMap = {
   'search': true,
 };
 
-export { Options } from './types';
+export { Options } from './types.js';
 
 export default function browser(options?: Partial<Options>): Middleware {
 
