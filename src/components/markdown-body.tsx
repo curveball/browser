@@ -1,6 +1,6 @@
 import * as React from 'react';
 import hljs from 'highlight.js';
-import * as md from 'markdown-it';
+import md from 'markdown-it';
 import { PageProps } from '../types.js';
 
 export function MarkdownBody(props: PageProps) {

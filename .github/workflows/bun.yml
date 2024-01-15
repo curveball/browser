@@ -20,5 +20,5 @@ jobs:
     - name: Use Bun
       uses: antongolub/action-setup-bun@v1
     - run: bun install
-    - run: make build
+    - run: bun run build
     - run: bun run mocha

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PageProps } from '../types';
+import { PageProps } from '../types.js';
 import { TemplatedLinks } from './forms/templated-links.js';
 import { ActionForm } from './forms/ketting-action.js';
 import { ButtonForm } from './forms/ketting-action-button.js';

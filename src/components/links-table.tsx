@@ -3,12 +3,12 @@ import { Link } from 'ketting';
 import { PageProps } from '../types.js';
 
 // List of links from the IANA website, auto generated
-import * as ianaLinks from '../data/iana-links.json' with { type: 'json' };
+import ianaLinks from '../data/iana-links.json';
 // List of links from this project, overrides some IANA links with better
 // descriptions
-import * as editorLinks from '../data/editor-links.json' with { type: 'json' };
+import editorLinks from '../data/editor-links.json';
 //List of links from the Level 3 REST (https://level3.rest) specification.
-import * as level3RestLinks from '../data/level3-rest-links.json' with { type: 'json' };
+import level3RestLinks from '../data/level3-rest-links.json';
 
 type LinkDescriptions = Record<string, {href: string; description: string}>;
 

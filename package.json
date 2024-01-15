@@ -3,11 +3,7 @@
   "version": "0.20.5",
   "description": "Automatic API browser generator. A middleware that turns your JSON responses into HTML if accessed by a browser.",
   "type": "module",
-  "exports": {
-    "require": "./cjs/index.js",
-    "import": "./esm/index.js"
-  },
-  "main": "cjs/index.js",
+  "exports": "./dist/index.js",
   "homepage": "https://github.com/curveball/browser#readme",
   "bugs": {
     "url": "https://github.com/curveball/browser"
@@ -30,14 +26,15 @@
     "lint": "make lint",
     "fix": "make fix",
     "tsc": "tsc",
-    "start": "make start"
+    "start": "make start",
+    "build": "make build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/curveball/browser"
   },
   "dependencies": {
-    "@curveball/static": "^0.4.0",
+    "@curveball/static": "^1",
     "csv-parse": "^5.1.0",
     "highlight.js": "^11.2.0",
     "ketting": "^7.5.1",
@@ -47,21 +44,21 @@
     "react-dom": "^18.1.0"
   },
   "peerDependencies": {
-    "@curveball/kernel": ">=0.21.0 <1"
+    "@curveball/kernel": "^1"
   },
   "devDependencies": {
-    "@curveball/kernel": "^0.21.0",
-    "@curveball/validator": "^0.10.0",
+    "@curveball/kernel": "^1.0.0",
+    "@curveball/validator": "^1",
     "@types/chai": "^4.3.11",
     "@types/markdown-it": "^13.0.7",
     "@types/mocha": "^10.0.1",
-    "@types/node": "^16.18.12",
+    "@types/node": "^18.19.7",
     "@types/node-fetch": "^2.6.1",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
     "@typescript-eslint/eslint-plugin": "^6.18.1",
     "@typescript-eslint/parser": "^6.18.1",
-    "chai": "^4.4.1",
+    "chai": "^5.0.0",
     "eslint": "^8.23.0",
     "html-form-enhancer": "^0.1.9",
     "jsdom": "^23.2.0",
@@ -71,13 +68,12 @@
     "typescript": "^5.3.3"
   },
   "engines": {
-    "node": ">= 16"
+    "node": ">= 18"
   },
   "files": [
     "package.json",
     "README.md",
-    "esm",
-    "cjs",
+    "dist",
     "LICENSE",
     "src",
     "assets"
