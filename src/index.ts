@@ -110,7 +110,6 @@ const defaultNavigationLinks: NavigationLinkMap = {
 export { Options } from './types.js';
 
 const assetsPath = join(fileURLToPath(new URL(import.meta.url)),'../../assets');
-console.log(assetsPath);
 
 export default function browser(options?: Partial<Options>): Middleware {
 
