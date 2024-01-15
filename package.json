@@ -77,7 +77,8 @@
     "README.md",
     "dist",
     "LICENSE",
-    "src"
+    "src",
+    "assets"
   ],
   "mocha": {
     "loader": [

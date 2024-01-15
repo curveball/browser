@@ -4,7 +4,7 @@ SOURCE_FILES:=$(shell find src/ -type f -name '*.ts')
 all: build
 
 .PHONY:build
-build: dist/build
+build: dist/build assets
 
 .PHONY:test
 test:
@@ -32,6 +32,22 @@ start: build
 clean:
 	rm -rf dist
 
+
 dist/build: $(SOURCE_FILES)
 	npx tsc
 	touch dist/build
+
+.PHONY:assets
+assets: assets/js/html-form-enhancer.js assets/js/serialize-json-form.js
+
+assets/js/html-form-enhancer.js: node_modules/html-form-enhancer/dist/html-form-enhancer.js
+	mkdir -p assets/js
+	cp node_modules/html-form-enhancer/dist/html-form-enhancer.* assets/js
+	touch cjs/build
+
+assets/js/serialize-json-form.js: node_modules/html-form-enhancer/dist/serialize-json-form.js
+	cp node_modules/html-form-enhancer/dist/serialize-json-form.* assets/js
+
+
+src/data/iana-links.json:
+	node util/fetch-link-relation-data.mjs > src/data/iana-links.json
