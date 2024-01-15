@@ -12,7 +12,7 @@ describe('Browser middleware integration test', () => {
 
     app.use( ctx => {
       ctx.response.body = { hello: 'world' };
-      ctx.response.type = 'application/json'
+      ctx.response.type = 'application/json';
     });
 
     const resp = await app.subRequest('GET', '/', {
