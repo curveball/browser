@@ -41,7 +41,7 @@ export default async function generateHtmlIndex(ctx: Context, options: Options) 
   }
 
   ctx.response.type = 'text/html; charset=utf-8';
-  ctx.response.body = ReactDOMServer.renderToString(
+  ctx.response.body = '<!DOCTYPE html>\n' + ReactDOMServer.renderToString(
     <App
       resourceState={state}
       options={options}

@@ -2,6 +2,8 @@ import { Middleware, invokeMiddlewares } from '@curveball/kernel';
 import generateHtmlIndex from './html-index.js';
 import { NavigationLinkMap, Options } from './types.js';
 import staticMw from '@curveball/static';
+import { fileURLToPath } from 'node:url';
+import { join } from 'node:path';
 
 export const supportedContentTypes = [
   'application/json',
@@ -107,10 +109,13 @@ const defaultNavigationLinks: NavigationLinkMap = {
 
 export { Options } from './types.js';
 
+const assetsPath = join(fileURLToPath(new URL(import.meta.url)),'..');
+console.log(assetsPath);
+
 export default function browser(options?: Partial<Options>): Middleware {
 
   const stat = staticMw({
-    staticDir: __dirname + '/../assets',
+    staticDir: assetsPath,
     pathPrefix: '/_hal-browser/assets',
     maxAge: 3600,
   });
