@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0.3 (????-??-??)
+1.0.3 (2024-01-15)
 ------------------
 
 * Added a DOCTYPE so we're not in quircks mode.
