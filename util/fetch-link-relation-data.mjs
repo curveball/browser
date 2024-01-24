@@ -1,5 +1,4 @@
 import { JSDOM } from 'jsdom';
-import fetch from 'node-fetch';
 import { writeFileSync } from 'node:fs';
 
 const response = await fetch('https://www.iana.org/assignments/link-relations/link-relations.xml');
