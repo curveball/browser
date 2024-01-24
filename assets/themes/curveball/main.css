@@ -214,6 +214,7 @@ a.definition {
 .method-delete { background: #d93b3b; }
 .method-patch  { background: #7a36ad; }
 .method-search { background: #9c1497; }
+.method-query  { background: #aaaa44; }
 
 main code {
   border-radius: 2px;
