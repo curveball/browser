@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.1.0 (????-??-??)
+------------------
+
+* Add color for HTTP QUERY methods.
+* Remove node-fetch dependency.
+
+
 1.0.3 (2024-01-15)
 ------------------
 
