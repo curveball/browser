@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.0 (????-??-??)
+1.1.0 (2024-01-24)
 ------------------
 
 * Add color for HTTP QUERY methods.
