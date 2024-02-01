@@ -19,11 +19,19 @@ type FieldProps = {
 export function ButtonForm(props: FormProps) {
 
   const action = props.action;
-  return <form action={action.uri} method={action.method} encType={action.contentType} id={action.name!} className="button-form">
-    {props.csrfToken ? <input type="hidden" name="csrf-token" defaultValue={props.csrfToken} /> : ''}
-    {action.fields.map( field => <ActionField field={field} key={field.name} />) }
-    <Button method={action.method} title={action.title || action.name || null} />
-  </form>;
+  const fields = action.fields.map( field => <ActionField field={field} key={field.name} />);
+  if (action.method === 'GET') {
+    return <form action={action.uri} method={action.method} id={action.name!} className="button-form">
+      {fields}
+      <Button method={action.method} title={action.title || action.name || null} />
+    </form>;
+  } else {
+    return <form action={action.uri} method={action.method} encType={action.contentType} id={action.name!} className="button-form">
+      {props.csrfToken ? <input type="hidden" name="csrf-token" defaultValue={props.csrfToken} /> : ''}
+      {fields}
+      <Button method={action.method} title={action.title || action.name || null} />
+    </form>;
+  }
 
 }
 

@@ -14,10 +14,10 @@ type FieldProps = {
 export function ActionForm(props: FormProps) {
 
   const action = props.action;
-  return <form action={action.uri} method={action.method} encType={action.contentType} id={action.name!} className="long-form">
+  return <form action={action.uri} method={action.method} encType={action.method !== 'GET' ? action.contentType : undefined} id={action.name!} className="long-form">
     <h3>{action.title || action.name || 'form'}</h3>
 
-    {props.csrfToken ? <input type="hidden" name="csrf-token" defaultValue={props.csrfToken} /> : ''}
+    {props.csrfToken && action.method !== 'GET' ? <input type="hidden" name="csrf-token" defaultValue={props.csrfToken} /> : ''}
     {action.fields.map( field => <ActionField field={field} key={field.name} />) }
 
     <div className="buttonRow"><Button method={action.method} titleHint={action.title} /></div>
