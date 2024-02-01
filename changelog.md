@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.1.1 (????-??-??)
+------------------
+
+* HAL/Siren forms that have method=GET no longer add a CSRF token or an enctype
+  attribute.
+
+
 1.1.0 (2024-01-24)
 ------------------
 
