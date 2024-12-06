@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.2 (????-??-??)
+1.1.2 (2024-12-06)
 ------------------
 
 * Add CSS style for experimental feature
