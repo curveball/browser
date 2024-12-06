@@ -19,7 +19,8 @@
           "DOM",
           "ES2022"
         ],
-        "declaration": true
+        "declaration": true,
+        "jsx": "React"
     },
     "include": [
         "src/**/*"

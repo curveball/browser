@@ -1,5 +1,6 @@
 import { getFieldsFromTemplatedUri } from '../src/util.js';
-import { expect } from 'chai';
+import { describe, it } from 'node:test';
+import { strict as assert } from 'node:assert';
 
 describe('Templated URI parser', () => {
 
@@ -50,7 +51,10 @@ describe('Templated URI parser', () => {
 
     it(`should correctly parse "${input}"`, () => {
 
-      expect(getFieldsFromTemplatedUri(input)).to.eql(expected);
+      assert.deepEqual(
+        getFieldsFromTemplatedUri(input),
+        expected
+      );
 
     });
 
