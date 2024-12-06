@@ -5,6 +5,7 @@ Changelog
 ------------------
 
 * Add CSS style for experimental feature
+* Fix an issue with loading JSON files when running as a dependency via npx.
 
 
 1.1.1 (2024-02-01)

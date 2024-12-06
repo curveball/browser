@@ -2,12 +2,21 @@ import * as React from 'react';
 import { Link } from 'ketting';
 import { PageProps } from '../types.js';
 import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import * as path from 'node:path';
 
 type LinkDescriptions = Record<string, {href: string; description: string}>;
 
 function loadLinkData(fileName: string) {
   return JSON.parse(
-    readFileSync(new URL(import.meta.url + '/..').pathname + '../../data/' + fileName + '.json', 'utf-8')
+    readFileSync(
+      path.join(
+        fileURLToPath(new URL(import.meta.url + '/..')),
+        '../../data/',
+        fileName + '.json'
+      ),
+      'utf-8'
+    )
   );
 }
 
