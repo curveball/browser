@@ -207,6 +207,7 @@ a.definition {
 
 .status-deprecated { background: #d93b3b; }
 .status-gone      { background: #d93b3b; }
+.status-experimental { background: #3e57d6; }
 
 .method-post   { background: #2365a8; }
 .method-get    { background: #5c945f; }
