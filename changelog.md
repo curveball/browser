@@ -6,6 +6,9 @@ Changelog
 
 * Add CSS style for experimental feature
 * Fix an issue with loading JSON files when running as a dependency via npx.
+* Updated standard Curveball configuration.
+* Migrated from mocha to node:test.
+* Migrated from chai to node:assert.
 
 
 1.1.1 (2024-02-01)

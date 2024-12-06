@@ -1,9 +1,11 @@
 import { Middleware, invokeMiddlewares } from '@curveball/kernel';
 import generateHtmlIndex from './html-index.js';
-import { NavigationLinkMap, Options } from './types.js';
+import { Options, NavigationLinkMap } from './types.js';
 import staticMw from '@curveball/static';
 import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
+
+export type { Options } from './types.js';
 
 export const supportedContentTypes = [
   'application/json',
@@ -15,6 +17,7 @@ export const supportedContentTypes = [
   'application/prs.hal-forms+json',
   'application/vnd.siren+json',
 ];
+
 
 /*
  * Wanted links support
@@ -106,8 +109,6 @@ const defaultNavigationLinks: NavigationLinkMap = {
   },
   'search': true,
 };
-
-export { Options } from './types.js';
 
 const assetsPath = join(fileURLToPath(new URL(import.meta.url)),'../../assets');
 
