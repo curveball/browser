@@ -43,6 +43,10 @@
     "description": "Gives a permanent link to use for bookmarking purposes.",
     "href": "https://html.spec.whatwg.org/multipage/links.html#link-type-bookmark"
   },
+  "c2pa-manifest": {
+    "description": "This link relation identifies the C2PA Manifest associated with the link context",
+    "href": "https://c2pa.org/specifications/specifications/2.0/specs/C2PA_Specification.html#_by_link_header"
+  },
   "canonical": {
     "description": "Designates the preferred version of a resource (the IRI and its contents).",
     "href": "https://datatracker.ietf.org/doc/html/rfc6596"
@@ -58,6 +62,9 @@
   "collection": {
     "description": "The target IRI points to a resource which represents the collection resource for the context IRI.",
     "href": "https://datatracker.ietf.org/doc/html/rfc6573"
+  },
+  "compression-dictionary": {
+    "description": "Refers to a compression dictionary used for content encoding."
   },
   "contents": {
     "description": "Refers to a table of contents.",
@@ -78,6 +85,9 @@
   "current": {
     "description": "Refers to a resource containing the most recent item(s) in a collection of resources.",
     "href": "https://datatracker.ietf.org/doc/html/rfc5005"
+  },
+  "deprecation": {
+    "description": "Refers to a resource that is documentation (intended for human consumption) about the deprecation of the link's context."
   },
   "describedby": {
     "description": "Refers to a resource providing information about the link's context.",
@@ -138,6 +148,9 @@
   "hub": {
     "description": "Refers to a hub that enables registration for\n    notification of updates to the context.",
     "href": "https://www.w3.org/TR/websub/"
+  },
+  "ice-server": {
+    "description": "Conveys the STUN and TURN servers that can be used by an ICE Agent to establish a connection with a peer."
   },
   "icon": {
     "description": "Refers to an icon representing the link's context.",

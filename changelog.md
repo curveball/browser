@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.1.3 (????-??-??)
+------------------
+
+* Added support for tooltips for c2pa-manifest, compression-dictionary,
+  ice-server and depreciation.
+
+
 1.1.2 (2024-12-06)
 ------------------
 
