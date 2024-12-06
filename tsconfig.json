@@ -19,9 +19,7 @@
           "DOM",
           "ES2022"
         ],
-        "declaration": true,
-        "jsx": "react",
-        "resolveJsonModule": true
+        "declaration": true
     },
     "include": [
         "src/**/*"
