@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.3 (????-??-??)
+1.1.3 (2024-12-06)
 ------------------
 
 * Added support for tooltips for c2pa-manifest, compression-dictionary,
