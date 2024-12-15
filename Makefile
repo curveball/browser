@@ -5,7 +5,7 @@ TEST_FILES:=$(shell find test/ -type f -name '*.ts')
 all: build
 
 .PHONY:build
-build: dist/build
+build: dist/build assets
 
 .PHONY:test
 test:
