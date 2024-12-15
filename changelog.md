@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.4 (????-??-??)
+1.1.4 (2024-12-15)
 ------------------
 
 * Make sure html-form-enhancer is included in npm build.
