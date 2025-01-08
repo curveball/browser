@@ -33,7 +33,7 @@ export function Forms(props: PageProps) {
 
   return <>
     <h2 key="-1">Actions</h2>
-    <ul className="action-buttons">
+    <ul className="button-actions">
       {buttonForms.map( (form, index) => <li key={index}>{form}</li>)}
     </ul>
     {forms.map( (form, index) => <span key={index}>{form}</span>)}
