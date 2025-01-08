@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.5 (????-??-??)
+1.1.5 (2025-01-08)
 ------------------
 
 * Fix layout when multiple single-button actions are rendered.
