@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.1.5 (????-??-??)
+------------------
+
+* Fix layout when multiple single-button actions are rendered.
+
+
 1.1.4 (2024-12-15)
 ------------------
 
