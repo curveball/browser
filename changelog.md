@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.0 (????-??-??)
+1.2.0 (2025-04-05)
 ------------------
 
 * Adding support for the 'friend' rel from XFN.
