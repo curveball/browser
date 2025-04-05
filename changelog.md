@@ -1,10 +1,11 @@
 Changelog
 =========
 
-1.1.7 (????-??-??)
+1.2.0 (????-??-??)
 ------------------
 
 * Adding support for the 'friend' rel from XFN.
+* Update to Ketting 8, React 19
 
 
 1.1.6 (2025-01-08)
