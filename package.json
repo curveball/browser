@@ -37,10 +37,10 @@
     "@curveball/static": "^1",
     "csv-parse": "^5.1.0",
     "highlight.js": "^11.2.0",
-    "ketting": "^7.5.1",
+    "ketting": "^8.0.0",
     "markdown-it": "^14.0.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "peerDependencies": {
     "@curveball/kernel": "^1"
@@ -51,10 +51,10 @@
     "@eslint/js": "^9.16.0",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^18.19.67",
-    "@types/react": "^18.0.12",
-    "@types/react-dom": "^18.0.5",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.1",
     "html-form-enhancer": "^0.1.9",
-    "jsdom": "^23.2.0",
+    "jsdom": "^26.0.0",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.17.0"
