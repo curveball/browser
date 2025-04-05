@@ -3,6 +3,10 @@
     "description": "A link to yourself at a different URL",
     "href": "http://gmpg.org/xfn/11"
   },
+  "friend": {
+    "description": "A link to a friend",
+    "href": "http://gmpg.org/xfn/11"
+  },
   "item": {
     "description": "A member of a collection",
     "href": "https://datatracker.ietf.org/doc/html/rfc6573#section-2.1"
