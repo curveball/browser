@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.1 (????-??-??)
+1.2.1 (2026-09-29)
 ------------------
 
 * Updated csv-parse from 5 to 7, to fix a security vulnerability.
