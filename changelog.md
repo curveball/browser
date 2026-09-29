@@ -6,6 +6,7 @@ Changelog
 
 * Updated csv-parse from 5 to 7, to fix a security vulnerability.
 * Updated dependencies.
+* Testing Node 24.x, Node 26.x
 
 
 1.2.0 (2025-04-05)
