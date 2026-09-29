@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.2.1 (????-??-??)
+------------------
+
+* Updated csv-parse from 5 to 7, to fix a security vulnerability.
+* Updated dependencies.
+
+
 1.2.0 (2025-04-05)
 ------------------
 
